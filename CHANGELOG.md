@@ -1,3 +1,10 @@
+# [1.0.0-alpha.3](https://github.com/dvhb/ui/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2020-02-10)
+
+
+### Features
+
+* add gh-pages ([7312964](https://github.com/dvhb/ui/commit/731296424b10b0f540194a4c3f8ace8d0e872b0c))
+
 # [1.0.0-alpha.2](https://github.com/dvhb/ui/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2020-02-10)
 
 
