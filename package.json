@@ -19,8 +19,7 @@
     "docz:build": "docz build",
     "lint": "tslint -p tsconfig.json -c tslint.json -t verbose",
     "presemantic-release": "npm run build",
-    "semantic-release": "semantic-release",
-    "postpublish": "npm run docz:build && npx gh-pages -d .docz/dist"
+    "semantic-release": "semantic-release"
   },
   "husky": {
     "hooks": {
