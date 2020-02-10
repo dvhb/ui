@@ -1,0 +1,72 @@
+{
+  "name": "@dvhb/ui",
+  "version": "1.0.0-alpha.3",
+  "description": "components for dvhb design system",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc",
+    "dev": "tsc --watch",
+    "docz": "docz dev",
+    "docz:build": "docz build",
+    "lint": "tslint -p tsconfig.json -c tslint.json -t verbose",
+    "presemantic-release": "npm run build",
+    "semantic-release": "semantic-release",
+    "postpublish": "npm run docz:build && npx gh-pages -d .docz/dist"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && tsc --noEmit",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{json,md,graphql}": [
+      "prettier --write",
+      "git add --force"
+    ],
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add --force"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@dvhb/tslint-config-react": "^1.0.9",
+    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@types/node": "^10.14.6",
+    "@types/react": "^16.9.19",
+    "docz": "^2.2.0",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "semantic-release": "^17.0.0",
+    "tslint": "^6.0.0",
+    "typescript": "^3.5.3"
+  },
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/github",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  }
+}
