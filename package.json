@@ -15,6 +15,8 @@
     "clean": "rm -rf ./dist",
     "compile": "tsc",
     "dev": "tsc --watch",
+    "docz": "docz dev",
+    "docz:build": "docz build",
     "lint": "tslint -p tsconfig.json -c tslint.json -t verbose",
     "presemantic-release": "npm run build",
     "semantic-release": "semantic-release"
@@ -43,9 +45,12 @@
     "@semantic-release/git": "^9.0.0",
     "@types/node": "^10.14.6",
     "@types/react": "^16.9.19",
+    "docz": "^2.2.0",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "semantic-release": "^17.0.0",
     "tslint": "^6.0.0",
     "typescript": "^3.5.3"
