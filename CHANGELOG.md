@@ -1,3 +1,10 @@
+# [1.0.0-alpha.2](https://github.com/dvhb/ui/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2020-02-10)
+
+
+### Features
+
+* add docz ([1e8df93](https://github.com/dvhb/ui/commit/1e8df9399a82d72b782477efa62e67a47cfdaf17))
+
 # 1.0.0-alpha.1 (2020-02-10)
 
 
