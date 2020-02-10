@@ -15,15 +15,39 @@
     "clean": "rm -rf ./dist",
     "compile": "tsc",
     "dev": "tsc --watch",
+    "lint": "tslint -p tsconfig.json -c tslint.json -t verbose",
     "presemantic-release": "npm run build",
     "semantic-release": "semantic-release"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && tsc --noEmit",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{json,md,graphql}": [
+      "prettier --write",
+      "git add --force"
+    ],
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add --force"
+    ]
+  },
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@dvhb/tslint-config-react": "^1.0.9",
     "@semantic-release/changelog": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
     "@types/node": "^10.14.6",
     "@types/react": "^16.9.19",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
     "semantic-release": "^17.0.0",
+    "tslint": "^6.0.0",
     "typescript": "^3.5.3"
   },
   "peerDependencies": {
