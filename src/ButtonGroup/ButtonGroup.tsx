@@ -3,8 +3,9 @@ import cn from 'classnames';
 
 import styles from './styles.module.scss';
 import { Text } from '../Text';
-import { Button, PropsButton } from './components/Button';
-import { Container, PropsContainer } from './components/Container';
+import { Button, ButtonProps } from './components/Button';
+import { Container, ContainerProps } from './components/Container';
+import { defaultComponents } from './components';
 
 export type ButtonGroupItem = {
   label: string;
@@ -21,14 +22,9 @@ export type ButtonGroupProps = {
   valueProperty?: string;
   onChange?: (value: any) => void;
   components?: {
-    Button?: (props: PropsButton) => ReactElement;
-    Container?: (props: PropsContainer) => ReactElement;
+    Button?: (props: ButtonProps) => ReactElement;
+    Container?: (props: ContainerProps) => ReactElement;
   };
-};
-
-const defaultComponents = {
-  Button,
-  Container,
 };
 
 export const ButtonGroup = ({

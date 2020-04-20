@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react';
 
-export type PropsContainer = {} & HTMLAttributes<HTMLDivElement>;
+export type ContainerProps = {} & HTMLAttributes<HTMLDivElement>;
 
-export const Container: FC = ({ ...rest }: PropsContainer) => {
+export const Container: FC = ({ ...rest }: ContainerProps) => {
   return <div {...rest} />;
 };
