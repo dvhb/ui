@@ -1,0 +1,82 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.text {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  color: $black;
+  font-family: $fontFamily;
+
+  &SizeInherit {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  &_white {
+    color: $white;
+  }
+
+  &_grey {
+    color: $grey;
+  }
+
+  &_purple {
+    color: $purple;
+  }
+
+  &_red {
+    color: $red;
+  }
+
+  &_link {
+    color: $link;
+  }
+
+  &_greyDark {
+    color: $greyDark;
+  }
+
+  &_warning {
+    color: $warning;
+  }
+
+  &_darker-warning {
+    color: $darker-warning;
+  }
+
+  &_inherit {
+    color: inherit;
+  }
+
+  &_sm {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &_md {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  &_lg {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &_centered {
+    text-align: center;
+  }
+
+  &_bold {
+    font-weight: bold;
+  }
+}
+
+.h1 {
+  font-size: 24px;
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
+}

@@ -4,14 +4,16 @@
   "description": "components for dvhb design system",
   "license": "MIT",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "typings": "dist/index",
   "files": [
     "dist",
     "README.md"
   ],
   "scripts": {
     "prebuild": "npm run clean",
-    "build": "npm run compile",
+    "build": "rollup -c",
     "clean": "rm -rf ./dist",
     "compile": "tsc",
     "dev": "tsc --watch",
@@ -19,7 +21,8 @@
     "docz:build": "docz build",
     "lint": "tslint -p tsconfig.json -c tslint.json -t verbose",
     "presemantic-release": "npm run build",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "storybook": "start-storybook -p 9009 -s public --quiet"
   },
   "husky": {
     "hooks": {
@@ -37,20 +40,41 @@
       "git add --force"
     ]
   },
+  "dependencies": {
+    "classnames": "^2.2.6"
+  },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@dvhb/tslint-config-react": "^1.0.9",
     "@semantic-release/changelog": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
+    "@storybook/addon-actions": "^5.3.12",
+    "@storybook/addon-knobs": "^5.3.13",
+    "@storybook/addon-links": "^5.3.12",
+    "@storybook/addons": "^5.3.12",
+    "@storybook/preset-create-react-app": "^1.5.2",
+    "@storybook/react": "^5.3.12",
+    "@types/classnames": "^2.2.10",
     "@types/node": "^10.14.6",
     "@types/react": "^16.9.19",
     "docz": "^2.2.0",
+    "final-form": "^4.19.1",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
+    "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-final-form": "^6.4.0",
+    "react-scripts": "3.3.1",
+    "rollup": "^1.16.6",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-typescript2": "^0.22.0",
     "semantic-release": "^17.0.0",
     "tslint": "^6.0.0",
     "typescript": "^3.5.3"
