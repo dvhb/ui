@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from './Button';
 
 export default {
-  title: '@dvhb/ui/Button',
+  title: 'Button',
 };
 
 export const Default = () => <Button>button</Button>;
