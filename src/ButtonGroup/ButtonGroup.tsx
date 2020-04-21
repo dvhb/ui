@@ -1,11 +1,19 @@
-import React, { ReactElement, useCallback } from 'react';
+import React, { FC, ReactElement, useCallback } from 'react';
 import cn from 'classnames';
 
 import styles from './styles.module.scss';
 import { Text } from '../Text';
-import { Button, ButtonProps } from './components/Button';
-import { Container, ContainerProps } from './components/Container';
-import { defaultComponents } from './components';
+import {
+  ButtonGroupButton,
+  ButtonGroupButtonProps,
+  ButtonGroupContainer,
+  ButtonGroupContainerProps,
+} from './components';
+
+const defaultComponents = {
+  ButtonGroupButton,
+  ButtonGroupContainer,
+};
 
 export type ButtonGroupItem = {
   label: string;
@@ -22,12 +30,12 @@ export type ButtonGroupProps = {
   valueProperty?: string;
   onChange?: (value: any) => void;
   components?: {
-    Button?: (props: ButtonProps) => ReactElement;
-    Container?: (props: ContainerProps) => ReactElement;
+    ButtonGroupButton?: (props: ButtonGroupButtonProps) => ReactElement;
+    ButtonGroupContainer?: (props: ButtonGroupContainerProps) => ReactElement;
   };
 };
 
-export const ButtonGroup = ({
+export const ButtonGroup: FC<ButtonGroupProps> = ({
   items,
   valueProperty = 'value',
   value,
@@ -36,7 +44,7 @@ export const ButtonGroup = ({
   block,
   onChange,
   components,
-}: ButtonGroupProps) => {
+}) => {
   const handleChange = useCallback(
     (item: ButtonGroupItem) => () => {
       onChange?.(item[valueProperty]);
@@ -44,10 +52,10 @@ export const ButtonGroup = ({
     [onChange, valueProperty],
   );
 
-  const { Button, Container } = { ...defaultComponents, ...components };
+  const { ButtonGroupButton, ButtonGroupContainer } = { ...defaultComponents, ...components };
 
   return (
-    <Container
+    <ButtonGroupContainer
       className={cn(
         type === 'square' && styles.containerSquare,
         type === 'round' && styles.containerRound,
@@ -55,7 +63,7 @@ export const ButtonGroup = ({
       )}
     >
       {items.map((item, index) => (
-        <Button
+        <ButtonGroupButton
           type="button"
           onClick={handleChange(item)}
           className={cn(
@@ -71,8 +79,8 @@ export const ButtonGroup = ({
           <Text weight="bold" color="inherit">
             {item.label || item[valueProperty]}
           </Text>
-        </Button>
+        </ButtonGroupButton>
       ))}
-    </Container>
+    </ButtonGroupContainer>
   );
 };

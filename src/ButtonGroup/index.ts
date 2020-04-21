@@ -1,2 +1,2 @@
 export * from './ButtonGroup';
-export { components } from './components';
+export * from './components';

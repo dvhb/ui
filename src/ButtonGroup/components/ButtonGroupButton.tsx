@@ -1,10 +1,10 @@
 import React, { FC, HTMLAttributes } from 'react';
 
-export type ButtonProps = {
+export type ButtonGroupButtonProps = {
   type?: 'button' | 'reset' | 'submit';
   active?: boolean;
 } & HTMLAttributes<HTMLButtonElement>;
 
-export const Button: FC = ({ ...rest }: ButtonProps) => {
+export const ButtonGroupButton: FC = ({ ...rest }: ButtonGroupButtonProps) => {
   return <button {...rest} />;
 };

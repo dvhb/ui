@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import styles from '../styles.module.scss';
 
-export type PropsCheckboxIcon = {
+export type CheckboxIconProps = {
   children?: ReactNode;
 };
 
-export const CheckboxIcon = ({ children }: PropsCheckboxIcon) => {
+export const CheckboxIcon: FC<CheckboxIconProps> = ({ children }) => {
   return <div className={styles.checkboxIcon}>{children}</div>;
 };

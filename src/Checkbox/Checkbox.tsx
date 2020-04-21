@@ -5,9 +5,14 @@ import styles from './styles.module.scss';
 import { Text } from '../Text';
 import { Icon } from '../Icon';
 
-import { CheckboxControl, PropsCheckboxControl } from './components/CheckboxControl';
-import { CheckboxControlWrapper, PropsCheckboxControlWrapper } from './components/CheckboxControlWrapper';
-import { CheckboxIcon, PropsCheckboxIcon } from './components/CheckboxIcon';
+import {
+  CheckboxControl,
+  CheckboxControlProps,
+  CheckboxControlWrapper,
+  CheckboxControlWrapperProps,
+  CheckboxIcon,
+  CheckboxIconProps,
+} from './components';
 
 export type CheckboxProps = {
   id?: string;
@@ -16,9 +21,9 @@ export type CheckboxProps = {
   error?: boolean;
   disabled?: boolean; // @todo checkbox disabled not implemented
   components?: {
-    CheckboxControl?: (props: PropsCheckboxControl) => ReactElement;
-    CheckboxControlWrapper?: (props: PropsCheckboxControlWrapper) => ReactElement;
-    CheckboxIcon?: (props: PropsCheckboxIcon) => ReactElement;
+    CheckboxControl?: (props: CheckboxControlProps) => ReactElement;
+    CheckboxControlWrapper?: (props: CheckboxControlWrapperProps) => ReactElement;
+    CheckboxIcon?: (props: CheckboxIconProps) => ReactElement;
   };
   onChange?: (checked: boolean) => void;
 };

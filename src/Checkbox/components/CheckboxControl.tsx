@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
-export type PropsCheckboxControl = {
+export type CheckboxControlProps = {
   children?: ReactNode;
   checked?: boolean;
   className?: string;
 };
 
-export const CheckboxControl = ({ children, checked, ...rest }: PropsCheckboxControl) => {
+export const CheckboxControl: FC<CheckboxControlProps> = ({ children, checked, ...rest }) => {
   return <div {...rest}>{children}</div>;
 };

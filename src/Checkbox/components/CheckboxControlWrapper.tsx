@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 import styles from '../styles.module.scss';
 
-export type PropsCheckboxControlWrapper = {
+export type CheckboxControlWrapperProps = {
   children?: ReactNode;
 };
 
-export const CheckboxControlWrapper = ({ children }: PropsCheckboxControlWrapper) => {
+export const CheckboxControlWrapper: FC<CheckboxControlWrapperProps> = ({ children }) => {
   return <div className={styles.checkboxControlWrapper}>{children}</div>;
 };
