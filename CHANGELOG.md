@@ -1,3 +1,10 @@
+# [1.1.0-beta.7](https://github.com/dvhb/ui/compare/v1.1.0-beta.6...v1.1.0-beta.7) (2020-04-21)
+
+
+### Bug Fixes
+
+* radio imports ([0e5cca3](https://github.com/dvhb/ui/commit/0e5cca347767ac6be8c76d66f2ad4934b7943273))
+
 # [1.1.0-beta.6](https://github.com/dvhb/ui/compare/v1.1.0-beta.5...v1.1.0-beta.6) (2020-04-21)
 
 
