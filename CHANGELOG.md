@@ -1,3 +1,10 @@
+# [1.1.0-beta.3](https://github.com/dvhb/ui/compare/v1.1.0-beta.2...v1.1.0-beta.3) (2020-04-21)
+
+
+### Bug Fixes
+
+* export composition components ([9f14128](https://github.com/dvhb/ui/commit/9f14128b4ba06840c1e0a8c00b87f7bd7b14a1a9))
+
 # [1.1.0-beta.2](https://github.com/dvhb/ui/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2020-04-20)
 
 
