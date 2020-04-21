@@ -89,7 +89,8 @@
     "typescript": "^3.5.3"
   },
   "peerDependencies": {
-    "react": "16.x"
+    "react": "16.x",
+    "react-day-picker": "7.4.0"
   },
   "release": {
     "plugins": [
