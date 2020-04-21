@@ -1,0 +1,60 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.input {
+  -webkit-appearance: none;
+  border: 1px solid $border;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: $black;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  height: 40px;
+  outline: none;
+  padding: 0 12px;
+  text-overflow: ellipsis;
+  width: 100%;
+  font-family: $fontFamily;
+
+  &:focus {
+    border-color: $purple;
+  }
+
+  &::placeholder {
+    color: $grey;
+  }
+
+  &._error {
+    border-color: $red;
+  }
+
+  &_lg {
+    height: 48px;
+  }
+
+  &_xlg {
+    height: 56px;
+  }
+
+  &_noBorder {
+    border-width: 0;
+  }
+
+  &._disabled,
+  &[disabled] {
+    opacity: 0.5;
+  }
+}
+
+.textarea {
+  height: 84px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  max-width: 100%;
+}
+
+.close {
+  display: flex;
+}

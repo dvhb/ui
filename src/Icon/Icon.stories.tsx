@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Icon } from '.';
 import * as Svg from './components';
 
-const stories = storiesOf('@dvhb/ui`/Icon', module);
+const stories = storiesOf('Icon', module);
 
 const icons = Object.keys(Svg);
 

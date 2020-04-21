@@ -1,0 +1,45 @@
+@import '../styles/colors';
+
+.hint {
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+
+  &_absolute {
+    position: absolute;
+    z-index: 10;
+
+    transform: translate(-12px, -12px);
+  }
+
+  &:hover &__popup {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__icon {
+    position: relative;
+
+    &_absolute {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+    }
+  }
+
+  &__popup {
+    padding: 12px 12px 12px 40px;
+    border: 1px solid $border;
+    border-radius: 4px;
+    box-shadow: 0px 8px 20px rgba(21, 23, 27, 0.2);
+    background-color: $white;
+    //width: max-content;
+    max-width: 450px;
+  }
+}
+
+.textItem {
+  & + & {
+    margin-top: 8px;
+  }
+}

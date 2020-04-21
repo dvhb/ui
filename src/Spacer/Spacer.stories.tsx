@@ -7,7 +7,7 @@ import { Aligner } from '../Aligner';
 
 const margin = ['none', 'default', 'xxs', 'xs', 'sm', 'lg', 'xlg'];
 
-const stories = storiesOf('@dvhb/ui/Spacer', module);
+const stories = storiesOf('Spacer', module);
 
 stories.addDecorator(withKnobs);
 stories

@@ -6,7 +6,7 @@ import { select, withKnobs } from '@storybook/addon-knobs';
 import { Aligner } from '.';
 import { Spacer } from '../Spacer';
 
-const stories = storiesOf('@dvhb/ui/Aligner', module);
+const stories = storiesOf('Aligner', module);
 
 const valing = ['center', 'top', 'bottom', 'baseline'];
 
