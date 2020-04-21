@@ -1,3 +1,10 @@
+# [1.1.0-beta.2](https://github.com/dvhb/ui/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2020-04-20)
+
+
+### Features
+
+* **button-group:** composition components ([9f6bb54](https://github.com/dvhb/ui/commit/9f6bb549b307f7061f5e9d2ee6608569b5690b27))
+
 # [1.1.0-beta.1](https://github.com/dvhb/ui/compare/v1.0.0...v1.1.0-beta.1) (2020-04-20)
 
 
