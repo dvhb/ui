@@ -1,3 +1,10 @@
+# [1.1.0-beta.6](https://github.com/dvhb/ui/compare/v1.1.0-beta.5...v1.1.0-beta.6) (2020-04-21)
+
+
+### Bug Fixes
+
+* react-day-picker fixed version ([e03ba46](https://github.com/dvhb/ui/commit/e03ba4629c5613dadc725807ab7d71b50b4dd9d6))
+
 # [1.1.0-beta.5](https://github.com/dvhb/ui/compare/v1.1.0-beta.4...v1.1.0-beta.5) (2020-04-21)
 
 
