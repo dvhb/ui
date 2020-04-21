@@ -1,3 +1,10 @@
+# [1.1.0-beta.4](https://github.com/dvhb/ui/compare/v1.1.0-beta.3...v1.1.0-beta.4) (2020-04-21)
+
+
+### Features
+
+* add components ([c002f43](https://github.com/dvhb/ui/commit/c002f4399a63bf76a7aa4c365862cf510be6bfd2))
+
 # [1.1.0-beta.3](https://github.com/dvhb/ui/compare/v1.1.0-beta.2...v1.1.0-beta.3) (2020-04-21)
 
 
