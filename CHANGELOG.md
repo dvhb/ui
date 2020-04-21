@@ -1,3 +1,10 @@
+# [1.1.0-beta.5](https://github.com/dvhb/ui/compare/v1.1.0-beta.4...v1.1.0-beta.5) (2020-04-21)
+
+
+### Bug Fixes
+
+* react-day-picker peer dep ([6e6efc1](https://github.com/dvhb/ui/commit/6e6efc1c27149825c89795ff868488fd0ba7e0c1))
+
 # [1.1.0-beta.4](https://github.com/dvhb/ui/compare/v1.1.0-beta.3...v1.1.0-beta.4) (2020-04-21)
 
 
