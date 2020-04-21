@@ -2,17 +2,14 @@ import React, { ReactElement, ReactNode, useCallback } from 'react';
 
 import styles from './styles.module.scss';
 
-import { Counter } from './components/Counter';
-import { Title } from './components/Title';
-import { Arrow } from './components/Arrow';
-import { Step } from './components/Step';
+import { StepperArrow, StepperCounter, StepperStep, StepperTitle } from './components';
 
 export type StepProps = {
   title: string;
   [key: string]: any;
 };
 
-export type ComponentCommonProps = {
+export type StepperStepComponentProps = {
   children: number | string | ReactNode;
   step: StepProps;
   key?: number | string;
@@ -23,10 +20,10 @@ export type ComponentCommonProps = {
 export type StepperProps = {
   steps: StepProps[];
   components?: {
-    Counter?: (props: ComponentCommonProps) => ReactElement;
-    Title?: (props: ComponentCommonProps) => ReactElement;
-    Arrow?: (props: ComponentCommonProps) => ReactElement;
-    Step?: (props: ComponentCommonProps & { onClick?: any }) => ReactElement;
+    StepperCounter?: (props: StepperStepComponentProps) => ReactElement;
+    StepperTitle?: (props: StepperStepComponentProps) => ReactElement;
+    StepperArrow?: (props: StepperStepComponentProps) => ReactElement;
+    StepperStep?: (props: StepperStepComponentProps & { onClick?: any }) => ReactElement;
   };
   activeStep?: number;
   onChangeActiveStep?: (index: number) => void;
@@ -34,10 +31,10 @@ export type StepperProps = {
 };
 
 const defaultComponents = {
-  Counter,
-  Title,
-  Arrow,
-  Step,
+  StepperCounter,
+  StepperTitle,
+  StepperArrow,
+  StepperStep,
 };
 
 export const Stepper = ({
@@ -47,7 +44,7 @@ export const Stepper = ({
   onChangeActiveStep,
   clickOnlyActiveStep = true,
 }: StepperProps) => {
-  const { Counter, Title, Arrow, Step } = { ...defaultComponents, ...components };
+  const { StepperCounter, StepperTitle, StepperArrow, StepperStep } = { ...defaultComponents, ...components };
 
   const onChangeActiveStepHandler = useCallback(
     index => () => {
@@ -63,25 +60,25 @@ export const Stepper = ({
   return (
     <div className={styles.stepper}>
       {steps.map((i, index) => (
-        <Step
+        <StepperStep
           step={i}
           completed={index < activeStep}
           active={index === activeStep}
           onClick={onChangeActiveStepHandler(index)}
           key={index}
         >
-          <Counter step={i} completed={index < activeStep} active={index === activeStep}>
+          <StepperCounter step={i} completed={index < activeStep} active={index === activeStep}>
             {index + 1}
-          </Counter>
-          <Title step={i} completed={index < activeStep} active={index === activeStep}>
+          </StepperCounter>
+          <StepperTitle step={i} completed={index < activeStep} active={index === activeStep}>
             {i.title}
-          </Title>
+          </StepperTitle>
           {index < steps.length - 1 && (
-            <Arrow step={i} completed={index < activeStep} active={index === activeStep}>
+            <StepperArrow step={i} completed={index < activeStep} active={index === activeStep}>
               >
-            </Arrow>
+            </StepperArrow>
           )}
-        </Step>
+        </StepperStep>
       ))}
     </div>
   );
