@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import resolve from 'rollup-plugin-node-resolve';
+import copy from 'rollup-plugin-copy';
 
 import pkg from './package.json';
 
@@ -44,6 +45,11 @@ export default {
         'node_modules/react-dom/index.js': ['createPortal', 'findDOMNode'],
         'node_modules/react-grid-system/build/index.js': ['Row', 'Col'],
       },
+    }),
+    copy({
+      targets: [{ src: 'src/**/*.scss', dest: 'dist' }],
+      flatten: false,
+      verbose: true,
     }),
   ],
 };
