@@ -1,3 +1,10 @@
+# [1.1.0-beta.11](https://github.com/dvhb/ui/compare/v1.1.0-beta.10...v1.1.0-beta.11) (2020-04-22)
+
+
+### Features
+
+* css modules names setup ([005b0e7](https://github.com/dvhb/ui/commit/005b0e7dfdb1cdd4d78a7a637bdec13482bde476))
+
 # [1.1.0-beta.10](https://github.com/dvhb/ui/compare/v1.1.0-beta.9...v1.1.0-beta.10) (2020-04-22)
 
 
