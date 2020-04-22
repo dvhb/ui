@@ -1,3 +1,11 @@
+# [1.1.0-beta.9](https://github.com/dvhb/ui/compare/v1.1.0-beta.8...v1.1.0-beta.9) (2020-04-22)
+
+
+### Bug Fixes
+
+* broken datepicker ([27e91df](https://github.com/dvhb/ui/commit/27e91df694d1c55e55e032cba2fa6dfd057a2822))
+* react-select ([db70961](https://github.com/dvhb/ui/commit/db709615bda09f1f46710f4d8505bb26669ccffe))
+
 # [1.1.0-beta.8](https://github.com/dvhb/ui/compare/v1.1.0-beta.7...v1.1.0-beta.8) (2020-04-21)
 
 
