@@ -27,10 +27,12 @@ export default {
   plugins: [
     external(),
     postcss({
-      modules: true,
       extract: true,
       minimize: true,
       sourceMap: true,
+      modules: {
+        generateScopedName: 'ui_[local]_[hash:base64:5]',
+      },
     }),
     resolve(),
     typescript({
