@@ -1,5 +1,5 @@
 import React, { useCallback, useRef } from 'react';
-import DayPicker, { ClassNames, DayPickerProps } from 'react-day-picker';
+import DayPicker, { DayPickerProps } from 'react-day-picker';
 
 // Include the locale utils designed for moment
 import MomentLocaleUtils from 'react-day-picker/moment';
@@ -15,7 +15,7 @@ export type CalendarProps = {} & DayPickerProps;
 export const calendarProps = {
   localeUtils: MomentLocaleUtils,
   locale: 'en',
-  classNames: (styles as unknown) as ClassNames,
+  classNames: styles as any,
   showOutsideDays: true,
   numberOfMonths: 1,
 };

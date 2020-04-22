@@ -8,6 +8,7 @@ import pkg from './package.json';
 
 export default {
   input: 'src/index.ts',
+  external: ['react', 'react-dom', 'react-day-picker/DayPickerInput'],
   output: [
     {
       file: pkg.main,
@@ -38,7 +39,8 @@ export default {
     }),
     commonjs({
       namedExports: {
-        'node_modules/react-day-picker/moment.js': ['parseDate', 'formatDate'],
+        'node_modules/react-day-picker/build/index.js': ['DateUtils'],
+        'node_modules/react-day-picker/moment/index.js': ['parseDate', 'formatDate'],
         'node_modules/react-dom/index.js': ['createPortal', 'findDOMNode'],
         'node_modules/react-grid-system/build/index.js': ['Row', 'Col'],
       },

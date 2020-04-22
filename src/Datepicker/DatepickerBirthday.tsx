@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 
 import { Datepicker, DatepickerProps } from './Datepicker';
-import { fromMonth, toMonth, YearMonthForm } from '../Calendar/components/YearMonthForm';
+import { fromMonth, toMonth, YearMonthForm } from '../Calendar';
 
 export type DatepickerBirthdayProps = {} & DatepickerProps;
 

@@ -1,7 +1,6 @@
 import React, { useCallback, createRef, forwardRef, useState, ReactElement } from 'react';
-import { ClassNames, DateUtils, DayModifiers, DayPickerInputProps } from 'react-day-picker';
+import { DateUtils, DayModifiers, DayPickerInputProps } from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-import { InputClassNames } from 'react-day-picker/types/common';
 import MomentLocaleUtils from 'react-day-picker/moment';
 
 import styles from '../Calendar/styles.module.scss';
@@ -120,7 +119,7 @@ export const Datepicker = ({
       ref: inputRef,
     },
     hideOnDayClick: !period,
-    classNames: (inputStyles as unknown) as InputClassNames,
+    classNames: inputStyles as any,
     ...dayPickerInpitProps,
 
     // day picker props
@@ -128,7 +127,7 @@ export const Datepicker = ({
       {
         localeUtils: MomentLocaleUtils,
         locale: 'en',
-        classNames: (styles as unknown) as ClassNames,
+        classNames: styles as any,
         showOutsideDays: !period,
         numberOfMonths: period ? 2 : 1,
         modifiers: period && modifiers,

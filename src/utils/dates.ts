@@ -11,8 +11,6 @@ export const dateStringToPeriod = (value?: string, locale?: string): any => {
     to: undefined,
   };
 
-  console.info('dateStringToPeriod', parseDate);
-
   if (!value) return range;
 
   const [from, to] = value.split('/');
