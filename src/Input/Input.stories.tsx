@@ -4,7 +4,6 @@ import { Field } from 'react-final-form';
 
 import { FormDemo } from '../utils/forms';
 import { Input } from './Input';
-import { InputWithIcon } from './InputWithIcon';
 
 export default {
   title: 'Input',
@@ -21,8 +20,6 @@ export const Default = () => <Input {...props} />;
 export const Required = () => <Input {...props} required />;
 
 export const WithMask = () => <Input {...props} mask="99.99.9999" />;
-
-export const WithIcon = () => <InputWithIcon {...props} iconName="Calendar" />;
 
 export const WithForm = () => (
   <FormDemo>

@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-import { Field } from '../../Field';
-import { Icon, IconNamesType } from '../../Icon';
+import { Field } from '../Field';
+import { Icon, IconNamesType } from '../Icon';
 import { Input, InputProps } from '../Input';
 
-type Props = {
+export type InputWithIconProps = {
   iconName?: IconNamesType;
 } & InputProps;
 
-export const InputWithIcon = ({ iconName, ...props }: Props) => {
+export const InputWithIcon: FC<InputWithIconProps> = ({ iconName, ...props }) => {
   return (
     <Field>
       <Input {...props} />

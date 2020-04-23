@@ -6,7 +6,7 @@ import MomentLocaleUtils from 'react-day-picker/moment';
 import styles from '../Calendar/styles.module.scss';
 import inputStyles from './stylesDayPickerInput.module.scss';
 import { Icon } from '../Icon';
-import { InputWithIcon } from '../Input/InputWithIcon';
+import { InputWithIcon } from '../InputWithIcon';
 import {
   dateStringToPeriod,
   formatDate,
