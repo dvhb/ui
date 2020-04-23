@@ -9,6 +9,6 @@ export default {
 
 export const Default = () => (
   <div style={{ padding: 20 }}>
-    <Hint text="В один полис можно добавить не более пяти путешественников." />
+    <Hint text="Hint text" />
   </div>
 );
