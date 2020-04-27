@@ -1,3 +1,10 @@
+# [1.1.0-beta.13](https://github.com/dvhb/ui/compare/v1.1.0-beta.12...v1.1.0-beta.13) (2020-04-27)
+
+
+### Features
+
+* refactor ui ([8078051](https://github.com/dvhb/ui/commit/80780513aa1debed4df329b1a68cf2dc14a62bbc))
+
 # [1.1.0-beta.12](https://github.com/dvhb/ui/compare/v1.1.0-beta.11...v1.1.0-beta.12) (2020-04-23)
 
 
