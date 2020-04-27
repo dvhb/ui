@@ -171,17 +171,26 @@
   color: #dce0e0;
 }
 
-.selected:not(.disabled) {
-  background-color: #e3e6ec !important;
+.selected {
+  background-color: #e3e6ec;
+}
+
+.customSelected {
+  background-color: #f5e6e8;
+}
+
+.customRangeFrom,
+.customRangeTo {
+  background-color: #e2b5ba;
 }
 
 .start,
 .end {
-  background-color: #cfd3da !important;
+  background-color: #cfd3da;
 }
 
 .outside {
-  background: none !important;
+  background: none;
 }
 
 .navButton {
