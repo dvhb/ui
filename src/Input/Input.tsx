@@ -29,13 +29,18 @@ function InputBase({
   mask,
   ...rest
 }: InputProps) {
-  const ref = useRef();
+  const ref = useRef<HTMLInputElement | InputMask>();
   let ComponentToUse = Component;
   if (mask) ComponentToUse = InputMask;
 
   // Proxy to forwarded ref if present
   useEffect(() => {
-    if (forwardedRef) forwardedRef.current = ref.current;
+    if (!ref.current || !forwardedRef) {
+      return;
+    }
+    forwardedRef.current = ref.current.hasOwnProperty('getInputDOMNode')
+      ? (ref.current as any).getInputDOMNode()
+      : ref.current;
   }, [forwardedRef, ref]);
 
   return (
