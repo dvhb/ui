@@ -20,7 +20,7 @@ export const Button: FC<ButtonProps> = ({
   type = 'default',
   block,
   className,
-  htmlType = 'submit',
+  htmlType = 'button',
   tag = 'button',
   ...rest
 }) => {
