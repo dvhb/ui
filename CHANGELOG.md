@@ -1,3 +1,10 @@
+# [1.1.0-beta.16](https://github.com/dvhb/ui/compare/v1.1.0-beta.15...v1.1.0-beta.16) (2020-04-27)
+
+
+### Features
+
+* calendar period styling ([9076d2c](https://github.com/dvhb/ui/commit/9076d2cb929b6eb94b12dbfe08b82f6992cd815b))
+
 # [1.1.0-beta.15](https://github.com/dvhb/ui/compare/v1.1.0-beta.14...v1.1.0-beta.15) (2020-04-27)
 
 
