@@ -23,7 +23,7 @@ export const FormDemo = ({ initialValues, children }: FinalForm) => {
           <Button type="submit" disabled={submitting || pristine}>
             Submit
           </Button>
-          <Button type="button" variant="borderedBlack" onClick={form.reset} disabled={submitting || pristine}>
+          <Button type="button" onClick={form.reset} disabled={submitting || pristine}>
             Reset
           </Button>
           <pre>{preJson(values)}</pre>

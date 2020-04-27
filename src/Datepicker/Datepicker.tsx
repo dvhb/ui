@@ -6,6 +6,7 @@ import MomentLocaleUtils from 'react-day-picker/moment';
 import styles from '../Calendar/styles.module.scss';
 import inputStyles from './stylesDayPickerInput.module.scss';
 import { Icon } from '../Icon';
+import * as Icons from './icons';
 import { InputWithIcon } from '../InputWithIcon';
 import {
   dateStringToPeriod,
@@ -137,13 +138,13 @@ export const Datepicker = ({
             <div>
               {props.showPreviousButton && (
                 <Arrow className={styles.navButtonPrev} onClick={handleMonthPrev}>
-                  <Icon name="ArrowRight" />
+                  <Icon svgs={Icons} name="ArrowRight" />
                 </Arrow>
               )}
 
               {props.showNextButton && (
                 <Arrow className={styles.navButtonNext} onClick={handleMonthNext}>
-                  <Icon name="ArrowRight" />
+                  <Icon svgs={Icons} name="ArrowRight" />
                 </Arrow>
               )}
             </div>

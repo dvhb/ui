@@ -2,23 +2,21 @@ import React from 'react';
 import cn from 'classnames';
 
 import styles from './styles.module.scss';
-import * as Svg from './components';
 
-export type IconNamesType = keyof typeof Svg;
-
-export type Props = {
-  name: IconNamesType;
+export type IconProps = {
+  name: string;
   className?: string;
   size?: 'default' | 'inherit';
+  svgs?: any;
 };
 
-export const Icon = ({ name, className, size = 'default', ...rest }: Props) => {
-  const capitalize = (s: IconNamesType) => {
+export const Icon = ({ name, className, size = 'default', svgs = {}, ...rest }: IconProps) => {
+  const capitalize = (s: string) => {
     return s && s[0].toUpperCase() + s.slice(1);
   };
 
   // @ts-ignore
-  const IconComponent = Svg[capitalize(name)];
+  const IconComponent = svgs[capitalize(name)];
 
   return (
     <div className={cn(styles.icon, styles[`icon_${size}`], className)}>

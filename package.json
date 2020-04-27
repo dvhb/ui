@@ -23,7 +23,8 @@
     "lint": "tslint -p tsconfig.json -c tslint.json -t verbose",
     "presemantic-release": "npm run build",
     "semantic-release": "semantic-release",
-    "storybook": "start-storybook -p 9009 -s public --quiet"
+    "storybook": "start-storybook -p 9009 -s public --quiet",
+    "local-build-and-publish": "npm run build && yalc push"
   },
   "husky": {
     "hooks": {

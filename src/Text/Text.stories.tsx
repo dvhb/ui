@@ -7,7 +7,8 @@ export default {
 
 export const Default = () => (
   <>
-    <Text type="h1">Text h1</Text>
+    <Text tag="h1">Text h1</Text>
     <Text>Text</Text>
+    <Text weight="bold">Text bold</Text>
   </>
 );

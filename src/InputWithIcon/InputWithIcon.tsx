@@ -1,21 +1,21 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import { Field } from '../Field';
-import { Icon, IconNamesType } from '../Icon';
+import { Icon } from '../Icon';
 import { Input, InputProps } from '../Input';
+import * as Icons from './icons';
 
 export type InputWithIconProps = {
-  iconName?: IconNamesType;
+  iconName?: string;
+  icon?: ReactNode;
 } & InputProps;
 
-export const InputWithIcon: FC<InputWithIconProps> = ({ iconName, ...props }) => {
+export const InputWithIcon: FC<InputWithIconProps> = ({ iconName, icon, ...props }) => {
   return (
-    <Field>
+    <Field bottomMargin={false}>
       <Input {...props} />
-      {iconName && (
-        <Field.Helper>
-          <Icon name={iconName} />
-        </Field.Helper>
+      {(iconName || icon) && (
+        <Field.Helper>{icon ? icon : iconName && <Icon svgs={Icons} name={iconName} />}</Field.Helper>
       )}
     </Field>
   );

@@ -15,16 +15,16 @@ const props: InputWithIconProps = {
   onFocus: action('onFocus'),
 };
 
-export const Default = () => <InputWithIcon {...props} iconName="Calendar" />;
+export const Default = () => <InputWithIcon {...props} icon="X" />;
 
 export const WithForm = () => (
   <FormDemo>
     <Field name="text">
-      {({ input }) => <InputWithIcon {...props} value={input.value} onChange={input.onChange} />}
+      {({ input }) => <InputWithIcon icon="X" {...props} value={input.value} onChange={input.onChange} />}
     </Field>
     <br />
     <Field name="mask">
-      {({ input }) => <InputWithIcon {...props} value={input.value} onChange={input.onChange} />}
+      {({ input }) => <InputWithIcon icon="X" {...props} value={input.value} onChange={input.onChange} />}
     </Field>
   </FormDemo>
 );

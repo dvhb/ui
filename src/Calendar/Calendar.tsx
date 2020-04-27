@@ -9,6 +9,7 @@ import 'moment/locale/ru';
 
 import styles from './styles.module.scss';
 import { Icon } from '../Icon';
+import * as Icons from './icons';
 
 export type CalendarProps = {} & DayPickerProps;
 
@@ -31,10 +32,10 @@ export const Calendar = (props: CalendarProps) => {
       navbarElement: () => (
         <div>
           <div className={styles.navButtonPrev} onClick={handleMonthPrev}>
-            <Icon name="ArrowRight" />
+            <Icon svgs={Icons} name="ArrowRight" />
           </div>
           <div className={styles.navButtonNext} onClick={handleMonthNext}>
-            <Icon name="ArrowRight" />
+            <Icon svgs={Icons} name="ArrowRight" />
           </div>
         </div>
       ),

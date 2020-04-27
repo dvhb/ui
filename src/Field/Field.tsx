@@ -76,13 +76,7 @@ export const Field = ({
       <div className={styles.fieldWrapper}>{children}</div>
       {descriptionValue && (
         <TextHelper error={error} className={styles.textHelper}>
-          {typeof descriptionValue === 'string' ? (
-            <Text type="inherit" color="inherit">
-              {descriptionValue}
-            </Text>
-          ) : (
-            <>{descriptionValue}</>
-          )}
+          {typeof descriptionValue === 'string' ? <Text>{descriptionValue}</Text> : <>{descriptionValue}</>}
         </TextHelper>
       )}
       {bottomMargin && <Spacer />}

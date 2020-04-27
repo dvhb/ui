@@ -1,32 +1,45 @@
-import React from 'react';
+import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, HTMLAttributes, ReactType } from 'react';
 import cn from 'classnames';
 
 import styles from './styles.module.scss';
-import { Text } from '../Text';
 
 export type ButtonProps = {
-  variant?: 'unstyled' | 'black' | 'borderedBlack' | 'whiteBorderedBlack' | string;
-  size?: 'lg';
+  tag?: 'div' | 'button' | 'a' | 'span';
+  type?: 'default' | 'unstyled' | string;
+  size?: 'default' | 'sm' | 'lg' | string;
+  htmlType?: 'submit' | 'reset' | 'button';
   block?: boolean;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+} & (
+  | HTMLAttributes<HTMLDivElement>
+  | ButtonHTMLAttributes<HTMLButtonElement>
+  | AnchorHTMLAttributes<HTMLAnchorElement>
+);
 
-export function Button({ children, size, variant, block, className, style, type = 'button', ...rest }: ButtonProps) {
+export const Button: FC<ButtonProps> = ({
+  size = 'default',
+  type = 'default',
+  block,
+  className,
+  htmlType = 'submit',
+  tag = 'button',
+  ...rest
+}) => {
+  const ComponentTag = tag as ReactType;
+  let attributes = {};
+
+  if (tag === 'button') attributes = { type: htmlType };
+
   return (
-    <button
-      type={type}
-      style={style}
+    <ComponentTag
       className={cn(
         styles.button,
-        variant && styles[`button_${variant}`],
-        size === 'lg' && styles.buttonLg,
+        styles[`button_type_${type}`],
+        styles[`button_size_${size}`],
         block && styles.buttonBlock,
         className && className,
       )}
+      {...attributes}
       {...rest}
-    >
-      <Text className={styles.button__text} color="inherit">
-        {children}
-      </Text>
-    </button>
+    />
   );
-}
+};

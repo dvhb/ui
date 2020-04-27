@@ -4,6 +4,7 @@ import cn from 'classnames';
 import styles from './styles.module.scss';
 import { Text } from '../Text';
 import { Icon } from '../Icon';
+import * as Icons from './icons';
 
 import {
   CheckboxControl,
@@ -61,7 +62,7 @@ export const Checkbox = ({
         >
           {checked && (
             <CheckboxIcon>
-              <Icon size="inherit" name="Check" />
+              <Icon svgs={Icons} size="inherit" name="IconCheck" />
             </CheckboxIcon>
           )}
         </CheckboxControl>
