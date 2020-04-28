@@ -1,4 +1,4 @@
-import React, { useCallback, createRef, forwardRef, useState, ReactElement } from 'react';
+import React, { useCallback, createRef, forwardRef, useState, ReactElement, useEffect } from 'react';
 import { DateUtils, DayModifiers, DayPickerInputProps } from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import MomentLocaleUtils from 'react-day-picker/moment';
@@ -31,6 +31,14 @@ export type DatepickerProps = {
   inputComponent?: (props: any) => ReactElement;
   components?: {
     Arrow?: (props: any) => ReactElement;
+  };
+
+  modifiersClassNames?: {
+    selected?: string;
+    range?: {
+      from?: string;
+      to?: string;
+    };
   };
 } & Pick<
   DayPickerInputProps,
@@ -65,6 +73,7 @@ export const Datepicker = ({
   inputComponent: InputComponent,
   mask,
   components,
+  modifiersClassNames,
   ...dayPickerInpitProps
 }: DatepickerProps) => {
   const pickerRef = createRef<DayPickerInput>();
@@ -83,8 +92,34 @@ export const Datepicker = ({
   }, [pickerRef, period]);
 
   const [range, setRange] = useState(dateStringToPeriod(value));
+  const [currentDate, setCurrentDate] = useState(value);
   const { from, to } = range;
-  const modifiers = { [styles.start]: from, [styles.end]: to };
+
+  const [modifiers, setModifiers] = useState({});
+
+  useEffect(() => {
+    if (period) {
+      if (from) {
+        setModifiers({
+          [modifiersClassNames?.selected || styles.selected]: from,
+        });
+      }
+
+      if (to) {
+        setModifiers({
+          [modifiersClassNames?.selected || styles.selected]: (day: Date) => DateUtils.isDayBetween(day, from, to),
+          [modifiersClassNames?.range?.from || styles.start]: from,
+          [modifiersClassNames?.range?.to || styles.end]: to,
+        });
+      }
+    } else {
+      if (currentDate) {
+        setModifiers({
+          [modifiersClassNames?.selected || styles.selected]: currentDate,
+        });
+      }
+    }
+  }, [from, to, setModifiers, modifiersClassNames, currentDate, period]);
 
   const { Arrow } = { ...defaultComponents, ...components };
 
@@ -126,12 +161,12 @@ export const Datepicker = ({
     // day picker props
     dayPickerProps: Object.assign(
       {
+        modifiers,
         localeUtils: MomentLocaleUtils,
         locale: 'en',
         classNames: styles as any,
         showOutsideDays: !period,
         numberOfMonths: period ? 2 : 1,
-        modifiers: period && modifiers,
         selectedDays: period && [from, { from, to }],
         navbarElement: (props: any) => {
           return (
@@ -163,6 +198,7 @@ export const Datepicker = ({
         return;
       }
       const value = formatDate(day, FORMAT_FORMDATA, locale);
+      setCurrentDate(day.toString());
       onChange?.(value);
     },
     [locale, onChange],

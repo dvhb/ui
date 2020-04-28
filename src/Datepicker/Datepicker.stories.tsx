@@ -4,6 +4,7 @@ import { Field } from 'react-final-form';
 
 import { FormDemo } from '../utils/forms';
 import { Datepicker } from './Datepicker';
+import styles from './styles.module.scss';
 
 export default {
   title: 'Datepicker',
@@ -13,8 +14,10 @@ const props = {
   onChange: action('onChange'),
 };
 
-export const Default = () => <Datepicker {...props} />;
-export const WithValue = () => <Datepicker {...props} value="2020-02-20" />;
+export const Default = () => <Datepicker modifiersClassNames={{ selected: styles.customSelected }} {...props} />;
+export const WithValue = () => (
+  <Datepicker modifiersClassNames={{ selected: styles.customSelected }} {...props} value="2020-02-20" />
+);
 
 export const WithForm = () => (
   <FormDemo initialValues={{ datepicker: '2020-03-20' }}>
