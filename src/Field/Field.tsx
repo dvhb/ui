@@ -5,7 +5,11 @@ import { Spacer } from '../Spacer';
 import { Text } from '../Text';
 import { Aligner } from '../Aligner';
 import { Hint, HintProps } from '../Hint';
-import { UniversalComponentProps, UniversalComponent as TextHelper } from './components/UniversalComponent';
+import {
+  UniversalComponentProps,
+  UniversalComponent as TextHelper,
+  UniversalComponent as Label,
+} from './components/UniversalComponent';
 import styles from './styles.module.scss';
 
 type Props = {
@@ -32,12 +36,14 @@ export type FieldProps = {
   components?: {
     Hint?: (props: HintProps) => ReactElement;
     TextHelper?: (props: UniversalComponentProps & { error?: boolean }) => ReactElement;
+    Label?: (props: UniversalComponentProps) => ReactElement;
   };
 };
 
 const defaultComponents = {
   Hint,
   TextHelper,
+  Label,
 };
 
 export const Field = ({
@@ -56,22 +62,24 @@ export const Field = ({
 
   const descriptionValue = error ? errorText : description;
 
-  const { Hint, TextHelper } = { ...defaultComponents, ...components };
+  const { Hint, TextHelper, Label } = { ...defaultComponents, ...components };
 
   return (
     <Component className={styles.field} {...rest}>
       {label && (
-        <Spacer margin="xxs">
-          <Aligner>
-            <Text>{label}</Text>
-            {labelHint && (
-              <>
-                <Spacer marginRight="xs" />
-                <Hint text={labelHint} />
-              </>
-            )}
-          </Aligner>
-        </Spacer>
+        <Label>
+          <Spacer margin="xxs">
+            <Aligner>
+              <Text>{label}</Text>
+              {labelHint && (
+                <>
+                  <Spacer marginRight="xs" />
+                  <Hint text={labelHint} />
+                </>
+              )}
+            </Aligner>
+          </Spacer>
+        </Label>
       )}
       <div className={styles.fieldWrapper}>{children}</div>
       {descriptionValue && (
