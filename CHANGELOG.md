@@ -1,3 +1,10 @@
+# [1.1.0-beta.18](https://github.com/dvhb/ui/compare/v1.1.0-beta.17...v1.1.0-beta.18) (2020-04-28)
+
+
+### Features
+
+* field label styling ([5805da3](https://github.com/dvhb/ui/commit/5805da3e7a5599cf79a8cfbdd47f20d1be33d010))
+
 # [1.1.0-beta.17](https://github.com/dvhb/ui/compare/v1.1.0-beta.16...v1.1.0-beta.17) (2020-04-28)
 
 
