@@ -210,7 +210,7 @@ export const Datepicker = ({
       setCurrentDate(day.toString());
       onChange?.(value);
     },
-    [locale, inputRef, onChange],
+    [locale, onChange],
   );
 
   const handleDayChangePeriod = useCallback(
@@ -228,7 +228,7 @@ export const Datepicker = ({
         onChange?.(formatPeriodFormdata(range.from, range.to));
       }
     },
-    [pickerRef, inputRef, from, to, onChange],
+    [pickerRef, from, to, onChange],
   );
 
   // console.log('');
