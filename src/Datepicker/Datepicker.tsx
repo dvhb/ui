@@ -32,6 +32,12 @@ export type DatepickerProps = {
   components?: {
     Arrow?: (props: any) => ReactElement;
   };
+  inputProps?: {
+    mask?: string;
+    required?: boolean;
+    iconName?: string;
+    ref?: React.MutableRefObject<HTMLInputElement | undefined>;
+  };
 
   modifiersClassNames?: {
     selected?: string;
@@ -64,20 +70,21 @@ const defaultComponents = {
 
 export const Datepicker = ({
   dayPickerProps,
-  required,
   onChange,
   value,
   placeholder,
   format = FORMAT_FORMDATA,
   period,
   inputComponent: InputComponent,
-  mask,
+  inputProps,
   components,
   modifiersClassNames,
   ...dayPickerInpitProps
 }: DatepickerProps) => {
-  const pickerRef = createRef<DayPickerInput>();
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const { mask, required, iconName } = inputProps || {};
+  let { ref: inputRef } = inputProps || {};
+  inputRef = inputRef ?? React.useRef<HTMLInputElement>();
+  const pickerRef = React.useRef<DayPickerInput>(null);
 
   const handleMonthPrev = useCallback(() => {
     const showPreviousMonth = pickerRef.current?.getDayPicker().showPreviousMonth as SwitchMonthFunc;
@@ -151,7 +158,7 @@ export const Datepicker = ({
     inputProps: {
       mask,
       required,
-      iconName: 'Calendar',
+      iconName: iconName || 'Calendar',
       ref: inputRef,
     },
     hideOnDayClick: !period,
@@ -197,21 +204,21 @@ export const Datepicker = ({
       if (!day || modifiers?.disabled) {
         return;
       }
+      pickerRef.current?.hideDayPicker();
+
       const value = formatDate(day, FORMAT_FORMDATA, locale);
       setCurrentDate(day.toString());
       onChange?.(value);
     },
-    [locale, onChange],
+    [locale, inputRef, onChange],
   );
 
   const handleDayChangePeriod = useCallback(
     (day: any) => {
-      // console.log('handleDayChangePeriod', day);
       if (day == null) {
         return;
       }
       const range = DateUtils.addDayToRange(day, { from, to });
-      // console.log('setRange', range);
       setRange(range);
 
       if (range.from && range.to && !DateUtils.isSameDay(range.to, range.from)) {
@@ -221,7 +228,7 @@ export const Datepicker = ({
         onChange?.(formatPeriodFormdata(range.from, range.to));
       }
     },
-    [pickerRef, from, to, onChange],
+    [pickerRef, inputRef, from, to, onChange],
   );
 
   // console.log('');

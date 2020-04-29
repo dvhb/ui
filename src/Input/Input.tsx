@@ -29,9 +29,16 @@ function InputBase({
   mask,
   ...rest
 }: InputProps) {
-  const ref = useRef<HTMLInputElement | InputMask>();
+  const ref = useRef<HTMLInputElement>();
   let ComponentToUse = Component;
-  if (mask) ComponentToUse = InputMask;
+  let refProp: any = { ref };
+
+  if (mask) {
+    ComponentToUse = InputMask;
+    refProp = {
+      inputRef: (maskInputRef: HTMLInputElement) => (ref.current = maskInputRef),
+    };
+  }
 
   // Proxy to forwarded ref if present
   useEffect(() => {
@@ -53,7 +60,7 @@ function InputBase({
         size && styles[`input_${size}`],
       )}
       mask={mask}
-      ref={ref}
+      {...refProp}
       {...rest}
     />
   );
