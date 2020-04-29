@@ -1,3 +1,10 @@
+# [1.1.0-beta.20](https://github.com/dvhb/ui/compare/v1.1.0-beta.19...v1.1.0-beta.20) (2020-04-29)
+
+
+### Bug Fixes
+
+* passing ref from masked input for Datepicker ([f4066bf](https://github.com/dvhb/ui/commit/f4066bf8fbe42c70ce64a2ab0d8d0369c80845f9))
+
 # [1.1.0-beta.19](https://github.com/dvhb/ui/compare/v1.1.0-beta.18...v1.1.0-beta.19) (2020-04-29)
 
 
