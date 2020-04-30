@@ -21,6 +21,7 @@ type HintPopupProps = {
   y: number;
   text: string | ReactNode;
   onIconClick?: () => void;
+  IconComponent?: any;
 };
 
 type FormattedTextProps = {
@@ -31,15 +32,15 @@ const FormattedText = ({ text }: FormattedTextProps) => {
   return (
     <>
       {text.split('\n').map((item, i) => (
-        <div key={i} className={styles.textItem}>
+        <span key={i} className={styles.textItem}>
           {item}
-        </div>
+        </span>
       ))}
     </>
   );
 };
 
-const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick }) =>
+const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick, IconComponent }) =>
   createPortal(
     <div className={cn(styles.hint, styles.hint_absolute, className)} style={{ left: x, top: y }}>
       <div className={styles.hint__popup}>
@@ -52,9 +53,9 @@ const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick }) =
         )}
       </div>
       <div className={cn(styles.hint__icon, styles.hint__icon_absolute)} onClick={onIconClick}>
-        <Icon>
+        <IconComponent>
           <UIIcon svgs={Icons} size="inherit" name="Question" />
-        </Icon>
+        </IconComponent>
       </div>
     </div>,
     document.body,
@@ -93,7 +94,9 @@ export const Hint = ({ text, components, ...rest }: HintProps) => {
       <Icon className={styles.hint__icon}>
         <UIIcon svgs={Icons} size="inherit" name="Question" />
       </Icon>
-      {hintIsVisible && <HintPopup x={x} y={y} text={text} onIconClick={handleHintMouseLeave} {...rest} />}
+      {hintIsVisible && (
+        <HintPopup IconComponent={Icon} x={x} y={y} text={text} onIconClick={handleHintMouseLeave} {...rest} />
+      )}
     </div>
   );
 };
