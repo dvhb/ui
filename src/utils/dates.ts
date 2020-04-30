@@ -5,6 +5,10 @@ const PLACEHOLDER_DEFAULT = 'YYYY-MM-DD';
 const PLACEHOLDER_PERIOD = 'YYYY-MM-DD—YYYY-MM-DD';
 const FORMAT_FORMDATA = 'YYYY-MM-DD';
 
+export const parseDateFromString = (value?: string, locale?: string): any => {
+  return parseDate(value, FORMAT_FORMDATA, locale);
+};
+
 export const dateStringToPeriod = (value?: string, locale?: string): any => {
   const range = {
     from: undefined,

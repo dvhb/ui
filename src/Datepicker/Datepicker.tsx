@@ -17,6 +17,7 @@ import {
   PLACEHOLDER_PERIOD,
   FORMAT_FORMDATA,
   formatPeriodFormdata,
+  parseDateFromString,
 } from '../utils/dates';
 
 import { UniversalComponent as Arrow } from './components/UniversalComponent';
@@ -35,6 +36,7 @@ export type DatepickerProps = {
 
   modifiersClassNames?: {
     selected?: string;
+    outside?: string;
     range?: {
       from?: string;
       to?: string;
@@ -53,6 +55,7 @@ export type DatepickerProps = {
   | 'inputProps'
   | 'onDayPickerShow'
   | 'onDayPickerHide'
+  | 'showOverlay'
 >;
 
 // Fix incomplete picker function signature
@@ -92,12 +95,25 @@ export const Datepicker = ({
   }, [pickerRef, period]);
 
   const [range, setRange] = useState(dateStringToPeriod(value));
-  const [currentDate, setCurrentDate] = useState(value);
+  const [currentDate, setCurrentDate] = useState<Date>(parseDateFromString(value));
+  // const [currentMonth, setCurrentMonth] = useState<Date>(
+  //   period
+  //     ? range.from
+  //       ? range.from.getMonth()
+  //       : new Date().getMonth()
+  //     : value
+  //     ? parseDateFromString(value).getMonth()
+  //     : new Date().getMonth(),
+  // );
   const { from, to } = range;
 
   const [modifiers, setModifiers] = useState({});
 
   useEffect(() => {
+    // setModifiers({
+    //   [modifiersClassNames?.outside || styles.outside]: day => day.getMonth() !== currentMonth,
+    // });
+
     if (period) {
       if (from) {
         setModifiers({
@@ -198,7 +214,7 @@ export const Datepicker = ({
         return;
       }
       const value = formatDate(day, FORMAT_FORMDATA, locale);
-      setCurrentDate(day.toString());
+      setCurrentDate(day);
       onChange?.(value);
     },
     [locale, onChange],
@@ -223,11 +239,6 @@ export const Datepicker = ({
     },
     [pickerRef, from, to, onChange],
   );
-
-  // console.log('');
-  // console.log('value', value);
-  // console.log('from', from);
-  // console.log('to', to);
 
   return (
     <DayPickerInput

@@ -14,7 +14,9 @@ const props = {
   onChange: action('onChange'),
 };
 
-export const Default = () => <Datepicker modifiersClassNames={{ selected: styles.customSelected }} {...props} />;
+export const Default = () => (
+  <Datepicker showOverlay modifiersClassNames={{ selected: styles.customSelected }} {...props} />
+);
 export const WithValue = () => (
   <Datepicker modifiersClassNames={{ selected: styles.customSelected }} {...props} value="2020-02-20" />
 );

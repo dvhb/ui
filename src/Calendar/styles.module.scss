@@ -190,7 +190,12 @@
 }
 
 .outside {
-  background: none;
+  background: none !important;
+
+  &:before,
+  &:after {
+    content: none !important;
+  }
 }
 
 .navButton {
