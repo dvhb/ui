@@ -121,27 +121,33 @@ export const Datepicker = ({
     //   [modifiersClassNames?.outside || styles.outside]: day => day.getMonth() !== currentMonth,
     // });
 
+    let modifiers = {};
     if (period) {
       if (from) {
-        setModifiers({
+        modifiers = {
+          ...modifiers,
           [modifiersClassNames?.selected || styles.selected]: from,
-        });
+        };
       }
 
       if (to) {
-        setModifiers({
+        modifiers = {
+          ...modifiers,
           [modifiersClassNames?.selected || styles.selected]: (day: Date) => DateUtils.isDayBetween(day, from, to),
           [modifiersClassNames?.range?.from || styles.start]: from,
           [modifiersClassNames?.range?.to || styles.end]: to,
-        });
+        };
       }
     } else {
       if (currentDate) {
-        setModifiers({
+        modifiers = {
+          ...modifiers,
           [modifiersClassNames?.selected || styles.selected]: currentDate,
-        });
+        };
       }
     }
+
+    setModifiers(modifiers);
   }, [from, to, setModifiers, modifiersClassNames, currentDate, period]);
 
   const { Arrow } = { ...defaultComponents, ...components };
@@ -232,16 +238,23 @@ export const Datepicker = ({
   const handleDayChangePeriod = useCallback(
     (day: any) => {
       if (day == null) {
+        if (from != null && to != null) {
+          onChange?.(undefined);
+          setRange({ from: null, to: null });
+          setTimeout(() => inputRef?.current?.focus(), 0);
+        }
         return;
       }
-      const range = DateUtils.addDayToRange(day, { from, to });
-      setRange(range);
 
-      if (range.from && range.to && !DateUtils.isSameDay(range.to, range.from)) {
+      const nextRange = DateUtils.addDayToRange(day, { from, to });
+      setRange(nextRange);
+
+      if (nextRange.from && nextRange.to && !DateUtils.isSameDay(nextRange.to, nextRange.from)) {
         pickerRef.current?.hideDayPicker();
-
         // fire onChange field value
-        onChange?.(formatPeriodFormdata(range.from, range.to));
+        onChange?.(formatPeriodFormdata(nextRange.from, nextRange.to));
+      } else {
+        setTimeout(() => inputRef?.current?.focus(), 0);
       }
     },
     [pickerRef, from, to, onChange],
