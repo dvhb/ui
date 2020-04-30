@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, ReactNode, SyntheticEvent, useCallback, useState } from 'react';
+import React, { FC, ReactElement, ReactNode, SyntheticEvent, useCallback, useEffect, useState } from 'react';
 import cn from 'classnames';
 import { createPortal } from 'react-dom';
 
@@ -70,34 +70,40 @@ const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick, com
 export const Hint = ({ text, components, ...rest }: HintProps) => {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
+  useEffect(() => {
+    document.addEventListener('click', handleHintHide);
+  }, []);
+
   const { Icon } = { ...defaultComponents, ...components };
   const [hintIsVisible, setHintIsVisible] = useState(false);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
-  const handleHintMouseEnter = useCallback((e: SyntheticEvent) => {
+  const handleHintShow = useCallback((e: SyntheticEvent) => {
     const { x, y } = e.currentTarget.getBoundingClientRect();
     setX(x + window.scrollX);
     setY(y + window.scrollY);
     setHintIsVisible(true);
+    e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
   }, []);
 
-  const handleHintMouseLeave = useCallback(() => {
+  const handleHintHide = useCallback(() => {
     setTimeout(() => setHintIsVisible(false), 0);
   }, []);
 
   return (
     <div
       className={styles.hint}
-      onMouseEnter={!isMobile ? handleHintMouseEnter : () => {}}
-      onMouseLeave={handleHintMouseLeave}
-      onClick={isMobile ? handleHintMouseEnter : () => {}}
+      onMouseEnter={!isMobile ? handleHintShow : () => {}}
+      onMouseLeave={handleHintHide}
+      onClick={isMobile ? handleHintShow : () => {}}
     >
       <Icon className={styles.hint__icon}>
         <UIIcon svgs={Icons} size="inherit" name="Question" />
       </Icon>
       {hintIsVisible && (
-        <HintPopup components={components} x={x} y={y} text={text} onIconClick={handleHintMouseLeave} {...rest} />
+        <HintPopup components={components} x={x} y={y} text={text} onIconClick={handleHintHide} {...rest} />
       )}
     </div>
   );
