@@ -1,3 +1,10 @@
+# [1.1.0-beta.26](https://github.com/dvhb/ui/compare/v1.1.0-beta.25...v1.1.0-beta.26) (2020-04-30)
+
+
+### Bug Fixes
+
+* closing datepicker when only one date in period is chosen (CEM-323) ([e861923](https://github.com/dvhb/ui/commit/e8619231afd33a1bef5e4a5950409790cfb10a8a))
+
 # [1.1.0-beta.25](https://github.com/dvhb/ui/compare/v1.1.0-beta.24...v1.1.0-beta.25) (2020-04-30)
 
 
