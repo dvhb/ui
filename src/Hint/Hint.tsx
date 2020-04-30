@@ -17,7 +17,48 @@ export type HintProps = {
 
 type HintPopupProps = {
   className?: string;
+  x: number;
+  y: number;
+  text: string | ReactNode;
+  onIconClick?: () => void;
 };
+
+type FormattedTextProps = {
+  text: string;
+};
+
+const FormattedText = ({ text }: FormattedTextProps) => {
+  return (
+    <>
+      {text.split('\n').map((item, i) => (
+        <div key={i} className={styles.textItem}>
+          {item}
+        </div>
+      ))}
+    </>
+  );
+};
+
+const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick }) =>
+  createPortal(
+    <div className={cn(styles.hint, styles.hint_absolute, className)} style={{ left: x, top: y }}>
+      <div className={styles.hint__popup}>
+        {typeof text === 'string' ? (
+          <Text>
+            <FormattedText text={text} />
+          </Text>
+        ) : (
+          text
+        )}
+      </div>
+      <div className={cn(styles.hint__icon, styles.hint__icon_absolute)} onClick={onIconClick}>
+        <Icon>
+          <UIIcon svgs={Icons} size="inherit" name="Question" />
+        </Icon>
+      </div>
+    </div>,
+    document.body,
+  );
 
 const defaultComponents = {
   Icon,
@@ -31,27 +72,6 @@ export const Hint = ({ text, components, ...rest }: HintProps) => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
-  const renderText = (text: string) => {
-    return text.split('\n').map((item, i) => (
-      <div key={i} className={styles.textItem}>
-        {item}
-      </div>
-    ));
-  };
-
-  const HintPopup: FC<HintPopupProps> = ({ className }) =>
-    createPortal(
-      <div className={cn(styles.hint, styles.hint_absolute, className)} style={{ left: x, top: y }}>
-        <div className={styles.hint__popup}>{typeof text === 'string' ? <Text>{renderText(text)}</Text> : text}</div>
-        <div className={cn(styles.hint__icon, styles.hint__icon_absolute)}>
-          <Icon>
-            <UIIcon svgs={Icons} size="inherit" name="Question" />
-          </Icon>
-        </div>
-      </div>,
-      document.body,
-    );
-
   const handleHintMouseEnter = useCallback((e: SyntheticEvent) => {
     const { x, y } = e.currentTarget.getBoundingClientRect();
     setX(x + window.scrollX);
@@ -60,7 +80,7 @@ export const Hint = ({ text, components, ...rest }: HintProps) => {
   }, []);
 
   const handleHintMouseLeave = useCallback(() => {
-    setHintIsVisible(false);
+    setTimeout(() => setHintIsVisible(false), 0);
   }, []);
 
   return (
@@ -73,7 +93,7 @@ export const Hint = ({ text, components, ...rest }: HintProps) => {
       <Icon className={styles.hint__icon}>
         <UIIcon svgs={Icons} size="inherit" name="Question" />
       </Icon>
-      {hintIsVisible && <HintPopup {...rest} />}
+      {hintIsVisible && <HintPopup x={x} y={y} text={text} onIconClick={handleHintMouseLeave} {...rest} />}
     </div>
   );
 };

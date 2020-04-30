@@ -1,4 +1,4 @@
-import React, { useCallback, createRef, forwardRef, useState, ReactElement, useEffect } from 'react';
+import React, { useCallback, forwardRef, useState, ReactElement, useEffect } from 'react';
 import { DateUtils, DayModifiers, DayPickerInputProps } from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import MomentLocaleUtils from 'react-day-picker/moment';
