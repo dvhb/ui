@@ -1,3 +1,11 @@
+# [1.1.0-beta.24](https://github.com/dvhb/ui/compare/v1.1.0-beta.23...v1.1.0-beta.24) (2020-04-30)
+
+
+### Bug Fixes
+
+* hint ([36473b6](https://github.com/dvhb/ui/commit/36473b688ff718321d0e983530666acf15956fd0))
+* hint ([156b297](https://github.com/dvhb/ui/commit/156b297febb1e64f46863f2bf4aae9ad0ccba1c7))
+
 # [1.1.0-beta.23](https://github.com/dvhb/ui/compare/v1.1.0-beta.22...v1.1.0-beta.23) (2020-04-30)
 
 
