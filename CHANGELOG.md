@@ -1,3 +1,10 @@
+# [1.1.0-beta.22](https://github.com/dvhb/ui/compare/v1.1.0-beta.21...v1.1.0-beta.22) (2020-04-30)
+
+
+### Bug Fixes
+
+* picker outside modificator ([d1ea7a0](https://github.com/dvhb/ui/commit/d1ea7a08377b86f1af0b71c3c8216777540eb09e))
+
 # [1.1.0-beta.21](https://github.com/dvhb/ui/compare/v1.1.0-beta.20...v1.1.0-beta.21) (2020-04-29)
 
 
