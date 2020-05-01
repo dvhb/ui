@@ -70,10 +70,6 @@ const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick, com
 export const Hint = ({ text, components, ...rest }: HintProps) => {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  useEffect(() => {
-    document.addEventListener('click', handleHintHide);
-  }, []);
-
   const { Icon } = { ...defaultComponents, ...components };
   const [hintIsVisible, setHintIsVisible] = useState(false);
   const [x, setX] = useState(0);
@@ -91,6 +87,10 @@ export const Hint = ({ text, components, ...rest }: HintProps) => {
   const handleHintHide = useCallback(() => {
     setTimeout(() => setHintIsVisible(false), 0);
   }, []);
+
+  useEffect(() => {
+    document.addEventListener('click', handleHintHide);
+  }, [handleHintHide]);
 
   return (
     <div

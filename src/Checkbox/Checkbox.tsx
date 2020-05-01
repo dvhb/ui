@@ -44,7 +44,7 @@ export const Checkbox = ({
   onChange,
   components,
 }: CheckboxProps) => {
-  const handleChange = useCallback(() => onChange?.(!checked), [checked, onChange]);
+  const handleChange = useCallback(() => !disabled && onChange?.(!checked), [checked, disabled, onChange]);
 
   const { CheckboxControl, CheckboxIcon, CheckboxControlWrapper } = { ...defaultComponents, ...components };
 

@@ -31,5 +31,8 @@ export const WithForm = () => (
     <Field name="checkboxError">
       {({ input }) => <Checkbox label="Checkbox with error" error checked={input.value} onChange={input.onChange} />}
     </Field>
+    <Field name="checkboxDisabled">
+      {({ input }) => <Checkbox label="Checkbox disabled" disabled checked={input.value} onChange={input.onChange} />}
+    </Field>
   </FormDemo>
 );
