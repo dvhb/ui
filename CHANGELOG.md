@@ -1,3 +1,10 @@
+# [1.1.0-beta.27](https://github.com/dvhb/ui/compare/v1.1.0-beta.26...v1.1.0-beta.27) (2020-05-01)
+
+
+### Features
+
+* **checkbox:** disabled checkbox ([bedef58](https://github.com/dvhb/ui/commit/bedef58976351ef7162e87945abb5d565dac5310))
+
 # [1.1.0-beta.26](https://github.com/dvhb/ui/compare/v1.1.0-beta.25...v1.1.0-beta.26) (2020-04-30)
 
 
