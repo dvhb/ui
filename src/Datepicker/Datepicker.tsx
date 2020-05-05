@@ -41,6 +41,7 @@ export type DatepickerProps = {
   };
 
   modifiersClassNames?: {
+    day?: string;
     selected?: string;
     outside?: string;
     range?: {
@@ -122,6 +123,14 @@ export const Datepicker = ({
     // });
 
     let modifiers = {};
+
+    if (modifiersClassNames?.day) {
+      modifiers = {
+        ...modifiers,
+        [modifiersClassNames?.day]: () => true,
+      };
+    }
+
     if (period) {
       if (from) {
         modifiers = {
@@ -257,7 +266,7 @@ export const Datepicker = ({
         setTimeout(() => inputRef?.current?.focus(), 0);
       }
     },
-    [pickerRef, from, to, onChange],
+    [pickerRef, from, to, onChange, inputRef],
   );
 
   return (

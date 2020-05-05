@@ -23,7 +23,11 @@ export const WithValue = () => (
 
 export const WithForm = () => (
   <FormDemo initialValues={{ datepicker: '2020-03-20' }}>
-    <Field name="datepicker">{({ input }) => <Datepicker value={input.value} onChange={input.onChange} />}</Field>
+    <Field name="datepicker">
+      {({ input }) => (
+        <Datepicker value={input.value} onChange={input.onChange} modifiersClassNames={{ day: styles.customDay }} />
+      )}
+    </Field>
   </FormDemo>
 );
 
