@@ -22,9 +22,11 @@ import {
 
 import { UniversalComponent as Arrow } from './components/UniversalComponent';
 
+export type DatepickerInputError = 'disabled';
+
 export type DatepickerProps = {
   value?: string;
-  onChange?: (value?: string) => void;
+  onChange?: (value?: string, error?: DatepickerInputError) => void;
   required?: boolean;
   format?: string;
   mask?: string;
@@ -233,14 +235,14 @@ export const Datepicker = ({
 
   const handleDayChange = useCallback(
     (day: Date | undefined, modifiers: DayModifiers) => {
-      if (!day || modifiers?.disabled) {
+      if (!day) {
         return;
       }
       pickerRef.current?.hideDayPicker();
 
       const value = formatDate(day, FORMAT_FORMDATA, locale);
       setCurrentDate(day);
-      onChange?.(value);
+      onChange?.(value, modifiers?.disabled ? 'disabled' : undefined);
     },
     [locale, onChange],
   );
