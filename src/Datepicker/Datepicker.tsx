@@ -93,14 +93,15 @@ export const Datepicker = ({
   const handleMonthPrev = useCallback(() => {
     const showPreviousMonth = pickerRef.current?.getDayPicker().showPreviousMonth as SwitchMonthFunc;
     // Go back two months if period mode is active and therefor two months are displayed at once
-    showPreviousMonth(() => period && showPreviousMonth());
-  }, [pickerRef, period]);
+
+    showPreviousMonth(() => period && dayPickerProps?.numberOfMonths !== 1 && showPreviousMonth());
+  }, [pickerRef, period, dayPickerProps]);
 
   const handleMonthNext = useCallback(() => {
     const showNextMonth = pickerRef.current?.getDayPicker().showNextMonth as SwitchMonthFunc;
     // Go forward two months if period mode is active and therefore two months are displayed at once
-    showNextMonth(() => period && showNextMonth());
-  }, [pickerRef, period]);
+    showNextMonth(() => period && dayPickerProps?.numberOfMonths !== 1 && showNextMonth());
+  }, [pickerRef, period, dayPickerProps]);
 
   const [range, setRange] = useState(dateStringToPeriod(value));
   const [currentDate, setCurrentDate] = useState<Date>(parseDateFromString(value));
