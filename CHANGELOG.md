@@ -1,3 +1,10 @@
+# [1.1.0-beta.31](https://github.com/dvhb/ui/compare/v1.1.0-beta.30...v1.1.0-beta.31) (2020-05-06)
+
+
+### Features
+
+* datepicker disabled day validation ([bc8aa1f](https://github.com/dvhb/ui/commit/bc8aa1ffdc7e4e70bec30ee0567631b1d2a9acb0))
+
 # [1.1.0-beta.30](https://github.com/dvhb/ui/compare/v1.1.0-beta.29...v1.1.0-beta.30) (2020-05-06)
 
 
