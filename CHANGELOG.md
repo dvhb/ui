@@ -1,3 +1,10 @@
+# [1.1.0-beta.30](https://github.com/dvhb/ui/compare/v1.1.0-beta.29...v1.1.0-beta.30) (2020-05-06)
+
+
+### Bug Fixes
+
+* **checkbox:** styles ([418c020](https://github.com/dvhb/ui/commit/418c020a1928a972d3e3836db2b74ae6076dd9f7))
+
 # [1.1.0-beta.29](https://github.com/dvhb/ui/compare/v1.1.0-beta.28...v1.1.0-beta.29) (2020-05-06)
 
 
