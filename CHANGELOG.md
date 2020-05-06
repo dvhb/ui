@@ -1,3 +1,10 @@
+# [1.1.0-beta.29](https://github.com/dvhb/ui/compare/v1.1.0-beta.28...v1.1.0-beta.29) (2020-05-06)
+
+
+### Bug Fixes
+
+* datepicker month change ([60c3e42](https://github.com/dvhb/ui/commit/60c3e42703fbc6319cc72c21e9cf5aa41cc3161d))
+
 # [1.1.0-beta.28](https://github.com/dvhb/ui/compare/v1.1.0-beta.27...v1.1.0-beta.28) (2020-05-05)
 
 
