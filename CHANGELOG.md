@@ -1,3 +1,10 @@
+# [1.1.0-beta.32](https://github.com/dvhb/ui/compare/v1.1.0-beta.31...v1.1.0-beta.32) (2020-05-07)
+
+
+### Features
+
+* datepicker early/late day validation ([f8c4203](https://github.com/dvhb/ui/commit/f8c4203787c68ba9939ceda1ae26f50da3de853b))
+
 # [1.1.0-beta.31](https://github.com/dvhb/ui/compare/v1.1.0-beta.30...v1.1.0-beta.31) (2020-05-06)
 
 
