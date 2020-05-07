@@ -254,7 +254,7 @@ export const Datepicker = ({
       setCurrentDate(day);
       onChange?.(value, getError(day, modifiers.disabled));
     },
-    [locale, onChange],
+    [locale, onChange, getError],
   );
 
   const handleDayChangePeriod = useCallback(
@@ -268,7 +268,8 @@ export const Datepicker = ({
         return;
       }
 
-      const nextRange = DateUtils.addDayToRange(day, { from, to });
+      const rangeToUse = from && to ? { from: undefined, to: undefined } : { from, to };
+      const nextRange = DateUtils.addDayToRange(day, rangeToUse);
       setRange(nextRange);
 
       if (nextRange.from && nextRange.to && !DateUtils.isSameDay(nextRange.to, nextRange.from)) {
