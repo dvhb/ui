@@ -1,3 +1,10 @@
+# [1.1.0-beta.34](https://github.com/dvhb/ui/compare/v1.1.0-beta.33...v1.1.0-beta.34) (2020-05-07)
+
+
+### Bug Fixes
+
+* datepicker initial month in range ([d7999c0](https://github.com/dvhb/ui/commit/d7999c05885298a5e1d4e9ae60157e0308398710))
+
 # [1.1.0-beta.33](https://github.com/dvhb/ui/compare/v1.1.0-beta.32...v1.1.0-beta.33) (2020-05-07)
 
 
