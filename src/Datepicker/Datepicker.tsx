@@ -22,7 +22,7 @@ import {
 
 import { UniversalComponent as Arrow } from './components/UniversalComponent';
 
-export type DatepickerInputError = 'disabled';
+export type DatepickerInputError = 'disabled' | 'early' | 'late';
 
 export type DatepickerProps = {
   value?: string;
@@ -85,7 +85,7 @@ export const Datepicker = ({
   inputProps,
   components,
   modifiersClassNames,
-  ...dayPickerInpitProps
+  ...dayPickerInputProps
 }: DatepickerProps) => {
   const { mask, required, iconName } = inputProps || {};
   let { ref: inputRef } = inputProps || {};
@@ -117,7 +117,6 @@ export const Datepicker = ({
   //     : new Date().getMonth(),
   // );
   const { from, to } = range;
-
   const [modifiers, setModifiers] = useState({});
 
   useEffect(() => {
@@ -189,15 +188,10 @@ export const Datepicker = ({
         <InputWithIcon forwardedRef={ref} {...props} />
       ),
     ),
-    inputProps: {
-      mask,
-      required,
-      iconName: iconName || 'Calendar',
-      ref: inputRef,
-    },
+    inputProps: { mask, required, iconName: iconName || 'Calendar', ref: inputRef },
     hideOnDayClick: !period,
     classNames: inputStyles as any,
-    ...dayPickerInpitProps,
+    ...dayPickerInputProps,
 
     // day picker props
     dayPickerProps: Object.assign(
@@ -233,6 +227,22 @@ export const Datepicker = ({
 
   const locale = props.dayPickerProps?.locale;
 
+  const getError = useCallback(
+    (day: Date, disabled?: boolean) => {
+      if (!disabled) {
+        return undefined;
+      }
+      if (dayPickerProps?.fromMonth && day < dayPickerProps.fromMonth) {
+        return 'early';
+      }
+      if (dayPickerProps?.toMonth && day > dayPickerProps.toMonth) {
+        return 'late';
+      }
+      return 'disabled';
+    },
+    [dayPickerProps],
+  );
+
   const handleDayChange = useCallback(
     (day: Date | undefined, modifiers: DayModifiers) => {
       if (!day) {
@@ -242,7 +252,7 @@ export const Datepicker = ({
 
       const value = formatDate(day, FORMAT_FORMDATA, locale);
       setCurrentDate(day);
-      onChange?.(value, modifiers?.disabled ? 'disabled' : undefined);
+      onChange?.(value, getError(day, modifiers.disabled));
     },
     [locale, onChange],
   );
