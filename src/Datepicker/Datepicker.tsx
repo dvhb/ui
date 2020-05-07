@@ -167,10 +167,6 @@ export const Datepicker = ({
     (value: string, format: string, locale: string) => {
       const [from, to] = value.split('—');
 
-      if (range.from) {
-        return parseDate(to, format, locale);
-      }
-
       return parseDate(from, format, locale);
     },
     [range],
