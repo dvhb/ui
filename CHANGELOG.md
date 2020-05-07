@@ -1,3 +1,10 @@
+# [1.1.0-beta.33](https://github.com/dvhb/ui/compare/v1.1.0-beta.32...v1.1.0-beta.33) (2020-05-07)
+
+
+### Bug Fixes
+
+* datepicker period selection ([1a5386b](https://github.com/dvhb/ui/commit/1a5386b7c59fa8e05bc18b0c0255c8ca2ed899fb))
+
 # [1.1.0-beta.32](https://github.com/dvhb/ui/compare/v1.1.0-beta.31...v1.1.0-beta.32) (2020-05-07)
 
 
