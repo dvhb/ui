@@ -2,7 +2,6 @@
 
 .checkboxWrapper {
   display: flex;
-  overflow: hidden;
   position: relative;
 }
 
@@ -48,5 +47,5 @@
 .checkboxInput {
   position: absolute;
   opacity: 0;
-  left: -20px;
+  left: -1000px;
 }
