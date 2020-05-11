@@ -1,3 +1,10 @@
+# [1.1.0-beta.37](https://github.com/dvhb/ui/compare/v1.1.0-beta.36...v1.1.0-beta.37) (2020-05-11)
+
+
+### Features
+
+* show first selected date ([8e4d088](https://github.com/dvhb/ui/commit/8e4d08891d55e68b43fc80f048b165da897d14bc))
+
 # [1.1.0-beta.36](https://github.com/dvhb/ui/compare/v1.1.0-beta.35...v1.1.0-beta.36) (2020-05-11)
 
 
