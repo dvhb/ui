@@ -1,3 +1,10 @@
+# [1.1.0-beta.36](https://github.com/dvhb/ui/compare/v1.1.0-beta.35...v1.1.0-beta.36) (2020-05-11)
+
+
+### Bug Fixes
+
+* checkbox styles & datepicker ([5040efb](https://github.com/dvhb/ui/commit/5040efb3420bec9d15dabb4b9dbe42d5e399a789))
+
 # [1.1.0-beta.35](https://github.com/dvhb/ui/compare/v1.1.0-beta.34...v1.1.0-beta.35) (2020-05-11)
 
 
