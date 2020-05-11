@@ -251,7 +251,7 @@ export const Datepicker = ({
   );
 
   const handleDayChangePeriod = useCallback(
-    (day: any) => {
+    (day: Date | undefined) => {
       if (day == null) {
         if (from != null && to != null) {
           onChange?.(undefined);
