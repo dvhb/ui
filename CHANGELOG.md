@@ -1,3 +1,45 @@
+# [1.1.0-beta.34](https://github.com/dvhb/ui/compare/v1.1.0-beta.33...v1.1.0-beta.34) (2020-05-07)
+
+
+### Bug Fixes
+
+* datepicker initial month in range ([d7999c0](https://github.com/dvhb/ui/commit/d7999c05885298a5e1d4e9ae60157e0308398710))
+
+# [1.1.0-beta.33](https://github.com/dvhb/ui/compare/v1.1.0-beta.32...v1.1.0-beta.33) (2020-05-07)
+
+
+### Bug Fixes
+
+* datepicker period selection ([1a5386b](https://github.com/dvhb/ui/commit/1a5386b7c59fa8e05bc18b0c0255c8ca2ed899fb))
+
+# [1.1.0-beta.32](https://github.com/dvhb/ui/compare/v1.1.0-beta.31...v1.1.0-beta.32) (2020-05-07)
+
+
+### Features
+
+* datepicker early/late day validation ([f8c4203](https://github.com/dvhb/ui/commit/f8c4203787c68ba9939ceda1ae26f50da3de853b))
+
+# [1.1.0-beta.31](https://github.com/dvhb/ui/compare/v1.1.0-beta.30...v1.1.0-beta.31) (2020-05-06)
+
+
+### Features
+
+* datepicker disabled day validation ([bc8aa1f](https://github.com/dvhb/ui/commit/bc8aa1ffdc7e4e70bec30ee0567631b1d2a9acb0))
+
+# [1.1.0-beta.30](https://github.com/dvhb/ui/compare/v1.1.0-beta.29...v1.1.0-beta.30) (2020-05-06)
+
+
+### Bug Fixes
+
+* **checkbox:** styles ([418c020](https://github.com/dvhb/ui/commit/418c020a1928a972d3e3836db2b74ae6076dd9f7))
+
+# [1.1.0-beta.29](https://github.com/dvhb/ui/compare/v1.1.0-beta.28...v1.1.0-beta.29) (2020-05-06)
+
+
+### Bug Fixes
+
+* datepicker month change ([60c3e42](https://github.com/dvhb/ui/commit/60c3e42703fbc6319cc72c21e9cf5aa41cc3161d))
+
 # [1.1.0-beta.28](https://github.com/dvhb/ui/compare/v1.1.0-beta.27...v1.1.0-beta.28) (2020-05-05)
 
 

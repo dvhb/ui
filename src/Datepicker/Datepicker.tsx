@@ -22,9 +22,11 @@ import {
 
 import { UniversalComponent as Arrow } from './components/UniversalComponent';
 
+export type DatepickerInputError = 'disabled' | 'early' | 'late';
+
 export type DatepickerProps = {
   value?: string;
-  onChange?: (value?: string) => void;
+  onChange?: (value?: string, error?: DatepickerInputError) => void;
   required?: boolean;
   format?: string;
   mask?: string;
@@ -83,7 +85,7 @@ export const Datepicker = ({
   inputProps,
   components,
   modifiersClassNames,
-  ...dayPickerInpitProps
+  ...dayPickerInputProps
 }: DatepickerProps) => {
   const { mask, required, iconName } = inputProps || {};
   let { ref: inputRef } = inputProps || {};
@@ -115,7 +117,6 @@ export const Datepicker = ({
   //     : new Date().getMonth(),
   // );
   const { from, to } = range;
-
   const [modifiers, setModifiers] = useState({});
 
   useEffect(() => {
@@ -166,10 +167,6 @@ export const Datepicker = ({
     (value: string, format: string, locale: string) => {
       const [from, to] = value.split('—');
 
-      if (range.from) {
-        return parseDate(to, format, locale);
-      }
-
       return parseDate(from, format, locale);
     },
     [range],
@@ -187,15 +184,10 @@ export const Datepicker = ({
         <InputWithIcon forwardedRef={ref} {...props} />
       ),
     ),
-    inputProps: {
-      mask,
-      required,
-      iconName: iconName || 'Calendar',
-      ref: inputRef,
-    },
+    inputProps: { mask, required, iconName: iconName || 'Calendar', ref: inputRef },
     hideOnDayClick: !period,
     classNames: inputStyles as any,
-    ...dayPickerInpitProps,
+    ...dayPickerInputProps,
 
     // day picker props
     dayPickerProps: Object.assign(
@@ -231,18 +223,34 @@ export const Datepicker = ({
 
   const locale = props.dayPickerProps?.locale;
 
+  const getError = useCallback(
+    (day: Date, disabled?: boolean) => {
+      if (!disabled) {
+        return undefined;
+      }
+      if (dayPickerProps?.fromMonth && day < dayPickerProps.fromMonth) {
+        return 'early';
+      }
+      if (dayPickerProps?.toMonth && day > dayPickerProps.toMonth) {
+        return 'late';
+      }
+      return 'disabled';
+    },
+    [dayPickerProps],
+  );
+
   const handleDayChange = useCallback(
     (day: Date | undefined, modifiers: DayModifiers) => {
-      if (!day || modifiers?.disabled) {
+      if (!day) {
         return;
       }
       pickerRef.current?.hideDayPicker();
 
       const value = formatDate(day, FORMAT_FORMDATA, locale);
       setCurrentDate(day);
-      onChange?.(value);
+      onChange?.(value, getError(day, modifiers.disabled));
     },
-    [locale, onChange],
+    [locale, onChange, getError],
   );
 
   const handleDayChangePeriod = useCallback(
@@ -256,7 +264,8 @@ export const Datepicker = ({
         return;
       }
 
-      const nextRange = DateUtils.addDayToRange(day, { from, to });
+      const rangeToUse = from && to ? { from: undefined, to: undefined } : { from, to };
+      const nextRange = DateUtils.addDayToRange(day, rangeToUse);
       setRange(nextRange);
 
       if (nextRange.from && nextRange.to && !DateUtils.isSameDay(nextRange.to, nextRange.from)) {
