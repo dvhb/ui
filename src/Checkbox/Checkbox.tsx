@@ -6,14 +6,12 @@ import { Text } from '../Text';
 import { Icon } from '../Icon';
 import * as Icons from './icons';
 
+import { CheckboxControl, CheckboxControlProps, CheckboxIcon, CheckboxIconProps } from './components';
 import {
-  CheckboxControl,
-  CheckboxControlProps,
-  CheckboxControlWrapper,
-  CheckboxControlWrapperProps,
-  CheckboxIcon,
-  CheckboxIconProps,
-} from './components';
+  UniversalComponentProps,
+  UniversalComponent as CheckboxControlWrapper,
+  UniversalComponent as Label,
+} from './components/UniversalComponent';
 
 export type CheckboxProps = {
   id?: string;
@@ -23,8 +21,9 @@ export type CheckboxProps = {
   disabled?: boolean; // @todo checkbox disabled not implemented
   components?: {
     CheckboxControl?: (props: CheckboxControlProps) => ReactElement;
-    CheckboxControlWrapper?: (props: CheckboxControlWrapperProps) => ReactElement;
+    CheckboxControlWrapper?: (props: UniversalComponentProps) => ReactElement;
     CheckboxIcon?: (props: CheckboxIconProps) => ReactElement;
+    Label?: (props: UniversalComponentProps) => ReactElement;
   };
   onChange?: (checked: boolean) => void;
 };
@@ -33,6 +32,7 @@ const defaultComponents = {
   CheckboxControl,
   CheckboxControlWrapper,
   CheckboxIcon,
+  Label,
 };
 
 export const Checkbox = ({
@@ -46,12 +46,12 @@ export const Checkbox = ({
 }: CheckboxProps) => {
   const handleChange = useCallback(() => !disabled && onChange?.(!checked), [checked, disabled, onChange]);
 
-  const { CheckboxControl, CheckboxIcon, CheckboxControlWrapper } = { ...defaultComponents, ...components };
+  const { CheckboxControl, CheckboxIcon, CheckboxControlWrapper, Label } = { ...defaultComponents, ...components };
 
   return (
     <div id={id} className={styles.checkboxWrapper} onClick={handleChange}>
       <input className={styles.checkboxInput} type="checkbox" defaultChecked={checked} />
-      <CheckboxControlWrapper>
+      <CheckboxControlWrapper className={styles.checkboxControlWrapper}>
         <CheckboxControl
           className={cn(
             styles.checkboxControl,
@@ -68,9 +68,9 @@ export const Checkbox = ({
         </CheckboxControl>
       </CheckboxControlWrapper>
       {label && (
-        <div className={styles.checkboxLabel}>
+        <Label className={styles.checkboxLabel}>
           <Text>{label}</Text>
-        </div>
+        </Label>
       )}
     </div>
   );
