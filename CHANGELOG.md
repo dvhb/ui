@@ -1,3 +1,10 @@
+# [1.1.0-beta.35](https://github.com/dvhb/ui/compare/v1.1.0-beta.34...v1.1.0-beta.35) (2020-05-11)
+
+
+### Bug Fixes
+
+* aligner.center & checkbox label styling ([079bdeb](https://github.com/dvhb/ui/commit/079bdeb7c99546679dd48c68ab535102ab72d57f))
+
 # [1.1.0-beta.34](https://github.com/dvhb/ui/compare/v1.1.0-beta.33...v1.1.0-beta.34) (2020-05-07)
 
 
