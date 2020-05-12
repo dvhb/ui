@@ -5,13 +5,26 @@ import { createPortal } from 'react-dom';
 import { Text } from '../Text';
 import { Icon as UIIcon } from '../Icon';
 import styles from './styles.module.scss';
-import { UniversalComponent as Icon, UniversalComponentProps } from './components/UniversalComponent';
+import {
+  UniversalComponent as Icon,
+  UniversalComponentProps,
+  UniversalComponent as Popup,
+  UniversalComponent as PopupContent,
+  UniversalComponent as PopupIcon,
+} from './components/UniversalComponent';
 import * as Icons from './icons';
+
+export type HintPopupComponentProps = {
+  onClose?: () => void;
+} & UniversalComponentProps;
 
 export type HintProps = {
   text: string | ReactNode;
   components?: {
     Icon?: (props: UniversalComponentProps) => ReactElement;
+    Popup?: (props: HintPopupComponentProps) => ReactElement;
+    PopupContent?: (props: UniversalComponentProps) => ReactElement;
+    PopupIcon?: (props: UniversalComponentProps) => ReactElement;
   };
 };
 
@@ -29,6 +42,9 @@ type FormattedTextProps = {
 
 const defaultComponents = {
   Icon,
+  Popup,
+  PopupContent,
+  PopupIcon,
 };
 
 const FormattedText = ({ text }: FormattedTextProps) => {
@@ -44,11 +60,15 @@ const FormattedText = ({ text }: FormattedTextProps) => {
 };
 
 const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick, components }) => {
-  const { Icon } = { ...defaultComponents, ...components };
+  const { Icon, Popup, PopupContent, PopupIcon } = { ...defaultComponents, ...components };
 
   return createPortal(
-    <div className={cn(styles.hint, styles.hint_absolute, className)} style={{ left: x, top: y }}>
-      <div className={styles.hint__popup}>
+    <Popup
+      className={cn(styles.hint, styles.hint_absolute, className)}
+      style={{ left: x, top: y }}
+      onClose={onIconClick}
+    >
+      <PopupContent className={styles.hint__popup}>
         {typeof text === 'string' ? (
           <Text>
             <FormattedText text={text} />
@@ -56,13 +76,15 @@ const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick, com
         ) : (
           text
         )}
-      </div>
-      <div className={cn(styles.hint__icon, styles.hint__icon_absolute)} onClick={onIconClick}>
-        <Icon>
-          <UIIcon svgs={Icons} size="inherit" name="Question" />
-        </Icon>
-      </div>
-    </div>,
+      </PopupContent>
+      {PopupIcon && (
+        <PopupIcon className={cn(styles.hint__icon, styles.hint__icon_absolute)} onClick={onIconClick}>
+          <Icon>
+            <UIIcon svgs={Icons} size="inherit" name="Question" />
+          </Icon>
+        </PopupIcon>
+      )}
+    </Popup>,
     document.body,
   );
 };
