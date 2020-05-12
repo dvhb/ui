@@ -1,6 +1,5 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC, HTMLAttributes, ReactElement } from 'react';
 
-import styles from './styles.module.scss';
 import { UniversalComponentProps, UniversalComponent as ListItem } from './components/UniversalComponent';
 
 export type ListProps = {
@@ -8,19 +7,19 @@ export type ListProps = {
   components?: {
     ListItem?: (props: UniversalComponentProps) => ReactElement;
   };
-};
+} & HTMLAttributes<HTMLDivElement>;
 
 const defaultComponents = {
   ListItem,
 };
 
-export const List: FC<ListProps> = ({ items, components }) => {
+export const List: FC<ListProps> = ({ items, components, ...rest }) => {
   const { ListItem } = { ...defaultComponents, ...components };
 
   return (
-    <div className={styles.list}>
+    <div {...rest}>
       {items?.map((i, index) => (
-        <ListItem className={styles.listItem}>{i}</ListItem>
+        <ListItem key={index}>{i}</ListItem>
       ))}
     </div>
   );
