@@ -1,3 +1,10 @@
+# [1.1.0-beta.39](https://github.com/dvhb/ui/compare/v1.1.0-beta.38...v1.1.0-beta.39) (2020-05-12)
+
+
+### Bug Fixes
+
+* hint styling ([b07ff7a](https://github.com/dvhb/ui/commit/b07ff7a8179d2ee611d1d83f71534118897c22cc))
+
 # [1.1.0-beta.38](https://github.com/dvhb/ui/compare/v1.1.0-beta.37...v1.1.0-beta.38) (2020-05-12)
 
 
