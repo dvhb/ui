@@ -1,3 +1,29 @@
+# [1.1.0-beta.38](https://github.com/dvhb/ui/compare/v1.1.0-beta.37...v1.1.0-beta.38) (2020-05-12)
+
+
+### Bug Fixes
+
+* useCallback dependency ([4468453](https://github.com/dvhb/ui/commit/44684535013609d7f24886905b016e5e6e3ebbc5))
+
+
+### Reverts
+
+* datepicker period ([969021f](https://github.com/dvhb/ui/commit/969021fc0c268524dbd1147ed91eada7e3ff1d0c))
+
+# [1.1.0-beta.37](https://github.com/dvhb/ui/compare/v1.1.0-beta.36...v1.1.0-beta.37) (2020-05-11)
+
+
+### Features
+
+* show first selected date ([8e4d088](https://github.com/dvhb/ui/commit/8e4d08891d55e68b43fc80f048b165da897d14bc))
+
+# [1.1.0-beta.36](https://github.com/dvhb/ui/compare/v1.1.0-beta.35...v1.1.0-beta.36) (2020-05-11)
+
+
+### Bug Fixes
+
+* checkbox styles & datepicker ([5040efb](https://github.com/dvhb/ui/commit/5040efb3420bec9d15dabb4b9dbe42d5e399a789))
+
 # [1.1.0-beta.35](https://github.com/dvhb/ui/compare/v1.1.0-beta.34...v1.1.0-beta.35) (2020-05-11)
 
 

@@ -163,11 +163,18 @@ export const Datepicker = ({
 
   const { Arrow } = { ...defaultComponents, ...components };
 
-  const handleParsePeriod = useCallback((value: string, format: string, locale: string) => {
-    const [from] = value.split('—');
+  const handleParsePeriod = useCallback(
+    (value: string, format: string, locale: string) => {
+      const [from, to] = value.split('—');
 
-    return parseDate(from, format, locale);
-  }, []);
+      if (range.from) {
+        return parseDate(to, format, locale);
+      }
+
+      return parseDate(from, format, locale);
+    },
+    [range.from],
+  );
 
   const props: DayPickerInputProps = {
     formatDate,
@@ -251,7 +258,7 @@ export const Datepicker = ({
   );
 
   const handleDayChangePeriod = useCallback(
-    (day: any) => {
+    (day: Date | undefined) => {
       if (day == null) {
         if (from != null && to != null) {
           onChange?.(undefined);
