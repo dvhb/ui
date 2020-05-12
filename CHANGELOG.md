@@ -1,3 +1,15 @@
+# [1.1.0-beta.38](https://github.com/dvhb/ui/compare/v1.1.0-beta.37...v1.1.0-beta.38) (2020-05-12)
+
+
+### Bug Fixes
+
+* useCallback dependency ([4468453](https://github.com/dvhb/ui/commit/44684535013609d7f24886905b016e5e6e3ebbc5))
+
+
+### Reverts
+
+* datepicker period ([969021f](https://github.com/dvhb/ui/commit/969021fc0c268524dbd1147ed91eada7e3ff1d0c))
+
 # [1.1.0-beta.37](https://github.com/dvhb/ui/compare/v1.1.0-beta.36...v1.1.0-beta.37) (2020-05-11)
 
 
