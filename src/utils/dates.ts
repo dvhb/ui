@@ -25,9 +25,6 @@ export const dateStringToPeriod = (value?: string, locale?: string): any => {
 };
 
 const formatPeriod = (from?: Date, to?: Date, format?: string, locale?: string): string | undefined => {
-  if (from && !to) {
-    return formatDate(from, format, locale);
-  }
   if (!from || !to) return undefined;
   return `${formatDate(from, format, locale)}—${formatDate(to, format, locale)}`;
 };
