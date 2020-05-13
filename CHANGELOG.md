@@ -1,3 +1,10 @@
+# [1.1.0-beta.40](https://github.com/dvhb/ui/compare/v1.1.0-beta.39...v1.1.0-beta.40) (2020-05-12)
+
+
+### Bug Fixes
+
+* list styling ([e33272e](https://github.com/dvhb/ui/commit/e33272e0b3e9a8b1353e53cff49dacab18a10e39))
+
 # [1.1.0-beta.39](https://github.com/dvhb/ui/compare/v1.1.0-beta.38...v1.1.0-beta.39) (2020-05-12)
 
 
