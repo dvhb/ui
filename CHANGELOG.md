@@ -1,3 +1,10 @@
+# [1.1.0-beta.41](https://github.com/dvhb/ui/compare/v1.1.0-beta.40...v1.1.0-beta.41) (2020-05-13)
+
+
+### Bug Fixes
+
+* aliger center component ([0b2ddf4](https://github.com/dvhb/ui/commit/0b2ddf4dec73ac5df8590c89bc8b95a458b2e5ec))
+
 # [1.1.0-beta.40](https://github.com/dvhb/ui/compare/v1.1.0-beta.39...v1.1.0-beta.40) (2020-05-12)
 
 
