@@ -1,3 +1,10 @@
+# [1.1.0-beta.42](https://github.com/dvhb/ui/compare/v1.1.0-beta.41...v1.1.0-beta.42) (2020-05-18)
+
+
+### Bug Fixes
+
+* fix datepicker focus (RGS-465) ([b15311d](https://github.com/dvhb/ui/commit/b15311d9d1475a2df2c33bfde90090839edd86ee))
+
 # [1.1.0-beta.41](https://github.com/dvhb/ui/compare/v1.1.0-beta.40...v1.1.0-beta.41) (2020-05-13)
 
 
