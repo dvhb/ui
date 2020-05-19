@@ -1,3 +1,10 @@
+# [1.1.0-beta.43](https://github.com/dvhb/ui/compare/v1.1.0-beta.42...v1.1.0-beta.43) (2020-05-19)
+
+
+### Bug Fixes
+
+* fix custom input of datepicker ([a9809cb](https://github.com/dvhb/ui/commit/a9809cb4db355b7bc8851855124916787282acb4))
+
 # [1.1.0-beta.42](https://github.com/dvhb/ui/compare/v1.1.0-beta.41...v1.1.0-beta.42) (2020-05-18)
 
 
