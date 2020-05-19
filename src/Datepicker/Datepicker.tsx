@@ -182,7 +182,7 @@ export const Datepicker = ({
     parseDate: period ? handleParsePeriod : parseDate,
     placeholder: placeholder ? placeholder : period ? PLACEHOLDER_PERIOD : PLACEHOLDER_DEFAULT,
     component: InputWrapper,
-    inputProps: { mask, required, iconName: iconName || 'Calendar', forwardedRef: inputRef },
+    inputProps: { mask, required, InputComponent, iconName: iconName || 'Calendar', forwardedRef: inputRef },
     hideOnDayClick: !period,
     classNames: inputStyles as any,
     ...dayPickerInputProps,

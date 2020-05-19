@@ -7,7 +7,7 @@ export class InputWrapper extends React.Component<any> {
   }
 
   render() {
-    const { InputComponent } = this.props;
-    return InputComponent ? <InputComponent {...this.props} /> : <InputWithIcon {...this.props} />;
+    const { InputComponent, ...props } = this.props;
+    return InputComponent ? <InputComponent {...props} /> : <InputWithIcon {...props} />;
   }
 }
