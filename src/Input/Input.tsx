@@ -17,6 +17,8 @@ export type InputProps = {
   onBlur?: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   onChange?: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
+  onKeyDown?: React.KeyboardEventHandler<HTMLTextAreaElement | HTMLInputElement>;
+  onKeyUp?: React.KeyboardEventHandler<HTMLTextAreaElement | HTMLInputElement>;
 };
 
 function InputBase({
