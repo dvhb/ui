@@ -1,3 +1,10 @@
+# [1.1.0-beta.44](https://github.com/dvhb/ui/compare/v1.1.0-beta.43...v1.1.0-beta.44) (2020-05-20)
+
+
+### Bug Fixes
+
+* add onKeyDown/onKeyUp event props for Input ([2c2db18](https://github.com/dvhb/ui/commit/2c2db1814ba5ac9b69fab852a09b7fdaa5757349))
+
 # [1.1.0-beta.43](https://github.com/dvhb/ui/compare/v1.1.0-beta.42...v1.1.0-beta.43) (2020-05-19)
 
 
