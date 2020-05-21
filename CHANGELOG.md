@@ -1,3 +1,10 @@
+# [1.1.0-beta.45](https://github.com/dvhb/ui/compare/v1.1.0-beta.44...v1.1.0-beta.45) (2020-05-21)
+
+
+### Features
+
+* add possibility to render hint on custom element ([7d1f07f](https://github.com/dvhb/ui/commit/7d1f07fa04696e6b55dc3ea5e5c0e7cfe33d63af))
+
 # [1.1.0-beta.44](https://github.com/dvhb/ui/compare/v1.1.0-beta.43...v1.1.0-beta.44) (2020-05-20)
 
 
