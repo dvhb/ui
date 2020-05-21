@@ -12,3 +12,15 @@ export const Default = () => (
     ))}
   </Modal>
 );
+
+const parentSelector = () => document.getElementById('target')!;
+
+export const CustomPlace = () => (
+  <div id="target">
+    <Modal isOpen parentSelector={parentSelector}>
+      {[...Array(20)].map((i, index) => (
+        <div key={index}>modal</div>
+      ))}
+    </Modal>
+  </div>
+);
