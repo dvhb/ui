@@ -17,6 +17,7 @@ export type InputProps = {
   onBlur?: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   onChange?: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
+  disabled?: boolean;
 };
 
 function InputBase({
@@ -66,6 +67,6 @@ function InputBase({
   );
 }
 
-export const Input = React.forwardRef((props: InputProps, ref: React.Ref<HTMLDivElement>) => (
+export const Input = React.forwardRef((props: InputProps, ref: React.Ref<HTMLInputElement>) => (
   <InputBase forwardedRef={ref} {...props} />
 ));
