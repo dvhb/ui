@@ -1,3 +1,10 @@
+# [1.1.0-beta.46](https://github.com/dvhb/ui/compare/v1.1.0-beta.45...v1.1.0-beta.46) (2020-05-22)
+
+
+### Bug Fixes
+
+* input props ([aa63466](https://github.com/dvhb/ui/commit/aa63466039a60e2cf20e034315e621c50f0556a0))
+
 # [1.1.0-beta.45](https://github.com/dvhb/ui/compare/v1.1.0-beta.44...v1.1.0-beta.45) (2020-05-21)
 
 ### Features
