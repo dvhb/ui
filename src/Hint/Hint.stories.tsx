@@ -12,3 +12,9 @@ export const Default = () => (
     <Hint text="Hint text" />
   </div>
 );
+
+export const CustomPlace = () => (
+  <div style={{ padding: 20 }} id="targetId">
+    <Hint text="Hint text" containerId="targetId" />
+  </div>
+);

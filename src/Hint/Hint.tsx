@@ -20,6 +20,7 @@ export type HintPopupComponentProps = {
 
 export type HintProps = {
   text: string | ReactNode;
+  containerId?: string;
   components?: {
     Icon?: (props: UniversalComponentProps) => ReactElement;
     Popup?: (props: HintPopupComponentProps) => ReactElement;
@@ -34,7 +35,7 @@ type HintPopupProps = {
   y: number;
   text: string | ReactNode;
   onIconClick?: () => void;
-} & Pick<HintProps, 'components'>;
+} & Pick<HintProps, 'components' | 'containerId'>;
 
 type FormattedTextProps = {
   text: string;
@@ -59,7 +60,7 @@ const FormattedText = ({ text }: FormattedTextProps) => {
   );
 };
 
-const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick, components }) => {
+const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick, components, containerId }) => {
   const { Icon, Popup, PopupContent, PopupIcon } = { ...defaultComponents, ...components };
 
   return createPortal(
@@ -85,7 +86,7 @@ const HintPopup: FC<HintPopupProps> = ({ className, x, y, text, onIconClick, com
         </PopupIcon>
       )}
     </Popup>,
-    document.body,
+    containerId ? document.getElementById(containerId)! : document.body,
   );
 };
 

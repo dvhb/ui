@@ -1,4 +1,4 @@
-import React, { useCallback, forwardRef, useState, ReactElement, useEffect } from 'react';
+import React, { useCallback, useState, ReactElement, useEffect } from 'react';
 import { DateUtils, DayModifiers, DayPickerInputProps } from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import MomentLocaleUtils from 'react-day-picker/moment';
@@ -7,7 +7,6 @@ import styles from '../Calendar/styles.module.scss';
 import inputStyles from './stylesDayPickerInput.module.scss';
 import { Icon } from '../Icon';
 import * as Icons from './icons';
-import { InputWithIcon } from '../InputWithIcon';
 import {
   dateStringToPeriod,
   formatDate,
@@ -21,6 +20,7 @@ import {
 } from '../utils/dates';
 
 import { UniversalComponent as Arrow } from './components/UniversalComponent';
+import { InputWrapper } from './InputWrapper';
 
 export type DatepickerInputError = 'disabled' | 'early' | 'late';
 
@@ -181,14 +181,8 @@ export const Datepicker = ({
     format,
     parseDate: period ? handleParsePeriod : parseDate,
     placeholder: placeholder ? placeholder : period ? PLACEHOLDER_PERIOD : PLACEHOLDER_DEFAULT,
-    component: forwardRef<DayPickerInput>((props, ref) =>
-      InputComponent ? (
-        <InputComponent forwardedRef={ref} {...props} />
-      ) : (
-        <InputWithIcon forwardedRef={ref} {...props} />
-      ),
-    ),
-    inputProps: { mask, required, iconName: iconName || 'Calendar', ref: inputRef },
+    component: InputWrapper,
+    inputProps: { mask, required, InputComponent, iconName: iconName || 'Calendar', forwardedRef: inputRef },
     hideOnDayClick: !period,
     classNames: inputStyles as any,
     ...dayPickerInputProps,
