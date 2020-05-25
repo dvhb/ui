@@ -1,3 +1,10 @@
+# [1.1.0-beta.48](https://github.com/dvhb/ui/compare/v1.1.0-beta.47...v1.1.0-beta.48) (2020-05-25)
+
+
+### Bug Fixes
+
+* checkbox label ([21c6c19](https://github.com/dvhb/ui/commit/21c6c1908b9a0fecb279c6bfab9f39a8ae0817db))
+
 # [1.1.0-beta.47](https://github.com/dvhb/ui/compare/v1.1.0-beta.46...v1.1.0-beta.47) (2020-05-25)
 
 
