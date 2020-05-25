@@ -1,3 +1,10 @@
+# [1.1.0-beta.49](https://github.com/dvhb/ui/compare/v1.1.0-beta.48...v1.1.0-beta.49) (2020-05-25)
+
+
+### Bug Fixes
+
+* modal ios scroll lock ([de3875f](https://github.com/dvhb/ui/commit/de3875f8ae3fd550abec3e1e9ed88166e1c621f9))
+
 # [1.1.0-beta.48](https://github.com/dvhb/ui/compare/v1.1.0-beta.47...v1.1.0-beta.48) (2020-05-25)
 
 
