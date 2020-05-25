@@ -1,4 +1,5 @@
 import React, { FC, ReactElement, useCallback, useEffect, useState } from 'react';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import ReactModal from 'react-modal';
 import cn from 'classnames';
 
@@ -32,23 +33,35 @@ export const Modal: FC<ModalProps> = ({
   ...rest
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
+  const [overlayRef, setOverlayRef] = useState<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setIsModalOpen(isOpen);
-  }, [isOpen]);
+    if (overlayRef && isOpen) {
+      disableBodyScroll(overlayRef);
+    }
+  }, [isOpen, overlayRef]);
 
   const closeModalHandler = useCallback(
     e => {
       onRequestClose && onRequestClose(e);
       setIsModalOpen(false);
+      if (overlayRef !== null) {
+        enableBodyScroll(overlayRef);
+      }
     },
-    [onRequestClose],
+    [onRequestClose, overlayRef],
   );
+
+  const getOverlayRef = useCallback((node: HTMLDivElement) => {
+    setOverlayRef(node);
+  }, []);
 
   const { CloseButton, ModalContent } = { ...defaultComponents, ...components };
 
   return (
     <ReactModal
+      overlayRef={getOverlayRef}
       overlayClassName={cn(styles.overlay, { overlayClassName })}
       className={cn(styles.modalWrapper, contentWrapperClassName)}
       isOpen={isModalOpen}
