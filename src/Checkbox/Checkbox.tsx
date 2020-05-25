@@ -69,7 +69,7 @@ export const Checkbox = ({
       </CheckboxControlWrapper>
       {label && (
         <Label className={styles.checkboxLabel}>
-          <Text>{label}</Text>
+          <Text tag="div">{label}</Text>
         </Label>
       )}
     </div>
