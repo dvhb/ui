@@ -41,3 +41,15 @@ export const WithForm = () => (
     </Field>
   </FormDemo>
 );
+
+const loadOptions = (inputValue: string) =>
+  new Promise(resolve => {
+    setTimeout(() => {
+      const options = mockOptionsSimple.filter(i => i.label.toLowerCase().includes(inputValue.toLowerCase()));
+      resolve(options);
+    }, 2000);
+  });
+
+export const Async = () => {
+  return <Select {...props} error cacheOptions defaultOptions loadOptions={loadOptions} />;
+};
