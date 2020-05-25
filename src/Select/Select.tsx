@@ -1,12 +1,16 @@
 import React from 'react';
-import ReactSelect, { Props, components } from 'react-select';
+import ReactSelect, { Props as ReactSelectProps, components } from 'react-select';
+import AsyncReactSelect, { Props as AsyncReactSelectProps } from 'react-select/async';
 
 import styles from './styles.module.scss';
 import { Text } from '../Text';
 import { Aligner } from '../Aligner';
 import { Spacer } from '../Spacer';
 
-export type SelectProps = { clearIndicator?: boolean } & Props;
+export type SelectProps = {
+  clearIndicator?: boolean;
+} & ReactSelectProps &
+  Partial<AsyncReactSelectProps<{ label: string; value: string }>>;
 
 const formatGroupLabel = (data: any) => {
   return data.label === 'groupBorder' ? <div className={styles.selectGroupDelimiter} /> : null;
@@ -33,13 +37,13 @@ const Option = (props: any) => {
     </components.Option>
   );
 };
-
 export const Select = ({ clearIndicator = true, options, components: customComponents, ...rest }: SelectProps) => {
   const ClearIndicator = (props: any) => (clearIndicator ? <components.ClearIndicator {...props} /> : null);
+  const SelectComponent: React.ComponentType<any> = rest.loadOptions ? AsyncReactSelect : ReactSelect;
 
   return (
     <Text>
-      <ReactSelect
+      <SelectComponent
         options={options}
         components={{ Option, ClearIndicator, IndicatorSeparator: null, ...customComponents }}
         formatGroupLabel={formatGroupLabel}
