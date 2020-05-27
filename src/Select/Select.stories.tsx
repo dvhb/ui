@@ -53,3 +53,30 @@ const loadOptions = (inputValue: string) =>
 export const Async = () => {
   return <Select {...props} error cacheOptions defaultOptions loadOptions={loadOptions} />;
 };
+
+const apiKey = '82392f053f6939bafa374832c31a66f3802dc049';
+const headers = {
+  Authorization: `Token ${apiKey}`,
+  Accept: 'application/json',
+  'Content-Type': 'application/json',
+};
+
+const loadAddresses = async (inputValue: string) => {
+  const response = await fetch('https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address', {
+    headers,
+    method: 'POST',
+    body: JSON.stringify({ query: inputValue, from_bound: { value: 'city' }, to_bound: { value: 'settlement' } }),
+  });
+  const data = await response.json();
+  return data.suggestions.map((suggestion: any) => {
+    console.dir(suggestion);
+    return {
+      label: suggestion.value,
+      value: suggestion.data,
+    };
+  });
+};
+
+export const Address = () => {
+  return <Select {...props} error cacheOptions loadOptions={loadAddresses} />;
+};
