@@ -1,3 +1,10 @@
+# [1.1.0-beta.50](https://github.com/dvhb/ui/compare/v1.1.0-beta.49...v1.1.0-beta.50) (2020-05-27)
+
+
+### Features
+
+* add AddressSelect ([365eab8](https://github.com/dvhb/ui/commit/365eab82d83b1fb4b83752f0868c43d5a57c937b))
+
 # [1.1.0-beta.49](https://github.com/dvhb/ui/compare/v1.1.0-beta.48...v1.1.0-beta.49) (2020-05-25)
 
 
