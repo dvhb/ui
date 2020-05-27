@@ -1,3 +1,10 @@
+# [1.1.0-beta.51](https://github.com/dvhb/ui/compare/v1.1.0-beta.50...v1.1.0-beta.51) (2020-05-27)
+
+
+### Bug Fixes
+
+* hide dadata key ([aa626f4](https://github.com/dvhb/ui/commit/aa626f4a1808b373803a31c2fb7e7a5c2801c0ab))
+
 # [1.1.0-beta.50](https://github.com/dvhb/ui/compare/v1.1.0-beta.49...v1.1.0-beta.50) (2020-05-27)
 
 
