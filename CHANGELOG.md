@@ -1,3 +1,10 @@
+# [1.1.0-beta.52](https://github.com/dvhb/ui/compare/v1.1.0-beta.51...v1.1.0-beta.52) (2020-05-29)
+
+
+### Bug Fixes
+
+* allow to choose same day period ([cd8eb3e](https://github.com/dvhb/ui/commit/cd8eb3e766db73f462ecc820f13a8f95d369a1ed))
+
 # [1.1.0-beta.51](https://github.com/dvhb/ui/compare/v1.1.0-beta.50...v1.1.0-beta.51) (2020-05-27)
 
 
