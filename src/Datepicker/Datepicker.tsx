@@ -266,7 +266,7 @@ export const Datepicker = ({
       const nextRange = DateUtils.addDayToRange(day, rangeToUse);
       setRange(nextRange);
 
-      if (nextRange.from && nextRange.to && !DateUtils.isSameDay(nextRange.to, nextRange.from)) {
+      if (nextRange.from && nextRange.to) {
         pickerRef.current?.hideDayPicker();
         // fire onChange field value
         onChange?.(formatPeriodFormdata(nextRange.from, nextRange.to));
