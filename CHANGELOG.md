@@ -1,3 +1,10 @@
+# [1.1.0-beta.53](https://github.com/dvhb/ui/compare/v1.1.0-beta.52...v1.1.0-beta.53) (2020-06-01)
+
+
+### Features
+
+* handle html in hints ([25b9c3c](https://github.com/dvhb/ui/commit/25b9c3cd7f89d1b85ce432105fc4730cf727c67c))
+
 # [1.1.0-beta.52](https://github.com/dvhb/ui/compare/v1.1.0-beta.51...v1.1.0-beta.52) (2020-05-29)
 
 
