@@ -52,9 +52,7 @@ const FormattedText = ({ text }: FormattedTextProps) => {
   return (
     <>
       {text.split('\n').map((item, i) => (
-        <span key={i} className={styles.textItem}>
-          {item}
-        </span>
+        <span key={i} className={styles.textItem} dangerouslySetInnerHTML={{ __html: item }} />
       ))}
     </>
   );

@@ -18,3 +18,9 @@ export const CustomPlace = () => (
     <Hint text="Hint text" containerId="targetId" />
   </div>
 );
+
+export const WithHtml = () => (
+  <div style={{ padding: 20 }}>
+    <Hint text="Hint text <br /><a href='/' target='_blank'>Link<a/>" />
+  </div>
+);
