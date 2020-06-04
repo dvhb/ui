@@ -1,3 +1,10 @@
+# [1.1.0-beta.58](https://github.com/dvhb/ui/compare/v1.1.0-beta.57...v1.1.0-beta.58) (2020-06-04)
+
+
+### Bug Fixes
+
+* add support maskChar for inputs ([27e231c](https://github.com/dvhb/ui/commit/27e231c00d8bf3cbb368d9c39ff70118543c868e))
+
 # [1.1.0-beta.57](https://github.com/dvhb/ui/compare/v1.1.0-beta.56...v1.1.0-beta.57) (2020-06-04)
 
 
