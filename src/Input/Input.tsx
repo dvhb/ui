@@ -21,6 +21,7 @@ export type InputProps = {
   onKeyUp?: React.KeyboardEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   disabled?: boolean;
   type?: string;
+  maskChar?: string;
 };
 
 function InputBase({
