@@ -5,6 +5,7 @@ export * from './Calendar';
 export * from './Checkbox';
 export * from './Datepicker';
 export * from './Field';
+export * from './FileUpload';
 export * from './Grid';
 export * from './Hint';
 export * from './Icon';

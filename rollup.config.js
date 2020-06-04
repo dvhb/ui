@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import resolve from 'rollup-plugin-node-resolve';
+import json from 'rollup-plugin-json';
 import copy from 'rollup-plugin-copy';
 
 import pkg from './package.json';
@@ -34,12 +35,13 @@ export default {
         generateScopedName: 'ui_[local]_[hash:base64:5]',
       },
     }),
-    resolve(),
+    resolve({ jsnext: true, preferBuiltins: true, browser: true }),
     typescript({
       rollupCommonJSResolveHack: true,
       clean: true,
       exclude: ['src/**/*.stories.tsx', 'src/**/*.test.(tsx|ts)'],
     }),
+    json(),
     commonjs({
       namedExports: {
         'node_modules/react-day-picker/build/index.js': ['DateUtils'],

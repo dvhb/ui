@@ -1,0 +1,11 @@
+import React from 'react';
+
+export const IconTrash = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width="18" height="17" viewBox="0 0 18 17" {...props}>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M7 0C6.44772 0 6 0.447715 6 1C6 1.55228 6.44772 2 7 2H11C11.5523 2 12 1.55228 12 1C12 0.447715 11.5523 0 11 0H7ZM0 4C0 3.44772 0.447715 3 1 3H2H16H17C17.5523 3 18 3.44772 18 4C18 4.55228 17.5523 5 17 5H15.8L14.69 16.0995C14.6389 16.6107 14.2088 17 13.695 17H4.30499C3.79124 17 3.36107 16.6107 3.30995 16.0995L2.2 5H1C0.447716 5 0 4.55228 0 4ZM4.20998 5H13.79L12.79 15H5.20998L4.20998 5Z"
+    />
+  </svg>
+);
