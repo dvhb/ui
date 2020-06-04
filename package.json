@@ -12,7 +12,6 @@
     "README.md"
   ],
   "scripts": {
-    "prebuild": "npm run clean",
     "build": "rollup -c",
     "build:dev": "rollup -c -w",
     "clean": "rm -rf ./dist",
@@ -47,9 +46,11 @@
     "@types/react-input-mask": "^2.0.5",
     "@types/react-modal": "^3.10.5",
     "@types/react-select": "^3.0.11",
+    "axios": "^0.19.2",
     "body-scroll-lock": "^3.0.2",
     "classnames": "^2.2.6",
     "react-day-picker": "^7.4.8",
+    "react-dropzone": "^11.0.1",
     "react-grid-system": "^6.2.3",
     "react-input-mask": "^2.0.4",
     "react-modal": "^3.11.2",
@@ -86,6 +87,7 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^2.9.0",
