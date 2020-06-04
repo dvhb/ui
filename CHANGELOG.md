@@ -1,3 +1,10 @@
+# [1.1.0-beta.55](https://github.com/dvhb/ui/compare/v1.1.0-beta.54...v1.1.0-beta.55) (2020-06-04)
+
+
+### Features
+
+* import datepicker birthday ([b8431ec](https://github.com/dvhb/ui/commit/b8431ec4b51e67a3e00dbb3fc0aeb734452cbb14))
+
 # [1.1.0-beta.54](https://github.com/dvhb/ui/compare/v1.1.0-beta.53...v1.1.0-beta.54) (2020-06-04)
 
 
