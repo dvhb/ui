@@ -1,3 +1,10 @@
+# [1.1.0-beta.56](https://github.com/dvhb/ui/compare/v1.1.0-beta.55...v1.1.0-beta.56) (2020-06-04)
+
+
+### Features
+
+* date period validation ([7cb111b](https://github.com/dvhb/ui/commit/7cb111b01b7a770e5a8f7b4800ba6d81da67ff78))
+
 # [1.1.0-beta.55](https://github.com/dvhb/ui/compare/v1.1.0-beta.54...v1.1.0-beta.55) (2020-06-04)
 
 
