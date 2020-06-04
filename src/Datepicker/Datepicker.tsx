@@ -1,5 +1,5 @@
 import React, { useCallback, useState, ReactElement, useEffect } from 'react';
-import { DateUtils, DayModifiers, DayPickerInputProps } from 'react-day-picker';
+import { DateUtils, DayModifiers, DayPickerInputProps, ModifiersUtils } from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import MomentLocaleUtils from 'react-day-picker/moment';
 
@@ -222,8 +222,9 @@ export const Datepicker = ({
   const locale = props.dayPickerProps?.locale;
 
   const getError = useCallback(
-    (day: Date, disabled?: boolean) => {
-      if (!disabled) {
+    (day?: Date) => {
+      const disabled = ModifiersUtils.dayMatchesModifier(day!, dayPickerProps?.disabledDays);
+      if (!day || !disabled) {
         return undefined;
       }
       if (dayPickerProps?.fromMonth && day < dayPickerProps.fromMonth) {
@@ -238,7 +239,7 @@ export const Datepicker = ({
   );
 
   const handleDayChange = useCallback(
-    (day: Date | undefined, modifiers: DayModifiers) => {
+    (day: Date | undefined) => {
       if (!day) {
         return;
       }
@@ -246,7 +247,7 @@ export const Datepicker = ({
 
       const value = formatDate(day, FORMAT_FORMDATA, locale);
       setCurrentDate(day);
-      onChange?.(value, getError(day, modifiers.disabled));
+      onChange?.(value, getError(day));
     },
     [locale, onChange, getError],
   );
@@ -269,7 +270,10 @@ export const Datepicker = ({
       if (nextRange.from && nextRange.to) {
         pickerRef.current?.hideDayPicker();
         // fire onChange field value
-        onChange?.(formatPeriodFormdata(nextRange.from, nextRange.to));
+        onChange?.(
+          formatPeriodFormdata(nextRange.from, nextRange.to),
+          getError(nextRange.from) ?? getError(nextRange.to),
+        );
       } else {
         setTimeout(() => inputRef?.current?.focus(), 0);
       }
