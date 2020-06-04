@@ -1,3 +1,10 @@
+# [1.1.0-beta.57](https://github.com/dvhb/ui/compare/v1.1.0-beta.56...v1.1.0-beta.57) (2020-06-04)
+
+
+### Bug Fixes
+
+* add type prop for InputProps ([2b522af](https://github.com/dvhb/ui/commit/2b522af25e5000af5143576313ccbc4282f05cfe))
+
 # [1.1.0-beta.56](https://github.com/dvhb/ui/compare/v1.1.0-beta.55...v1.1.0-beta.56) (2020-06-04)
 
 
