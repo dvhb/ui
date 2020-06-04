@@ -20,6 +20,7 @@ export type InputProps = {
   onKeyDown?: React.KeyboardEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   onKeyUp?: React.KeyboardEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   disabled?: boolean;
+  type?: string;
 };
 
 function InputBase({
