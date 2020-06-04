@@ -1,3 +1,15 @@
+# [1.1.0-beta.54](https://github.com/dvhb/ui/compare/v1.1.0-beta.53...v1.1.0-beta.54) (2020-06-04)
+
+
+### Bug Fixes
+
+* return prebuild ([c6fe3ed](https://github.com/dvhb/ui/commit/c6fe3ede5da66d752a9f3a0b19e1179de6e7e65c))
+
+
+### Features
+
+* add FileUpload ([078241c](https://github.com/dvhb/ui/commit/078241cc7c309a257d60427a1cacfd295527dcbe))
+
 # [1.1.0-beta.53](https://github.com/dvhb/ui/compare/v1.1.0-beta.52...v1.1.0-beta.53) (2020-06-01)
 
 
