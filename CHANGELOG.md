@@ -1,3 +1,10 @@
+# [1.1.0-beta.60](https://github.com/dvhb/ui/compare/v1.1.0-beta.59...v1.1.0-beta.60) (2020-06-05)
+
+
+### Bug Fixes
+
+* add type prop for datePicker ([4c64293](https://github.com/dvhb/ui/commit/4c64293196483d3eb867c2ea5542731733604ad4))
+
 # [1.1.0-beta.59](https://github.com/dvhb/ui/compare/v1.1.0-beta.58...v1.1.0-beta.59) (2020-06-05)
 
 
