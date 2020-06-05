@@ -24,28 +24,41 @@ export const YearMonthForm = ({ date, localeUtils, onChange, locale }: YearMonth
     years.push(i);
   }
 
-  const handleChange = useCallback(
+  const handleChangeMonth = useCallback(
     (e: any) => {
-      const { year, month } = e.target.form;
-      if (new Date(year.value, month.value) > toMonth) {
-        onChange(new Date(year.value, toMonth.getMonth()));
+      const month = e.target.value;
+      const year = date.getFullYear();
+      if (new Date(year, month) > toMonth) {
+        onChange(new Date(year, toMonth.getMonth()));
       } else {
-        onChange(new Date(year.value, month.value));
+        onChange(new Date(year, month));
       }
     },
-    [onChange],
+    [onChange, date],
+  );
+  const handleChangeYear = useCallback(
+    (e: any) => {
+      const month = date.getMonth();
+      const year = e.target.value;
+      if (new Date(year, month) > toMonth) {
+        onChange(new Date(year, toMonth.getMonth()));
+      } else {
+        onChange(new Date(year, month));
+      }
+    },
+    [onChange, date],
   );
 
   return (
     <>
-      <select name="month" onChange={handleChange} value={date.getMonth()}>
+      <select name="month" onChange={handleChangeMonth} value={date.getMonth()}>
         {months.map((month: any, i: number) => (
           <option key={month} value={i}>
             {month}
           </option>
         ))}
       </select>
-      <select name="year" onChange={handleChange} value={date.getFullYear()}>
+      <select name="year" onChange={handleChangeYear} value={date.getFullYear()}>
         {years.map(year => (
           <option key={year} value={year}>
             {year}
