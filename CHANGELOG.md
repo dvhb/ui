@@ -1,3 +1,10 @@
+# [1.1.0-beta.59](https://github.com/dvhb/ui/compare/v1.1.0-beta.58...v1.1.0-beta.59) (2020-06-05)
+
+
+### Bug Fixes
+
+* fix choosing of month/year ([fe47471](https://github.com/dvhb/ui/commit/fe474713a555561b8fbd0761cf817e3c9df7749e))
+
 # [1.1.0-beta.58](https://github.com/dvhb/ui/compare/v1.1.0-beta.57...v1.1.0-beta.58) (2020-06-04)
 
 
