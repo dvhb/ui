@@ -22,6 +22,7 @@ export type InputProps = {
   disabled?: boolean;
   type?: string;
   maskChar?: string;
+  formatChars?: any;
 };
 
 function InputBase({
