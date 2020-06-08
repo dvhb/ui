@@ -1,3 +1,10 @@
+# [1.1.0-beta.61](https://github.com/dvhb/ui/compare/v1.1.0-beta.60...v1.1.0-beta.61) (2020-06-08)
+
+
+### Bug Fixes
+
+* allow formatChars prop for Input ([4258244](https://github.com/dvhb/ui/commit/4258244e32dd9f9846c9503be7b99b141aed330f))
+
 # [1.1.0-beta.60](https://github.com/dvhb/ui/compare/v1.1.0-beta.59...v1.1.0-beta.60) (2020-06-05)
 
 
