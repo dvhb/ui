@@ -1,3 +1,57 @@
+# [1.1.0-beta.63](https://github.com/dvhb/ui/compare/v1.1.0-beta.62...v1.1.0-beta.63) (2020-06-09)
+
+
+### Bug Fixes
+
+* remove dadata key ([19e3b72](https://github.com/dvhb/ui/commit/19e3b7245f9f000b927300d902a81c69bb5649b9))
+
+
+### Features
+
+* add street address select possibility ([f0afda5](https://github.com/dvhb/ui/commit/f0afda5055aeca93868cdb3f31a9a5f78a0aed3f))
+
+# [1.1.0-beta.62](https://github.com/dvhb/ui/compare/v1.1.0-beta.61...v1.1.0-beta.62) (2020-06-09)
+
+
+### Features
+
+* refactor mask props ([23f7f9e](https://github.com/dvhb/ui/commit/23f7f9e9e7b5b8bdc6b5982e87211e245d052340))
+
+# [1.1.0-beta.61](https://github.com/dvhb/ui/compare/v1.1.0-beta.60...v1.1.0-beta.61) (2020-06-08)
+
+
+### Bug Fixes
+
+* allow formatChars prop for Input ([4258244](https://github.com/dvhb/ui/commit/4258244e32dd9f9846c9503be7b99b141aed330f))
+
+# [1.1.0-beta.60](https://github.com/dvhb/ui/compare/v1.1.0-beta.59...v1.1.0-beta.60) (2020-06-05)
+
+
+### Bug Fixes
+
+* add type prop for datePicker ([4c64293](https://github.com/dvhb/ui/commit/4c64293196483d3eb867c2ea5542731733604ad4))
+
+# [1.1.0-beta.59](https://github.com/dvhb/ui/compare/v1.1.0-beta.58...v1.1.0-beta.59) (2020-06-05)
+
+
+### Bug Fixes
+
+* fix choosing of month/year ([fe47471](https://github.com/dvhb/ui/commit/fe474713a555561b8fbd0761cf817e3c9df7749e))
+
+# [1.1.0-beta.58](https://github.com/dvhb/ui/compare/v1.1.0-beta.57...v1.1.0-beta.58) (2020-06-04)
+
+
+### Bug Fixes
+
+* add support maskChar for inputs ([27e231c](https://github.com/dvhb/ui/commit/27e231c00d8bf3cbb368d9c39ff70118543c868e))
+
+# [1.1.0-beta.57](https://github.com/dvhb/ui/compare/v1.1.0-beta.56...v1.1.0-beta.57) (2020-06-04)
+
+
+### Bug Fixes
+
+* add type prop for InputProps ([2b522af](https://github.com/dvhb/ui/commit/2b522af25e5000af5143576313ccbc4282f05cfe))
+
 # [1.1.0-beta.56](https://github.com/dvhb/ui/compare/v1.1.0-beta.55...v1.1.0-beta.56) (2020-06-04)
 
 

@@ -39,6 +39,7 @@ export type DatepickerProps = {
     mask?: string;
     required?: boolean;
     iconName?: string;
+    type?: string;
     ref?: React.MutableRefObject<HTMLInputElement | undefined>;
   };
 
@@ -70,9 +71,7 @@ export type DatepickerProps = {
 // Fix incomplete picker function signature
 type SwitchMonthFunc = (callback?: () => void) => void;
 
-const defaultComponents = {
-  Arrow,
-};
+const defaultComponents = { Arrow };
 
 export const Datepicker = ({
   dayPickerProps,
@@ -87,7 +86,7 @@ export const Datepicker = ({
   modifiersClassNames,
   ...dayPickerInputProps
 }: DatepickerProps) => {
-  const { mask, required, iconName } = inputProps || {};
+  const { mask, required, iconName, type: inputType = 'text' } = inputProps || {};
   let { ref: inputRef } = inputProps || {};
   inputRef = inputRef ?? React.useRef<HTMLInputElement>();
   const pickerRef = React.useRef<DayPickerInput>(null);
@@ -123,7 +122,6 @@ export const Datepicker = ({
     // setModifiers({
     //   [modifiersClassNames?.outside || styles.outside]: day => day.getMonth() !== currentMonth,
     // });
-
     let modifiers = {};
 
     if (modifiersClassNames?.day) {
@@ -182,7 +180,14 @@ export const Datepicker = ({
     parseDate: period ? handleParsePeriod : parseDate,
     placeholder: placeholder ? placeholder : period ? PLACEHOLDER_PERIOD : PLACEHOLDER_DEFAULT,
     component: InputWrapper,
-    inputProps: { mask, required, InputComponent, iconName: iconName || 'Calendar', forwardedRef: inputRef },
+    inputProps: {
+      mask,
+      required,
+      InputComponent,
+      iconName: iconName || 'Calendar',
+      forwardedRef: inputRef,
+      type: inputType,
+    },
     hideOnDayClick: !period,
     classNames: inputStyles as any,
     ...dayPickerInputProps,

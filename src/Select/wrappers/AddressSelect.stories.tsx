@@ -16,3 +16,7 @@ export const FullAddress = () => {
 export const CitiesAndSettlements = () => {
   return <AddressSelect apiKey={apiKey} fromBound="city" toBound="settlement" onChange={action('onChange')} />;
 };
+
+export const StreetAddressInKrasnoyarsk = () => {
+  return <AddressSelect apiKey={apiKey} constraintKladrId="2400000100000" onChange={action('onChange')} />;
+};
