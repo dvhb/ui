@@ -1,3 +1,10 @@
+# [1.1.0-beta.64](https://github.com/dvhb/ui/compare/v1.1.0-beta.63...v1.1.0-beta.64) (2020-06-09)
+
+
+### Features
+
+* datepicker format error ([ce5e710](https://github.com/dvhb/ui/commit/ce5e7108f4aaf63da0c77559b7f2b8ef3a325ed0))
+
 # [1.1.0-beta.63](https://github.com/dvhb/ui/compare/v1.1.0-beta.62...v1.1.0-beta.63) (2020-06-09)
 
 
