@@ -41,6 +41,8 @@ export type DatepickerProps = {
     iconName?: string;
     type?: string;
     ref?: React.MutableRefObject<HTMLInputElement | undefined>;
+    onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
+    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   };
 
   modifiersClassNames?: {
@@ -86,7 +88,7 @@ export const Datepicker = ({
   modifiersClassNames,
   ...dayPickerInputProps
 }: DatepickerProps) => {
-  const { mask, required, iconName, type: inputType = 'text' } = inputProps || {};
+  const { mask, required, iconName, type: inputType = 'text', onFocus, onBlur } = inputProps || {};
   let { ref: inputRef } = inputProps || {};
   inputRef = inputRef ?? React.useRef<HTMLInputElement>();
   const pickerRef = React.useRef<DayPickerInput>(null);
@@ -106,22 +108,10 @@ export const Datepicker = ({
 
   const [range, setRange] = useState(dateStringToPeriod(value));
   const [currentDate, setCurrentDate] = useState<Date>(parseDateFromString(value));
-  // const [currentMonth, setCurrentMonth] = useState<Date>(
-  //   period
-  //     ? range.from
-  //       ? range.from.getMonth()
-  //       : new Date().getMonth()
-  //     : value
-  //     ? parseDateFromString(value).getMonth()
-  //     : new Date().getMonth(),
-  // );
   const { from, to } = range;
   const [modifiers, setModifiers] = useState({});
 
   useEffect(() => {
-    // setModifiers({
-    //   [modifiersClassNames?.outside || styles.outside]: day => day.getMonth() !== currentMonth,
-    // });
     let modifiers = {};
 
     if (modifiersClassNames?.day) {
@@ -184,6 +174,8 @@ export const Datepicker = ({
       mask,
       required,
       InputComponent,
+      onFocus,
+      onBlur,
       iconName: iconName || 'Calendar',
       forwardedRef: inputRef,
       type: inputType,
