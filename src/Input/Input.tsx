@@ -13,7 +13,7 @@ export type InputProps = {
   required?: boolean;
   forwardedRef?: any;
   readOnly?: boolean;
-  mask?: string;
+  mask?: string | string[] | RegExp[];
   onBlur?: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   onChange?: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
@@ -21,9 +21,7 @@ export type InputProps = {
   onKeyUp?: React.KeyboardEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   disabled?: boolean;
   type?: string;
-  maskChar?: string;
-  formatChars?: any;
-};
+} & Pick<InputMask['props'], 'formatChars' | 'maskChar'>;
 
 function InputBase({
   Component = 'input',
