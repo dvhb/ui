@@ -1,3 +1,10 @@
+# [1.1.0-beta.62](https://github.com/dvhb/ui/compare/v1.1.0-beta.61...v1.1.0-beta.62) (2020-06-09)
+
+
+### Features
+
+* refactor mask props ([23f7f9e](https://github.com/dvhb/ui/commit/23f7f9e9e7b5b8bdc6b5982e87211e245d052340))
+
 # [1.1.0-beta.61](https://github.com/dvhb/ui/compare/v1.1.0-beta.60...v1.1.0-beta.61) (2020-06-08)
 
 
