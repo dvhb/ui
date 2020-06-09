@@ -7,7 +7,7 @@ export default {
   title: 'Select/wrappers/AddressSelect',
 };
 
-const apiKey = process.env.REACT_APP_DADATA_API_KEY || '82392f053f6939bafa374832c31a66f3802dc049';
+const apiKey = process.env.REACT_APP_DADATA_API_KEY || '';
 
 export const FullAddress = () => {
   return <AddressSelect apiKey={apiKey} onChange={action('onChange')} />;
