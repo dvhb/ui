@@ -7,6 +7,7 @@ export interface AddressSelectProps extends SelectProps {
   apiUrl?: string;
   fromBound?: 'country' | 'region' | 'area' | 'city' | 'settlement' | 'street' | 'house';
   toBound?: 'country' | 'region' | 'area' | 'city' | 'settlement' | 'street' | 'house';
+  constraintKladrId?: string;
 }
 
 export const AddressSelect: FC<AddressSelectProps> = ({
@@ -14,6 +15,7 @@ export const AddressSelect: FC<AddressSelectProps> = ({
   apiUrl = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address',
   fromBound,
   toBound,
+  constraintKladrId,
   ...props
 }) => {
   const headers = {
@@ -26,7 +28,13 @@ export const AddressSelect: FC<AddressSelectProps> = ({
     const response = await fetch(apiUrl, {
       headers,
       method: 'POST',
-      body: JSON.stringify({ query: inputValue, from_bound: { value: fromBound }, to_bound: { value: toBound } }),
+      body: JSON.stringify({
+        locations: constraintKladrId ? { kladr_id: constraintKladrId } : undefined,
+        query: inputValue,
+        from_bound: { value: fromBound },
+        to_bound: { value: toBound },
+        restrict_value: true,
+      }),
     });
     const data = await response.json();
     return data.suggestions.map((suggestion: any) => {
