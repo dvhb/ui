@@ -237,17 +237,17 @@ export const Datepicker = ({
 
   const handleDayChange = useCallback(
     (day: Date | undefined, DayModifiers: DayModifiers, dayPickerInput: DayPickerInput) => {
-      if (!day) {
-        setTimeout(() => {
-          onChange?.(undefined, dayPickerInput.state.typedValue && 'format');
-        }, 0);
-        return;
-      }
-      pickerRef.current?.hideDayPicker();
+      setTimeout(() => {
+        if (!day) {
+          onChange?.(undefined, dayPickerInput.state.value && 'format');
+          return;
+        }
+        pickerRef.current?.hideDayPicker();
 
-      const value = formatDate(day, FORMAT_FORMDATA, locale);
-      setCurrentDate(day);
-      onChange?.(value, getError(day));
+        const value = formatDate(day, FORMAT_FORMDATA, locale);
+        setCurrentDate(day);
+        onChange?.(value, getError(day));
+      }, 0);
     },
     [locale, onChange, getError],
   );
