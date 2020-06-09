@@ -1,3 +1,10 @@
+# [1.1.0-beta.65](https://github.com/dvhb/ui/compare/v1.1.0-beta.64...v1.1.0-beta.65) (2020-06-09)
+
+
+### Features
+
+* datepicker onFocus onBlur input props ([a26f117](https://github.com/dvhb/ui/commit/a26f1177d1dba60b98f71e06795a431b8250584d))
+
 # [1.1.0-beta.64](https://github.com/dvhb/ui/compare/v1.1.0-beta.63...v1.1.0-beta.64) (2020-06-09)
 
 
