@@ -1,3 +1,10 @@
+# [1.1.0-beta.67](https://github.com/dvhb/ui/compare/v1.1.0-beta.66...v1.1.0-beta.67) (2020-06-10)
+
+
+### Bug Fixes
+
+* address select error state ([c5d1011](https://github.com/dvhb/ui/commit/c5d1011f8165e5fb754f9037f0c326036d3636c3))
+
 # [1.1.0-beta.66](https://github.com/dvhb/ui/compare/v1.1.0-beta.65...v1.1.0-beta.66) (2020-06-09)
 
 
