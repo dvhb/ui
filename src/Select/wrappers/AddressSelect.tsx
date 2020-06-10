@@ -45,5 +45,5 @@ export const AddressSelect: FC<AddressSelectProps> = ({
     });
   };
 
-  return <Select {...props} error cacheOptions loadOptions={loadAddresses} />;
+  return <Select {...props} cacheOptions loadOptions={loadAddresses} />;
 };
