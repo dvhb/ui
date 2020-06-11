@@ -1,3 +1,10 @@
+# [1.1.0-beta.68](https://github.com/dvhb/ui/compare/v1.1.0-beta.67...v1.1.0-beta.68) (2020-06-11)
+
+
+### Bug Fixes
+
+* modal & select ([5555bc3](https://github.com/dvhb/ui/commit/5555bc3c4b2a53eb896774f00ce78ca4df5f5f25))
+
 # [1.1.0-beta.67](https://github.com/dvhb/ui/compare/v1.1.0-beta.66...v1.1.0-beta.67) (2020-06-10)
 
 
