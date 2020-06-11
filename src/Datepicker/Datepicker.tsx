@@ -262,6 +262,11 @@ export const Datepicker = ({
         }
         return;
       }
+      if (!from && !to) {
+        setRange({ from: day, to: undefined });
+        onChange?.(formatPeriodFormdata(day, undefined), 'format');
+        return;
+      }
 
       const rangeToUse = from && to ? { from: undefined, to: undefined } : { from, to };
       const nextRange = DateUtils.addDayToRange(day, rangeToUse);
