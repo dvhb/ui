@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import ReactSelect, { Props as ReactSelectProps, components } from 'react-select';
 import AsyncReactSelect, { Props as AsyncReactSelectProps } from 'react-select/async';
 
@@ -9,6 +9,7 @@ import { Spacer } from '../Spacer';
 
 export type SelectProps = {
   clearIndicator?: boolean;
+  forwardedRef?: any;
 } & ReactSelectProps &
   Partial<AsyncReactSelectProps<{ label: string; value: string }>>;
 
@@ -30,26 +31,36 @@ const Option = (props: any) => {
         {props.data.description && (
           <>
             <Spacer marginRight="xs" />
-            <Text color="grey">{props.data.description}</Text>
+            <Text tag="div" color="grey">
+              {props.data.description}
+            </Text>
           </>
         )}
       </Aligner>
     </components.Option>
   );
 };
-export const Select = ({ clearIndicator = true, options, components: customComponents, ...rest }: SelectProps) => {
+
+const SelectPure = ({
+  clearIndicator = true,
+  options,
+  components: customComponents,
+  forwardedRef,
+  ...rest
+}: SelectProps) => {
   const ClearIndicator = (props: any) => (clearIndicator ? <components.ClearIndicator {...props} /> : null);
   const SelectComponent: React.ComponentType<any> = rest.loadOptions ? AsyncReactSelect : ReactSelect;
 
   return (
-    <Text>
-      <SelectComponent
-        options={options}
-        components={{ Option, ClearIndicator, IndicatorSeparator: null, ...customComponents }}
-        formatGroupLabel={formatGroupLabel}
-        styles={customStyles}
-        {...rest}
-      />
-    </Text>
+    <SelectComponent
+      ref={forwardedRef}
+      options={options}
+      components={{ Option, ClearIndicator, IndicatorSeparator: null, ...customComponents }}
+      formatGroupLabel={formatGroupLabel}
+      styles={customStyles}
+      {...rest}
+    />
   );
 };
+
+export const Select = forwardRef((props: SelectProps, ref) => <SelectPure {...props} forwardedRef={ref} />);

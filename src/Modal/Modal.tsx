@@ -1,5 +1,5 @@
 import React, { FC, ReactElement, useCallback, useEffect, useState } from 'react';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { disableBodyScroll as disableBodyScrollLock, enableBodyScroll } from 'body-scroll-lock';
 import ReactModal from 'react-modal';
 import cn from 'classnames';
 
@@ -12,6 +12,7 @@ import styles from './styles.module.scss';
 
 export type ModalProps = {
   contentWrapperClassName?: string;
+  disableBodyScroll?: boolean;
   components?: {
     CloseButton?: (props: UniversalComponentProps) => ReactElement;
     ModalContent?: (props: UniversalComponentProps) => ReactElement;
@@ -30,6 +31,7 @@ export const Modal: FC<ModalProps> = ({
   overlayClassName,
   onRequestClose,
   components,
+  disableBodyScroll = true,
   ...rest
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
@@ -37,8 +39,8 @@ export const Modal: FC<ModalProps> = ({
 
   useEffect(() => {
     setIsModalOpen(isOpen);
-    if (overlayRef && isOpen) {
-      disableBodyScroll(overlayRef);
+    if (overlayRef && isOpen && disableBodyScroll) {
+      disableBodyScrollLock(overlayRef);
     }
   }, [isOpen, overlayRef]);
 
@@ -46,7 +48,7 @@ export const Modal: FC<ModalProps> = ({
     e => {
       onRequestClose && onRequestClose(e);
       setIsModalOpen(false);
-      if (overlayRef !== null) {
+      if (overlayRef !== null && disableBodyScroll) {
         enableBodyScroll(overlayRef);
       }
     },
