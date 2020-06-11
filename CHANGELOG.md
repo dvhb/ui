@@ -1,3 +1,11 @@
+# [1.1.0-beta.69](https://github.com/dvhb/ui/compare/v1.1.0-beta.68...v1.1.0-beta.69) (2020-06-11)
+
+
+### Features
+
+* fire onChange event after choosing start day for period datepicker ([0908066](https://github.com/dvhb/ui/commit/09080665ba4fe701b0861f021df0cf72668104be))
+* refactor formatPeriodFormdata to handle only start day also ([dadecad](https://github.com/dvhb/ui/commit/dadecad486d765ec8d7d828f4ab7e6df4f8c2876))
+
 # [1.1.0-beta.68](https://github.com/dvhb/ui/compare/v1.1.0-beta.67...v1.1.0-beta.68) (2020-06-11)
 
 
