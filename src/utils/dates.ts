@@ -30,7 +30,10 @@ const formatPeriod = (from?: Date, to?: Date, format?: string, locale?: string):
 };
 
 const formatPeriodFormdata = (from?: Date, to?: Date): string | undefined => {
-  if (!from || !to) return undefined;
+  if (!from && !to) return undefined;
+  if (from && !to) {
+    return `${formatDate(from, FORMAT_FORMDATA)}/`;
+  }
   return `${formatDate(from, FORMAT_FORMDATA)}/${formatDate(to, FORMAT_FORMDATA)}`;
 };
 
