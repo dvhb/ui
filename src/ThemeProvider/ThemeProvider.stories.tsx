@@ -26,6 +26,6 @@ export const Default = () => (
       Button: ButtonStyled,
     }}
   >
-    <Component>custom button</Component>
+    <Component />
   </Provider>
 );

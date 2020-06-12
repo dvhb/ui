@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useMemo } from 'react';
 
 import { Aligner } from '../Aligner';
 import { Button } from '../Button';
@@ -61,7 +61,7 @@ type Props = {
 export const Provider = ({ children, components }: Props) => {
   const [componentsContext, setComponentsContext] = useState(defaultComponents);
 
-  useEffect(() => {
+  useMemo(() => {
     const merge = {
       ...defaultComponents,
       ...components,
