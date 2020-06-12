@@ -20,3 +20,4 @@ export * from './Select';
 export * from './Spacer';
 export * from './Stepper';
 export * from './Text';
+export * from './ThemeProvider';
