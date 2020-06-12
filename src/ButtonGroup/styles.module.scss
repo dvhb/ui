@@ -1,0 +1,93 @@
+@import '../styles/colors';
+
+.btnReset {
+  align-items: center;
+  border: none;
+  box-sizing: border-box;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  justify-content: center;
+  max-width: 100%;
+  position: relative;
+  text-align: center;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.containerSquare {
+  display: inline-flex;
+  border: 1px solid $border;
+  min-height: 40px;
+  align-items: stretch;
+  border-radius: 4px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.itemSquare {
+  @extend .btnReset;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #f0f2f7;
+  box-sizing: border-box;
+  margin-top: -1px;
+  margin-bottom: -1px;
+
+  & + & {
+    border-left: 1px solid $border;
+  }
+
+  &.itemActive {
+    background-color: $grey;
+    color: $white;
+  }
+}
+
+.containerRound {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -4px -8px;
+}
+
+.itemRound {
+  @extend .btnReset;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  min-height: 40px;
+  border-radius: 20px;
+  border: 1px solid $border;
+  box-sizing: border-box;
+  background-color: $white;
+  margin: 0 4px 8px;
+
+  &.itemActive {
+    background-color: $purple;
+    border-color: $purple;
+    color: $white;
+  }
+}
+
+.item {
+  &_lg {
+    height: 48px;
+  }
+  &_block {
+    flex: auto;
+  }
+}
+
+.container {
+  &_block {
+    width: 100%;
+  }
+}

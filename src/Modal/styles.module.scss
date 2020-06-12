@@ -1,0 +1,34 @@
+.bodyModalOpen {
+  overflow: hidden;
+}
+
+.modal {
+  margin: 0 auto;
+  max-width: 920px;
+  box-sizing: border-box;
+  background: #fff;
+  pointer-events: initial;
+  position: relative;
+}
+
+.modalWrapper {
+  padding: 30px;
+  pointer-events: none;
+  overflow: initial;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  display: flex;
+  z-index: 100;
+}

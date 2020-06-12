@@ -1,0 +1,51 @@
+@import '../styles/colors';
+
+.checkboxWrapper {
+  display: flex;
+  position: relative;
+}
+
+.checkboxControlWrapper {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.checkboxControl {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  border: 2px solid $border;
+  position: relative;
+
+  &_active {
+    background-color: $black;
+    border-color: $black;
+  }
+}
+
+.checkboxIcon {
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.checkboxLabel {
+  padding-left: 8px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+.checkboxInput {
+  position: absolute;
+  opacity: 0;
+  left: -1000px;
+}

@@ -1,0 +1,59 @@
+@import '../styles/colors';
+
+.button {
+  align-items: center;
+  background: $black;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: $white;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: normal;
+  height: 40px;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  text-overflow: ellipsis;
+  transition-duration: 0.4s;
+  transition-property: box-shadow, color, background, border-color;
+  transition-timing-function: ease-in-out;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &Block {
+    display: flex;
+    min-width: 0;
+    width: 100%;
+  }
+
+  &_type {
+    &_unstyled {
+      min-width: 0;
+      background-color: transparent;
+      border-radius: 0;
+      color: inherit;
+      height: auto;
+      padding: 0;
+      font-size: inherit;
+      vertical-align: baseline;
+      box-shadow: none;
+    }
+  }
+
+  &._disabled,
+  &[disabled] {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

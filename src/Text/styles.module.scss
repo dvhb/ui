@@ -1,0 +1,45 @@
+@import '../styles/colors';
+@import '../styles/fonts';
+
+.text {
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+
+  &_centered {
+    text-align: center;
+  }
+
+  &_weight {
+    &_100 {
+      font-weight: 100;
+    }
+    &_200 {
+      font-weight: 200;
+    }
+    &_300,
+    &_light {
+      font-weight: 300;
+    }
+    &_500,
+    &_medium {
+      font-weight: 500;
+    }
+    &_600,
+    &_semibold {
+      font-weight: 600;
+    }
+    &_700,
+    &_bold {
+      font-weight: 700;
+    }
+    &_800 {
+      font-weight: 800;
+    }
+    &_900 {
+      font-weight: 900;
+    }
+  }
+}

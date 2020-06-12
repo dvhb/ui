@@ -1,0 +1,209 @@
+@import '../styles/fonts';
+
+/* DayPicker styles */
+
+.container {
+  display: inline-block;
+  font-size: 14px;
+  font-family: $fontFamily;
+}
+
+.wrapper {
+  position: relative;
+
+  flex-direction: row;
+  padding: 16px 20px 8px;
+  user-select: none;
+  outline: none;
+}
+
+.interactionDisabled {
+  .day {
+    cursor: default;
+  }
+}
+
+.navBar {
+  position: relative;
+}
+
+.navButtonPrev {
+  @extend .navButton;
+  left: 20px;
+  transform: rotate(180deg);
+}
+
+.navButtonNext {
+  @extend .navButton;
+  right: 20px;
+}
+
+.navButtonInteractionDisabled {
+  display: none;
+}
+
+.months {
+  display: flex;
+  justify-content: center;
+}
+
+.month {
+  display: table;
+  border-spacing: 0;
+  border-collapse: collapse;
+  user-select: none;
+
+  & + & {
+    margin-left: 20px;
+  }
+}
+
+.caption {
+  display: table-caption;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.caption > div {
+  font-weight: bold;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+
+.weekdays {
+  display: table-header-group;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.weekdaysRow {
+  display: table-row;
+}
+
+.weekday {
+  display: table-cell;
+  text-align: center;
+  line-height: 24px;
+  padding-bottom: 8px;
+}
+
+.weekday abbr[title] {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.weekNumber {
+  display: table-cell;
+  padding: 0.5em;
+  min-width: 1em;
+  border-right: 1px solid #eaecec;
+  color: #8b9898;
+  vertical-align: middle;
+  text-align: right;
+  font-size: 0.75em;
+  cursor: pointer;
+}
+
+.body {
+  display: table-row-group;
+}
+
+.week {
+  display: table-row;
+}
+
+.day {
+  display: table-cell;
+  line-height: 40px;
+  min-width: 40px;
+  border-radius: 2px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+
+  &Today {
+    color: #d0021b;
+    font-weight: 700;
+  }
+}
+
+.footer {
+  padding-top: 0.5em;
+}
+
+.todayButton {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: #4a90e2;
+  font-size: 0.875em;
+  cursor: pointer;
+}
+
+/* Default modifiers */
+
+.today {
+  color: #d0021b;
+  font-weight: 700;
+}
+
+.outside {
+  color: #8b9898;
+  cursor: default;
+}
+
+.disabled {
+  color: #dce0e0;
+  cursor: default;
+  /* background-color: #eff1f1; */
+}
+
+/* Example modifiers */
+
+.sunday {
+  background-color: #f7f8f8;
+}
+
+.sunday:not(.day--today) {
+  color: #dce0e0;
+}
+
+.selected {
+  background-color: #e3e6ec;
+}
+
+.customSelected {
+  background-color: #f5e6e8;
+}
+
+.customRangeFrom,
+.customRangeTo {
+  background-color: #e2b5ba;
+}
+
+.start,
+.end {
+  background-color: #cfd3da;
+}
+
+.outside {
+  background: none !important;
+
+  &:before,
+  &:after {
+    content: none !important;
+  }
+}
+
+.navButton {
+  position: absolute;
+  top: 16px;
+  cursor: pointer;
+}
+
+.navButton:hover {
+  opacity: 0.8;
+}
