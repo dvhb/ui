@@ -44,7 +44,7 @@ export const Modal: FC<ModalProps> = ({
     }
   }, [isOpen, overlayRef]);
 
-  const closeModalHandler = useCallback(
+  const handleCloseModal = useCallback(
     e => {
       onRequestClose && onRequestClose(e);
       setIsModalOpen(false);
@@ -67,12 +67,12 @@ export const Modal: FC<ModalProps> = ({
       overlayClassName={cn(styles.overlay, { overlayClassName })}
       className={cn(styles.modalWrapper, contentWrapperClassName)}
       isOpen={isModalOpen}
-      onRequestClose={closeModalHandler}
+      onRequestClose={handleCloseModal}
       bodyOpenClassName={styles.bodyModalOpen}
       {...rest}
     >
       <ModalContent className={styles.modal}>
-        <CloseButton tag="button" onClick={closeModalHandler}>
+        <CloseButton tag="button" onClick={handleCloseModal}>
           X
         </CloseButton>
         {children}

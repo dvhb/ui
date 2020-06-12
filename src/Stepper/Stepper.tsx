@@ -46,7 +46,7 @@ export const Stepper = ({
 }: StepperProps) => {
   const { StepperCounter, StepperTitle, StepperArrow, StepperStep } = { ...defaultComponents, ...components };
 
-  const onChangeActiveStepHandler = useCallback(
+  const handleOnChangeActiveStep = useCallback(
     index => () => {
       if (clickOnlyActiveStep) {
         if (index < activeStep) onChangeActiveStep?.(index);
@@ -64,7 +64,7 @@ export const Stepper = ({
           step={i}
           completed={index < activeStep}
           active={index === activeStep}
-          onClick={onChangeActiveStepHandler(index)}
+          onClick={handleOnChangeActiveStep(index)}
           key={index}
         >
           <StepperCounter step={i} completed={index < activeStep} active={index === activeStep}>

@@ -8,18 +8,18 @@ export default {
 export const Default = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const buttonClickHandler = useCallback(() => {
+  const handleButtonClick = useCallback(() => {
     setIsOpen(true);
   }, []);
 
-  const modalCloseHandler = useCallback(() => {
+  const handleModalClose = useCallback(() => {
     setIsOpen(false);
   }, []);
 
   return (
     <div>
-      <button onClick={buttonClickHandler}>Open modal</button>
-      <Modal isOpen={isOpen} onRequestClose={modalCloseHandler}>
+      <button onClick={handleButtonClick}>Open modal</button>
+      <Modal isOpen={isOpen} onRequestClose={handleModalClose}>
         {[...Array(20)].map((i, index) => (
           <div key={index}>modal</div>
         ))}
