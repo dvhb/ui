@@ -1,3 +1,10 @@
+# [1.1.0-beta.71](https://github.com/dvhb/ui/compare/v1.1.0-beta.70...v1.1.0-beta.71) (2020-06-12)
+
+
+### Bug Fixes
+
+* double render component with theme provider ([4a690be](https://github.com/dvhb/ui/commit/4a690be0d9b4bc9c99f87cc813e06d6d474c8636))
+
 # [1.1.0-beta.70](https://github.com/dvhb/ui/compare/v1.1.0-beta.69...v1.1.0-beta.70) (2020-06-12)
 
 
