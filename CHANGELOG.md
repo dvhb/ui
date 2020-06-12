@@ -1,3 +1,10 @@
+# [1.1.0-beta.70](https://github.com/dvhb/ui/compare/v1.1.0-beta.69...v1.1.0-beta.70) (2020-06-12)
+
+
+### Features
+
+* theme provider prototype ([51db7f2](https://github.com/dvhb/ui/commit/51db7f27c3b65518d1d9b9ae5eda029b0f873a64))
+
 # [1.1.0-beta.69](https://github.com/dvhb/ui/compare/v1.1.0-beta.68...v1.1.0-beta.69) (2020-06-11)
 
 
