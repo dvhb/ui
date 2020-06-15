@@ -110,7 +110,7 @@ export const Datepicker = ({
   const [currentDate, setCurrentDate] = useState<Date>(parseDateFromString(value));
   const { from, to } = range;
   const [modifiers, setModifiers] = useState({});
-  const locale = dayPickerProps?.locale || 'em';
+  const locale = dayPickerProps?.locale || 'en';
 
   useEffect(() => {
     let modifiers = {};
