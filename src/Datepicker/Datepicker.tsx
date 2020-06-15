@@ -110,6 +110,7 @@ export const Datepicker = ({
   const [currentDate, setCurrentDate] = useState<Date>(parseDateFromString(value));
   const { from, to } = range;
   const [modifiers, setModifiers] = useState({});
+  const locale = dayPickerProps?.locale || 'em';
 
   useEffect(() => {
     let modifiers = {};
@@ -188,8 +189,8 @@ export const Datepicker = ({
     dayPickerProps: Object.assign(
       {
         modifiers,
+        locale,
         localeUtils: MomentLocaleUtils,
-        locale: 'en',
         classNames: styles as any,
         showOutsideDays: !period,
         numberOfMonths: period ? 2 : 1,
@@ -215,8 +216,6 @@ export const Datepicker = ({
       dayPickerProps,
     ),
   };
-
-  const locale = props.dayPickerProps?.locale;
 
   const getError = useCallback(
     (day?: Date) => {
