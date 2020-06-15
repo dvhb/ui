@@ -17,6 +17,7 @@ import {
   FORMAT_FORMDATA,
   formatPeriodFormdata,
   parseDateFromString,
+  isValidDate,
 } from '../utils/dates';
 
 import { UniversalComponent as Arrow } from './components/UniversalComponent';
@@ -156,11 +157,12 @@ export const Datepicker = ({
     (value: string, format: string, locale: string) => {
       const [from, to] = value.split('—');
 
-      if (range.from) {
+      if (range.from && isValidDate(to, format)) {
         return parseDate(to, format, locale);
       }
-
-      return parseDate(from, format, locale);
+      if (isValidDate(from, format)) {
+        return parseDate(from, format, locale);
+      }
     },
     [range.from],
   );
@@ -266,7 +268,6 @@ export const Datepicker = ({
         onChange?.(formatPeriodFormdata(day, undefined), 'format');
         return;
       }
-
       const rangeToUse = from && to ? { from: undefined, to: undefined } : { from, to };
       const nextRange = DateUtils.addDayToRange(day, rangeToUse);
       setRange(nextRange);

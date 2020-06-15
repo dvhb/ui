@@ -25,8 +25,13 @@ export const dateStringToPeriod = (value?: string, locale?: string): any => {
 };
 
 const formatPeriod = (from?: Date, to?: Date, format?: string, locale?: string): string | undefined => {
-  if (!from || !to) return undefined;
-  return `${formatDate(from, format, locale)}—${formatDate(to, format, locale)}`;
+  if (!from) return undefined;
+  if (!from && !to) return undefined;
+  const resultDate: string[] = [];
+
+  resultDate.push(formatDate(from, format, locale));
+  resultDate.push(to ? formatDate(to, format, locale) : '');
+  return resultDate.join('—');
 };
 
 const formatPeriodFormdata = (from?: Date, to?: Date): string | undefined => {
@@ -37,11 +42,19 @@ const formatPeriodFormdata = (from?: Date, to?: Date): string | undefined => {
   return `${formatDate(from, FORMAT_FORMDATA)}/${formatDate(to, FORMAT_FORMDATA)}`;
 };
 
+const isValidDate = (date?: string, format?: string) => {
+  if (!date) {
+    return false;
+  }
+  return !!parseDate(date, format);
+};
+
 export {
   parseDate,
   formatDate,
   formatPeriod,
   formatPeriodFormdata,
+  isValidDate,
   FORMAT_FORMDATA,
   PLACEHOLDER_DEFAULT,
   PLACEHOLDER_PERIOD,
