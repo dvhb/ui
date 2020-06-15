@@ -1,3 +1,10 @@
+# [1.1.0-beta.73](https://github.com/dvhb/ui/compare/v1.1.0-beta.72...v1.1.0-beta.73) (2020-06-15)
+
+
+### Bug Fixes
+
+* set locale for datepicker ([877b03a](https://github.com/dvhb/ui/commit/877b03ac9a682b22bf4fc2fc7fed707ac0ed52bd))
+
 # [1.1.0-beta.72](https://github.com/dvhb/ui/compare/v1.1.0-beta.71...v1.1.0-beta.72) (2020-06-15)
 
 
