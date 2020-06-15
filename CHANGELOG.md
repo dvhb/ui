@@ -1,3 +1,10 @@
+# [1.1.0-beta.74](https://github.com/dvhb/ui/compare/v1.1.0-beta.73...v1.1.0-beta.74) (2020-06-15)
+
+
+### Bug Fixes
+
+* typo ([6521f04](https://github.com/dvhb/ui/commit/6521f04ce46030cab903af01187cd8da580812e8))
+
 # [1.1.0-beta.73](https://github.com/dvhb/ui/compare/v1.1.0-beta.72...v1.1.0-beta.73) (2020-06-15)
 
 
