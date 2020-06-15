@@ -1,3 +1,10 @@
+# [1.1.0-beta.75](https://github.com/dvhb/ui/compare/v1.1.0-beta.74...v1.1.0-beta.75) (2020-06-15)
+
+
+### Bug Fixes
+
+* wrong date after delete some part of date period ([ed393c5](https://github.com/dvhb/ui/commit/ed393c5c9a3f7a843f6eeb469f9901630c5b9623))
+
 # [1.1.0-beta.74](https://github.com/dvhb/ui/compare/v1.1.0-beta.73...v1.1.0-beta.74) (2020-06-15)
 
 
