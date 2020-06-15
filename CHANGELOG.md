@@ -1,3 +1,10 @@
+# [1.1.0-beta.72](https://github.com/dvhb/ui/compare/v1.1.0-beta.71...v1.1.0-beta.72) (2020-06-15)
+
+
+### Bug Fixes
+
+* update default theme components ([0f44d4b](https://github.com/dvhb/ui/commit/0f44d4b39cffa7cb768f871ca9924e2c598b9050))
+
 # [1.1.0-beta.71](https://github.com/dvhb/ui/compare/v1.1.0-beta.70...v1.1.0-beta.71) (2020-06-12)
 
 
