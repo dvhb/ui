@@ -6,6 +6,7 @@ import { ButtonGroup } from '../ButtonGroup';
 import { Checkbox } from '../Checkbox';
 import { Datepicker, DatepickerBirthday, DatepickerPeriod } from '../Datepicker';
 import { Field } from '../Field';
+import { FileUpload } from '../FileUpload';
 import { Row, Col } from '../Grid';
 import { Hint } from '../Hint';
 import { Icon } from '../Icon';
@@ -30,6 +31,7 @@ const defaultComponents = {
   DatepickerPeriod,
   DatepickerBirthday,
   Field,
+  FileUpload,
   Row,
   Col,
   Hint,
