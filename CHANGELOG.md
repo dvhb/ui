@@ -1,3 +1,10 @@
+# [1.1.0-beta.77](https://github.com/dvhb/ui/compare/v1.1.0-beta.76...v1.1.0-beta.77) (2020-06-16)
+
+
+### Bug Fixes
+
+* enter to date from keyboard in datepicker period ([e2bc080](https://github.com/dvhb/ui/commit/e2bc0809dc4da0c7a11e710dbc26168489f7d23d))
+
 # [1.1.0-beta.76](https://github.com/dvhb/ui/compare/v1.1.0-beta.75...v1.1.0-beta.76) (2020-06-16)
 
 
