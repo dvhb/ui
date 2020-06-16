@@ -1,3 +1,10 @@
+# [1.1.0-beta.79](https://github.com/dvhb/ui/compare/v1.1.0-beta.78...v1.1.0-beta.79) (2020-06-16)
+
+
+### Bug Fixes
+
+* moment locale import ([9e8b068](https://github.com/dvhb/ui/commit/9e8b0685ad4a7a0bc06612eb150ae75121ada07f))
+
 # [1.1.0-beta.78](https://github.com/dvhb/ui/compare/v1.1.0-beta.77...v1.1.0-beta.78) (2020-06-16)
 
 
