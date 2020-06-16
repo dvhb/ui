@@ -4,6 +4,7 @@
     "exclude": ["**/*.js", "src/ui/Icon/components/*.tsx"]
   },
   "rules": {
-    "no-default-export": false
+    "no-default-export": false,
+    "max-file-line-count": [true, 400]
   }
 }

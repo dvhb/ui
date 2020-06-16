@@ -1,3 +1,17 @@
+# [1.1.0-beta.77](https://github.com/dvhb/ui/compare/v1.1.0-beta.76...v1.1.0-beta.77) (2020-06-16)
+
+
+### Bug Fixes
+
+* enter to date from keyboard in datepicker period ([e2bc080](https://github.com/dvhb/ui/commit/e2bc0809dc4da0c7a11e710dbc26168489f7d23d))
+
+# [1.1.0-beta.76](https://github.com/dvhb/ui/compare/v1.1.0-beta.75...v1.1.0-beta.76) (2020-06-16)
+
+
+### Features
+
+* implement TextTimer component ([1dda0d0](https://github.com/dvhb/ui/commit/1dda0d078c88150be1299ce6f6b42eb01822f8dd))
+
 # [1.1.0-beta.75](https://github.com/dvhb/ui/compare/v1.1.0-beta.74...v1.1.0-beta.75) (2020-06-15)
 
 

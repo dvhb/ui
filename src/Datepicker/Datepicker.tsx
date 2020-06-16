@@ -156,15 +156,19 @@ export const Datepicker = ({
   const handleParsePeriod = useCallback(
     (value: string, format: string, locale: string) => {
       const [from, to] = value.split('—');
+      const toDateValid = isValidDate(to, format);
 
-      if (range.from && isValidDate(to, format)) {
+      if (range.from && toDateValid) {
         return parseDate(to, format, locale);
+      }
+      if (range.from && !toDateValid) {
+        return '';
       }
       if (isValidDate(from, format)) {
         return parseDate(from, format, locale);
       }
     },
-    [range.from],
+    [range],
   );
 
   const props: DayPickerInputProps = {
@@ -255,12 +259,10 @@ export const Datepicker = ({
 
   const handleDayChangePeriod = useCallback(
     (day: Date | undefined) => {
-      if (day == null) {
-        if (from != null && to != null) {
-          onChange?.(undefined);
-          setRange({ from: null, to: null });
-          setTimeout(() => inputRef?.current?.focus(), 0);
-        }
+      if (!day) {
+        // case with not valid to date
+        setRange({ from, to: undefined });
+        onChange?.(formatPeriodFormdata(from, undefined), 'format');
         return;
       }
       if (!from && !to) {
