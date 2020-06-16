@@ -1,3 +1,10 @@
+# [1.1.0-beta.76](https://github.com/dvhb/ui/compare/v1.1.0-beta.75...v1.1.0-beta.76) (2020-06-16)
+
+
+### Features
+
+* implement TextTimer component ([1dda0d0](https://github.com/dvhb/ui/commit/1dda0d078c88150be1299ce6f6b42eb01822f8dd))
+
 # [1.1.0-beta.75](https://github.com/dvhb/ui/compare/v1.1.0-beta.74...v1.1.0-beta.75) (2020-06-15)
 
 
