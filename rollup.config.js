@@ -10,7 +10,7 @@ import pkg from './package.json';
 
 export default {
   input: 'src/index.ts',
-  external: ['react', 'react-dom', 'react-day-picker/DayPickerInput'],
+  external: ['react', 'react-dom', 'react-day-picker/DayPickerInput', 'moment'],
   output: [
     {
       file: pkg.main,
