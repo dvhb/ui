@@ -39,7 +39,7 @@ export interface FileUploadProps extends DropzoneProps {
   invalid?: boolean;
   fileIdProp?: string;
   defaultFiles?: FileDefault[];
-  onChange?: (files: FileWithPercentage[]) => void;
+  onChange?: (files: (FileWithPercentage | FileDefault)[]) => void;
   components?: {
     DropzoneArea?: (props: any) => ReactElement;
     Caption?: (props: any) => ReactElement;
@@ -77,11 +77,10 @@ export class FileUpload extends React.Component<FileUploadProps, State> {
       if (files.length === 0 && defaultFiles.length === 0) {
         this.props.onChange([]);
       } else if (files.length === 0 && defaultFiles.length !== 0) {
-        this.props.onChange(defaultFiles.map((file: any) => file.id));
+        this.props.onChange(defaultFiles);
       } else {
-        const defaultFilesIds = defaultFiles.map((file: any) => file.id);
-        const filesIds = files.filter(file => file.id).map((file: any) => file.id);
-        this.props.onChange([...defaultFilesIds, ...filesIds]);
+        const preparedFiles = files.filter(file => file.id);
+        this.props.onChange([...defaultFiles, ...preparedFiles]);
       }
     }
   };
@@ -94,11 +93,10 @@ export class FileUpload extends React.Component<FileUploadProps, State> {
       if (files.length === 0 && defaultFiles.length === 0) {
         this.props.onChange([]);
       } else if (files.length === 0 && defaultFiles.length !== 0) {
-        this.props.onChange(defaultFiles.map((file: any) => file.id));
+        this.props.onChange(defaultFiles);
       } else {
-        const defaultFilesIds = defaultFiles.map((file: any) => file.id);
-        const filesIds = files.filter(file => file.id).map((file: any) => file.id);
-        this.props.onChange([...defaultFilesIds, ...filesIds]);
+        const preparedFiles = files.filter(file => file.id);
+        this.props.onChange([...defaultFiles, ...preparedFiles]);
       }
     }
   };
