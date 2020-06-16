@@ -1,3 +1,10 @@
+# [1.1.0-beta.78](https://github.com/dvhb/ui/compare/v1.1.0-beta.77...v1.1.0-beta.78) (2020-06-16)
+
+
+### Features
+
+* provide all info (not only id) about file by FileUpload ([18b9c02](https://github.com/dvhb/ui/commit/18b9c02809f61cadcaf223cdb40b1bf50afbd052))
+
 # [1.1.0-beta.77](https://github.com/dvhb/ui/compare/v1.1.0-beta.76...v1.1.0-beta.77) (2020-06-16)
 
 
