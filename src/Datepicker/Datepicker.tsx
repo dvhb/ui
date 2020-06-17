@@ -112,8 +112,8 @@ export const Datepicker = ({
   const [currentDate, setCurrentDate] = useState<Date>(parseDateFromString(value));
   const { from, to } = range;
   const [modifiers, setModifiers] = useState({});
-  const [typeToDate, setTypeToDate] = useState(false);
   const locale = dayPickerProps?.locale || 'en';
+  let typeToDate = false;
 
   useEffect(() => {
     let modifiers = {};
@@ -163,8 +163,12 @@ export const Datepicker = ({
       if (range.from && toDateValid) {
         return parseDate(to, format, locale);
       }
+      if (range.from && to && !toDateValid) {
+        typeToDate = true;
+        return '';
+      }
       if (range.from && !toDateValid) {
-        setTypeToDate(true);
+        typeToDate = false;
         return '';
       }
       if (isValidDate(from, format)) {
@@ -272,7 +276,13 @@ export const Datepicker = ({
         if (from && to && !dayPickerInput.state.typedValue) {
           // case with not valid to date
           setRange({ from, to: undefined });
+          typeToDate = false;
           onChange?.(formatPeriodFormdata(from, undefined), 'format');
+          return;
+        }
+        if (from && !to && !typeToDate) {
+          setRange({ from: null, to: null });
+          onChange?.(formatPeriodFormdata(undefined));
           return;
         }
         return;
@@ -285,7 +295,7 @@ export const Datepicker = ({
       const rangeToUse = from && to ? { from: undefined, to: undefined } : { from, to };
       const nextRange = DateUtils.addDayToRange(day, rangeToUse);
       setRange(nextRange);
-      setTypeToDate(false);
+      typeToDate = false;
 
       if (nextRange.from && nextRange.to) {
         pickerRef.current?.hideDayPicker();
