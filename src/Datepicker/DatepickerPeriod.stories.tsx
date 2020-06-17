@@ -19,7 +19,7 @@ const mask = '9999-99-99—9999-99-99';
 export const Default = () => <DatepickerPeriod {...props} />;
 export const WithValue = () => <DatepickerPeriod {...props} value={periodValue} />;
 
-export const WithMask = () => <DatepickerPeriod mask={mask} />;
+export const WithMask = () => <DatepickerPeriod inputProps={{ mask, maskChar: null }} />;
 
 export const WithForm = () => (
   <FormDemo initialValues={{ datepickerPeriod1: periodValue }}>
@@ -35,10 +35,10 @@ export const WithForm = () => (
 export const WithFormAndMask = () => (
   <FormDemo initialValues={{ datepickerPeriod1: periodValue }}>
     <Field name="datepickerPeriod1">
-      {({ input }) => <DatepickerPeriod period value={input.value} mask={mask} onChange={input.onChange} />}
+      {({ input }) => <DatepickerPeriod period value={input.value} onChange={input.onChange} />}
     </Field>
     <Field name="datepickerPeriod2">
-      {({ input }) => <DatepickerPeriod period value={input.value} mask={mask} onChange={input.onChange} />}
+      {({ input }) => <DatepickerPeriod period value={input.value} onChange={input.onChange} />}
     </Field>
   </FormDemo>
 );

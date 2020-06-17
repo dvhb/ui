@@ -38,6 +38,7 @@ export type DatepickerProps = {
   };
   inputProps?: {
     mask?: string;
+    maskChar?: string | null;
     required?: boolean;
     iconName?: string;
     type?: string;
@@ -89,7 +90,7 @@ export const Datepicker = ({
   modifiersClassNames,
   ...dayPickerInputProps
 }: DatepickerProps) => {
-  const { mask, required, iconName, type: inputType = 'text', onFocus, onBlur } = inputProps || {};
+  const { mask, maskChar, required, iconName, type: inputType = 'text', onFocus, onBlur } = inputProps || {};
   let { ref: inputRef } = inputProps || {};
   inputRef = inputRef ?? React.useRef<HTMLInputElement>();
   const pickerRef = React.useRef<DayPickerInput>(null);
@@ -111,6 +112,7 @@ export const Datepicker = ({
   const [currentDate, setCurrentDate] = useState<Date>(parseDateFromString(value));
   const { from, to } = range;
   const [modifiers, setModifiers] = useState({});
+  const [typeToDate, setTypeToDate] = useState(false);
   const locale = dayPickerProps?.locale || 'en';
 
   useEffect(() => {
@@ -162,6 +164,7 @@ export const Datepicker = ({
         return parseDate(to, format, locale);
       }
       if (range.from && !toDateValid) {
+        setTypeToDate(true);
         return '';
       }
       if (isValidDate(from, format)) {
@@ -179,6 +182,7 @@ export const Datepicker = ({
     component: InputWrapper,
     inputProps: {
       mask,
+      maskChar,
       required,
       InputComponent,
       onFocus,
@@ -258,11 +262,19 @@ export const Datepicker = ({
   );
 
   const handleDayChangePeriod = useCallback(
-    (day: Date | undefined) => {
+    (day: Date | undefined, _, dayPickerInput: DayPickerInput) => {
       if (!day) {
-        // case with not valid to date
-        setRange({ from, to: undefined });
-        onChange?.(formatPeriodFormdata(from, undefined), 'format');
+        if ((!from && !to) || (from && !typeToDate && dayPickerInput.state.typedValue)) {
+          setRange({ from: null, to: null });
+          onChange?.(formatPeriodFormdata(undefined));
+          return;
+        }
+        if (from && to && !dayPickerInput.state.typedValue) {
+          // case with not valid to date
+          setRange({ from, to: undefined });
+          onChange?.(formatPeriodFormdata(from, undefined), 'format');
+          return;
+        }
         return;
       }
       if (!from && !to) {
@@ -273,6 +285,7 @@ export const Datepicker = ({
       const rangeToUse = from && to ? { from: undefined, to: undefined } : { from, to };
       const nextRange = DateUtils.addDayToRange(day, rangeToUse);
       setRange(nextRange);
+      setTypeToDate(false);
 
       if (nextRange.from && nextRange.to) {
         pickerRef.current?.hideDayPicker();
@@ -281,11 +294,9 @@ export const Datepicker = ({
           formatPeriodFormdata(nextRange.from, nextRange.to),
           getError(nextRange.from) ?? getError(nextRange.to),
         );
-      } else {
-        setTimeout(() => inputRef?.current?.focus(), 0);
       }
     },
-    [pickerRef, from, to, onChange, inputRef],
+    [pickerRef, from, to, onChange, inputRef, typeToDate],
   );
 
   return (
