@@ -1,3 +1,10 @@
+# [1.1.0-beta.82](https://github.com/dvhb/ui/compare/v1.1.0-beta.81...v1.1.0-beta.82) (2020-06-17)
+
+
+### Bug Fixes
+
+* remove moment locale ([24a0447](https://github.com/dvhb/ui/commit/24a0447780f8f370f9a66cfbabcf6ed26fa5a4cb))
+
 # [1.1.0-beta.81](https://github.com/dvhb/ui/compare/v1.1.0-beta.80...v1.1.0-beta.81) (2020-06-17)
 
 
