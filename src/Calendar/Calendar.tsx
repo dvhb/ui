@@ -4,9 +4,6 @@ import DayPicker, { DayPickerProps } from 'react-day-picker';
 // Include the locale utils designed for moment
 import MomentLocaleUtils from 'react-day-picker/moment';
 
-// Make sure moment.js has the required locale data
-import 'moment/locale/ru';
-
 import styles from './styles.module.scss';
 import { Icon } from '../Icon';
 import * as Icons from './icons';
