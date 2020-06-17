@@ -1,3 +1,10 @@
+# [1.1.0-beta.80](https://github.com/dvhb/ui/compare/v1.1.0-beta.79...v1.1.0-beta.80) (2020-06-17)
+
+
+### Bug Fixes
+
+* move to next month, delete from date ([e5f7906](https://github.com/dvhb/ui/commit/e5f7906e966ac4c139d170ebe75a5b4dc560f81d))
+
 # [1.1.0-beta.79](https://github.com/dvhb/ui/compare/v1.1.0-beta.78...v1.1.0-beta.79) (2020-06-16)
 
 
