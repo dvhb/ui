@@ -1,3 +1,10 @@
+# [1.1.0-beta.81](https://github.com/dvhb/ui/compare/v1.1.0-beta.80...v1.1.0-beta.81) (2020-06-17)
+
+
+### Bug Fixes
+
+* delete from date ([56dee2a](https://github.com/dvhb/ui/commit/56dee2a39333cf63c6f094f02bf113378e5df764))
+
 # [1.1.0-beta.80](https://github.com/dvhb/ui/compare/v1.1.0-beta.79...v1.1.0-beta.80) (2020-06-17)
 
 
