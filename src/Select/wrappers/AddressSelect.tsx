@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 
 import { Select, SelectProps } from '../Select';
+import { makeAddressString, makeStreetAddressString } from './utils';
+import { DaDataSuggestion } from './types';
 
 export interface AddressSelectProps extends SelectProps {
   apiKey: string;
@@ -37,9 +39,9 @@ export const AddressSelect: FC<AddressSelectProps> = ({
       }),
     });
     const data = await response.json();
-    return data.suggestions.map((suggestion: any) => {
+    return data.suggestions.map((suggestion: DaDataSuggestion) => {
       return {
-        label: suggestion.value,
+        label: constraintKladrId ? makeStreetAddressString(suggestion.data) : makeAddressString(suggestion.data),
         value: suggestion.data,
       };
     });
