@@ -163,14 +163,17 @@ export const Datepicker = ({
       const [from, to] = value.split('—');
       const toDateValid = isValidDate(to, format);
 
-      if (range.from && toDateValid) {
+      if (range.from && !range.to && toDateValid) {
+        // set to date
         return parseDate(to, format, locale);
       }
       if (range.from && to && !toDateValid) {
+        // incomplete to date
         setTypeToDate(true);
         return '';
       }
-      if (range.from && !toDateValid) {
+      if ((range.from && !toDateValid) || (range.from && range.to && from && toDateValid)) {
+        // clear to date
         setTypeToDate(false);
         return '';
       }
@@ -277,7 +280,6 @@ export const Datepicker = ({
     if (!fromChange) {
       return;
     }
-
     if (!periodDate) {
       if ((!from && !to) || (from && !typeToDate && typedValue)) {
         setRange({ from: null, to: null });
