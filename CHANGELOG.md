@@ -1,3 +1,10 @@
+# [1.1.0-beta.84](https://github.com/dvhb/ui/compare/v1.1.0-beta.83...v1.1.0-beta.84) (2020-06-18)
+
+
+### Bug Fixes
+
+* handling change date for period dates ([aca38a0](https://github.com/dvhb/ui/commit/aca38a0a667c6812d27f9abc290dc7a3695a9fee))
+
 # [1.1.0-beta.83](https://github.com/dvhb/ui/compare/v1.1.0-beta.82...v1.1.0-beta.83) (2020-06-18)
 
 
