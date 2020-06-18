@@ -1,3 +1,10 @@
+# [1.1.0-beta.85](https://github.com/dvhb/ui/compare/v1.1.0-beta.84...v1.1.0-beta.85) (2020-06-18)
+
+
+### Bug Fixes
+
+* handling to date for datepicker ([10ec793](https://github.com/dvhb/ui/commit/10ec7933168f4d2ea36642f201c85b50a4d7dd1f))
+
 # [1.1.0-beta.84](https://github.com/dvhb/ui/compare/v1.1.0-beta.83...v1.1.0-beta.84) (2020-06-18)
 
 
