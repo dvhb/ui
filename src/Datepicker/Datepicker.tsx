@@ -112,8 +112,11 @@ export const Datepicker = ({
   const [currentDate, setCurrentDate] = useState<Date>(parseDateFromString(value));
   const { from, to } = range;
   const [modifiers, setModifiers] = useState({});
+  const [periodDate, setPeriodDate] = useState();
+  const [typedValue, setTypedValue] = useState('');
+  const [typeToDate, setTypeToDate] = useState(false);
+  const [fromChange, setFromChange] = useState(false);
   const locale = dayPickerProps?.locale || 'en';
-  let typeToDate = false;
 
   useEffect(() => {
     let modifiers = {};
@@ -164,11 +167,11 @@ export const Datepicker = ({
         return parseDate(to, format, locale);
       }
       if (range.from && to && !toDateValid) {
-        typeToDate = true;
+        setTypeToDate(true);
         return '';
       }
       if (range.from && !toDateValid) {
-        typeToDate = false;
+        setTypeToDate(false);
         return '';
       }
       if (isValidDate(from, format)) {
@@ -265,49 +268,64 @@ export const Datepicker = ({
     [locale, onChange, getError],
   );
 
-  const handleDayChangePeriod = useCallback(
-    (day: Date | undefined, _, dayPickerInput: DayPickerInput) => {
-      if (!day) {
-        if ((!from && !to) || (from && !typeToDate && dayPickerInput.state.typedValue)) {
-          setRange({ from: null, to: null });
-          onChange?.(formatPeriodFormdata(undefined));
-          return;
-        }
-        if (from && to && !dayPickerInput.state.typedValue) {
-          // case with not valid to date
-          setRange({ from, to: undefined });
-          typeToDate = false;
-          onChange?.(formatPeriodFormdata(from, undefined), 'format');
-          return;
-        }
-        if (from && !to && !typeToDate) {
-          setRange({ from: null, to: null });
-          onChange?.(formatPeriodFormdata(undefined));
-          return;
-        }
-        return;
-      }
-      if (!from && !to) {
-        setRange({ from: day, to: undefined });
-        onChange?.(formatPeriodFormdata(day, undefined), 'format');
-        return;
-      }
-      const rangeToUse = from && to ? { from: undefined, to: undefined } : { from, to };
-      const nextRange = DateUtils.addDayToRange(day, rangeToUse);
-      setRange(nextRange);
-      typeToDate = false;
+  const handleDayChangePeriod = useCallback((day: Date | undefined, _, dayPickerInput: DayPickerInput) => {
+    setPeriodDate(day);
+    setTypedValue(dayPickerInput.state.typedValue);
+    setFromChange(true);
+  }, []);
+  useEffect(() => {
+    if (!fromChange) {
+      return;
+    }
 
-      if (nextRange.from && nextRange.to) {
-        pickerRef.current?.hideDayPicker();
-        // fire onChange field value
-        onChange?.(
-          formatPeriodFormdata(nextRange.from, nextRange.to),
-          getError(nextRange.from) ?? getError(nextRange.to),
-        );
+    if (!periodDate) {
+      if ((!from && !to) || (from && !typeToDate && typedValue)) {
+        setRange({ from: null, to: null });
+        onChange?.(undefined);
+        setFromChange(false);
+        return;
       }
-    },
-    [pickerRef, from, to, onChange, inputRef, typeToDate],
-  );
+      if (from && to && !typedValue) {
+        // case with not valid to date
+        setRange({ from, to: undefined });
+        setTypeToDate(false);
+        onChange?.(formatPeriodFormdata(from, undefined), 'format');
+        setFromChange(false);
+        return;
+      }
+      if (from && !to && !typeToDate) {
+        // case with not valid from date
+        setRange({ from: null, to: null });
+        onChange?.(undefined);
+        setFromChange(false);
+        return;
+      }
+      setFromChange(false);
+      return;
+    }
+
+    if (!from && !to) {
+      setRange({ from: periodDate, to: undefined });
+      onChange?.(formatPeriodFormdata(periodDate, undefined), 'format');
+      setFromChange(false);
+      return;
+    }
+
+    const rangeToUse = from && to ? { from: undefined, to: undefined } : { from, to };
+    const nextRange = DateUtils.addDayToRange(periodDate, rangeToUse);
+    setRange(nextRange);
+    setTypeToDate(false);
+    setFromChange(false);
+
+    if (nextRange.from && nextRange.to) {
+      pickerRef.current?.hideDayPicker();
+      // fire onChange field value
+      onChange?.(
+        formatPeriodFormdata(nextRange.from, nextRange.to),
+        getError(nextRange.from) ?? getError(nextRange.to),
+      );
+    }
+  }, [fromChange, periodDate, typedValue, typeToDate, from, to, getError, onChange]);
 
   return (
     <DayPickerInput
