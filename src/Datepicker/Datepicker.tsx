@@ -273,7 +273,6 @@ export const Datepicker = ({
     setTypedValue(dayPickerInput.state.typedValue);
     setFromChange(true);
   }, []);
-
   useEffect(() => {
     if (!fromChange) {
       return;
