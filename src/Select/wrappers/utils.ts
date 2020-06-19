@@ -15,7 +15,7 @@ export const makeAddressString = (address: DaDataAddress) => {
     getRegion(address),
     join([address.area, address.area_type_full], ' '),
     join([address.settlement_type_full, address.settlement], ' '),
-    (address.city !== address.region && join([address.city_type_full, address.city], ' ')) || ' ',
+    (address.city !== address.region && join([address.city_type_full, address.city], ' ')) || '',
     join([address.street_type_full, address.street], ' '),
     join([address.house_type_full, address.house, address.block_type_full, address.block], ' '),
     join([address.flat_type_full, address.flat], ' '),
