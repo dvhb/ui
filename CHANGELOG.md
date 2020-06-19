@@ -1,3 +1,10 @@
+# [1.1.0-beta.86](https://github.com/dvhb/ui/compare/v1.1.0-beta.85...v1.1.0-beta.86) (2020-06-19)
+
+
+### Bug Fixes
+
+* remove unexpected commas in address select ([eb68ea5](https://github.com/dvhb/ui/commit/eb68ea5c0e9f556d0c8d8b86aeba0dbe47f4194a))
+
 # [1.1.0-beta.85](https://github.com/dvhb/ui/compare/v1.1.0-beta.84...v1.1.0-beta.85) (2020-06-18)
 
 
