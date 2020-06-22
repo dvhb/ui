@@ -1,3 +1,10 @@
+# [1.1.0-beta.87](https://github.com/dvhb/ui/compare/v1.1.0-beta.86...v1.1.0-beta.87) (2020-06-22)
+
+
+### Bug Fixes
+
+* grid with set configuration ([5de1ac8](https://github.com/dvhb/ui/commit/5de1ac8308bafb4cc86187104558b9fbdb7a99a1))
+
 # [1.1.0-beta.86](https://github.com/dvhb/ui/compare/v1.1.0-beta.85...v1.1.0-beta.86) (2020-06-19)
 
 
