@@ -47,7 +47,7 @@ export default {
         'node_modules/react-day-picker/build/index.js': ['DateUtils', 'ModifiersUtils'],
         'node_modules/react-day-picker/moment/index.js': ['parseDate', 'formatDate'],
         'node_modules/react-dom/index.js': ['createPortal', 'findDOMNode'],
-        'node_modules/react-grid-system/build/index.js': ['Row', 'Col'],
+        'node_modules/react-grid-system/build/index.js': ['Row', 'Col', 'setConfiguration'],
       },
     }),
     copy({
