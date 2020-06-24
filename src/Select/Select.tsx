@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import ReactSelect, { Props as ReactSelectProps, components } from 'react-select';
-import AsyncReactSelect, { Props as AsyncReactSelectProps } from 'react-select/async';
+import ReactSelect, { components } from 'react-select';
+import { AsyncPaginateBase, Props as ReactSelectProps } from 'react-select-async-paginate';
 
 import styles from './styles.module.scss';
 import { Text } from '../Text';
@@ -10,8 +10,7 @@ import { Spacer } from '../Spacer';
 export type SelectProps = {
   clearIndicator?: boolean;
   forwardedRef?: any;
-} & ReactSelectProps &
-  Partial<AsyncReactSelectProps<{ label: string; value: string }>>;
+} & ReactSelectProps<{ label: string; value: string }>;
 
 const formatGroupLabel = (data: any) => {
   return data.label === 'groupBorder' ? <div className={styles.selectGroupDelimiter} /> : null;
@@ -49,7 +48,7 @@ const SelectPure = ({
   ...rest
 }: SelectProps) => {
   const ClearIndicator = (props: any) => (clearIndicator ? <components.ClearIndicator {...props} /> : null);
-  const SelectComponent: React.ComponentType<any> = rest.loadOptions ? AsyncReactSelect : ReactSelect;
+  const SelectComponent: React.ComponentType<any> = rest.loadOptions ? AsyncPaginateBase : ReactSelect;
 
   return (
     <SelectComponent

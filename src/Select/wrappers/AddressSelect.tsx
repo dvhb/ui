@@ -4,7 +4,7 @@ import { Select, SelectProps } from '../Select';
 import { makeAddressString, makeStreetAddressString } from './utils';
 import { DaDataSuggestion } from './types';
 
-export interface AddressSelectProps extends SelectProps {
+export interface AddressSelectProps extends Omit<SelectProps, 'loadOptions'> {
   apiKey: string;
   apiUrl?: string;
   fromBound?: 'country' | 'region' | 'area' | 'city' | 'settlement' | 'street' | 'house';
@@ -39,12 +39,14 @@ export const AddressSelect: FC<AddressSelectProps> = ({
       }),
     });
     const data = await response.json();
-    return data.suggestions.map((suggestion: DaDataSuggestion) => {
+    const options = data.suggestions.map((suggestion: DaDataSuggestion) => {
       return {
         label: constraintKladrId ? makeStreetAddressString(suggestion.data) : makeAddressString(suggestion.data),
         value: suggestion.data,
       };
     });
+
+    return { options, hasMore: false };
   };
 
   return <Select {...props} cacheOptions loadOptions={loadAddresses} />;
