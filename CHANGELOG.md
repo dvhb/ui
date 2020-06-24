@@ -1,3 +1,10 @@
+# [1.1.0-beta.88](https://github.com/dvhb/ui/compare/v1.1.0-beta.87...v1.1.0-beta.88) (2020-06-24)
+
+
+### Features
+
+* replace async reat-select with paginate async ([2f8121e](https://github.com/dvhb/ui/commit/2f8121e7434a1249f871c740691159c97cce9cde))
+
 # [1.1.0-beta.87](https://github.com/dvhb/ui/compare/v1.1.0-beta.86...v1.1.0-beta.87) (2020-06-22)
 
 
