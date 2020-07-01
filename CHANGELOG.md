@@ -1,3 +1,10 @@
+# [1.1.0-beta.89](https://github.com/dvhb/ui/compare/v1.1.0-beta.88...v1.1.0-beta.89) (2020-07-01)
+
+
+### Bug Fixes
+
+* change street address select city filtering logic ([a61e9c0](https://github.com/dvhb/ui/commit/a61e9c0b7a2fd39f71712b66af3180d34e36e02f))
+
 # [1.1.0-beta.88](https://github.com/dvhb/ui/compare/v1.1.0-beta.87...v1.1.0-beta.88) (2020-06-24)
 
 
