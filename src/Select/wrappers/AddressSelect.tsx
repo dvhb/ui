@@ -9,7 +9,7 @@ export interface AddressSelectProps extends Omit<SelectProps, 'loadOptions'> {
   apiUrl?: string;
   fromBound?: 'country' | 'region' | 'area' | 'city' | 'settlement' | 'street' | 'house';
   toBound?: 'country' | 'region' | 'area' | 'city' | 'settlement' | 'street' | 'house';
-  constraintKladrId?: string;
+  cityString?: string;
 }
 
 export const AddressSelect: FC<AddressSelectProps> = ({
@@ -17,7 +17,7 @@ export const AddressSelect: FC<AddressSelectProps> = ({
   apiUrl = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address',
   fromBound,
   toBound,
-  constraintKladrId,
+  cityString,
   ...props
 }) => {
   const headers = {
@@ -31,20 +31,21 @@ export const AddressSelect: FC<AddressSelectProps> = ({
       headers,
       method: 'POST',
       body: JSON.stringify({
-        locations: constraintKladrId ? { kladr_id: constraintKladrId } : undefined,
-        query: inputValue,
+        query: cityString ? `${cityString} ${inputValue}` : inputValue,
         from_bound: { value: fromBound },
         to_bound: { value: toBound },
         restrict_value: true,
       }),
     });
     const data = await response.json();
-    const options = data.suggestions.map((suggestion: DaDataSuggestion) => {
-      return {
-        label: constraintKladrId ? makeStreetAddressString(suggestion.data) : makeAddressString(suggestion.data),
-        value: suggestion.data,
-      };
-    });
+    const options = data.suggestions
+      .map((suggestion: DaDataSuggestion) => {
+        return {
+          label: cityString ? makeStreetAddressString(suggestion.data) : makeAddressString(suggestion.data),
+          value: suggestion.data,
+        };
+      })
+      .filter((suggestion: any) => suggestion.label);
 
     return { options, hasMore: false };
   };

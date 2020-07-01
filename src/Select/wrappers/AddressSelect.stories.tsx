@@ -18,5 +18,5 @@ export const CitiesAndSettlements = () => {
 };
 
 export const StreetAddressInKrasnoyarsk = () => {
-  return <AddressSelect apiKey={apiKey} constraintKladrId="2400000100000" onChange={action('onChange')} />;
+  return <AddressSelect apiKey={apiKey} cityString="Красноярск" onChange={action('onChange')} />;
 };
