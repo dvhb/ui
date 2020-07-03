@@ -1,3 +1,10 @@
+# [1.1.0-beta.90](https://github.com/dvhb/ui/compare/v1.1.0-beta.89...v1.1.0-beta.90) (2020-07-03)
+
+
+### Bug Fixes
+
+* text timer ending ([423a441](https://github.com/dvhb/ui/commit/423a44116de4cde599d678827ccae85deeea16ca))
+
 # [1.1.0-beta.89](https://github.com/dvhb/ui/compare/v1.1.0-beta.88...v1.1.0-beta.89) (2020-07-01)
 
 
