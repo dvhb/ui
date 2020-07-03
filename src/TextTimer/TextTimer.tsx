@@ -31,7 +31,7 @@ export const TextTimer: FC<TextTimerProps> = ({ duration, text, labels = default
     const timer = setInterval(() => {
       const newTime = countdown(targetTime);
 
-      if (newTime.hours === -1 && !newTime.minutes && !newTime.seconds) {
+      if (newTime.hours === -1) {
         setTime({ hours: 0, minutes: 0, seconds: 0 });
         onEnd?.();
         clearInterval(timer);
