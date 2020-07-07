@@ -1,3 +1,10 @@
+# [1.1.0-beta.91](https://github.com/dvhb/ui/compare/v1.1.0-beta.90...v1.1.0-beta.91) (2020-07-07)
+
+
+### Bug Fixes
+
+* checkbox pointer events ([df6c8a1](https://github.com/dvhb/ui/commit/df6c8a11a9de6dacf2be7140df18acf2ce925fa3))
+
 # [1.1.0-beta.90](https://github.com/dvhb/ui/compare/v1.1.0-beta.89...v1.1.0-beta.90) (2020-07-03)
 
 
