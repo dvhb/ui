@@ -3,6 +3,7 @@
 .checkboxWrapper {
   display: flex;
   position: relative;
+  cursor: pointer;
 }
 
 .checkboxControlWrapper {
@@ -21,6 +22,7 @@
   border-radius: 2px;
   border: 2px solid $border;
   position: relative;
+  pointer-events: none;
 
   &_active {
     background-color: $black;
@@ -42,6 +44,11 @@
   padding-left: 8px;
   padding-top: 3px;
   cursor: pointer;
+  pointer-events: none;
+
+  a {
+    pointer-events: all;
+  }
 }
 
 .checkboxInput {
