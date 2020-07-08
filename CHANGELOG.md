@@ -1,3 +1,10 @@
+# [1.1.0-beta.93](https://github.com/dvhb/ui/compare/v1.1.0-beta.92...v1.1.0-beta.93) (2020-07-08)
+
+
+### Features
+
+* add simple table component ([05b3522](https://github.com/dvhb/ui/commit/05b352230b976da0233f26cc47e065584a629677))
+
 # [1.1.0-beta.92](https://github.com/dvhb/ui/compare/v1.1.0-beta.91...v1.1.0-beta.92) (2020-07-08)
 
 
