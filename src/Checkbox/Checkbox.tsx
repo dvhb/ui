@@ -26,6 +26,7 @@ export type CheckboxProps = {
     Label?: (props: UniversalComponentProps) => ReactElement;
   };
   onChange?: (checked: boolean) => void;
+  type?: 'default' | 'slider';
 };
 
 const defaultComponents = {

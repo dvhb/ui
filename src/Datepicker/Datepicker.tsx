@@ -31,6 +31,7 @@ export type DatepickerProps = {
   required?: boolean;
   format?: string;
   mask?: string;
+  maskChar?: any;
   period?: boolean;
   inputComponent?: (props: any) => ReactElement;
   components?: {

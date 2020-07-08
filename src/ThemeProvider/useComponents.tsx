@@ -49,18 +49,14 @@ const defaultComponents = {
   Text,
 };
 
-export type ComponentsContextType = {
-  [key: string]: any;
-};
+export const ComponentsContext = createContext(defaultComponents);
 
-export const ComponentsContext = createContext<ComponentsContextType>(defaultComponents);
-
-type Props = {
+type Props<T> = {
   children: React.ReactNode;
-  components?: ComponentsContextType;
+  components?: T;
 };
 
-export const Provider = ({ children, components }: Props) => {
+export const Provider = <T extends {} = typeof defaultComponents>({ children, components }: Props<T>) => {
   const [componentsContext, setComponentsContext] = useState(defaultComponents);
 
   useMemo(() => {

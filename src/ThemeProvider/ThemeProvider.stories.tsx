@@ -20,12 +20,12 @@ const Component: FC = () => {
   );
 };
 
+const components = {
+  Button: ButtonStyled,
+};
+
 export const Default = () => (
-  <Provider
-    components={{
-      Button: ButtonStyled,
-    }}
-  >
+  <Provider<typeof components> components={components}>
     <Component />
   </Provider>
 );
