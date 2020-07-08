@@ -1,3 +1,10 @@
+# [1.1.0-beta.92](https://github.com/dvhb/ui/compare/v1.1.0-beta.91...v1.1.0-beta.92) (2020-07-08)
+
+
+### Bug Fixes
+
+* remove russian text from TextTimer ([2252b1a](https://github.com/dvhb/ui/commit/2252b1a105b52c0199413dff9a0a8ff55cbc5777))
+
 # [1.1.0-beta.91](https://github.com/dvhb/ui/compare/v1.1.0-beta.90...v1.1.0-beta.91) (2020-07-07)
 
 
