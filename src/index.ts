@@ -19,6 +19,7 @@ export * from './RadioGroup';
 export * from './Select';
 export * from './Spacer';
 export * from './Stepper';
+export * from './TableSimple';
 export * from './Text';
 export * from './TextTimer';
 export * from './ThemeProvider';
