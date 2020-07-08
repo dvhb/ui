@@ -1,3 +1,10 @@
+# [1.1.0-beta.95](https://github.com/dvhb/ui/compare/v1.1.0-beta.94...v1.1.0-beta.95) (2020-07-08)
+
+
+### Bug Fixes
+
+* useComponents typings ([e3ef170](https://github.com/dvhb/ui/commit/e3ef1709bac235d81ec955e444ab4212113dedea))
+
 # [1.1.0-beta.94](https://github.com/dvhb/ui/compare/v1.1.0-beta.93...v1.1.0-beta.94) (2020-07-08)
 
 
