@@ -14,9 +14,9 @@ export interface TextTimerProps {
 }
 
 const defaultLabels = {
-  hours: 'часов',
-  minutes: 'минут',
-  seconds: 'секунд',
+  hours: 'hours',
+  minutes: 'minutes',
+  seconds: 'seconds',
 };
 
 export const TextTimer: FC<TextTimerProps> = ({ duration, text, labels = defaultLabels, onEnd }) => {
