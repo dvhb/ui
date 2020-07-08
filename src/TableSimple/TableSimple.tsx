@@ -8,7 +8,7 @@ export type TableHeaderCellProps = { innerProps: ColumnProps } & UniversalCompon
 
 type ColumnProps = { accessor: string; header?: string; [key: string]: any };
 
-export type TableProps = {
+export type TableSimpleProps = {
   components?: {
     HeaderCell?: (props: TableHeaderCellProps) => ReactElement;
     Cell?: (props: TableCellProps) => ReactElement;
@@ -26,7 +26,7 @@ const defaultComponents = {
   Cell: (props: any) => <td {...props} />,
 };
 
-export const TableSimple = ({ columns, data, components }: TableProps) => {
+export const TableSimple = ({ columns, data, components }: TableSimpleProps) => {
   const { Cell, HeaderCell } = { ...defaultComponents, ...components };
 
   return (
