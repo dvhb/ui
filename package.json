@@ -1,6 +1,6 @@
 {
   "name": "@dvhb/ui",
-  "version": "1.1.0-beta.93",
+  "version": "1.1.0-beta.94",
   "description": "components for dvhb design system",
   "license": "MIT",
   "main": "dist/index.js",

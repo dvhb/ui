@@ -1,3 +1,10 @@
+# [1.1.0-beta.94](https://github.com/dvhb/ui/compare/v1.1.0-beta.93...v1.1.0-beta.94) (2020-07-08)
+
+
+### Bug Fixes
+
+* rename simple table props ([26960e1](https://github.com/dvhb/ui/commit/26960e18fd5acb62799e46b2edc17d69d365c268))
+
 # [1.1.0-beta.93](https://github.com/dvhb/ui/compare/v1.1.0-beta.92...v1.1.0-beta.93) (2020-07-08)
 
 
