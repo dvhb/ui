@@ -1,3 +1,10 @@
+# [1.1.0-beta.96](https://github.com/dvhb/ui/compare/v1.1.0-beta.95...v1.1.0-beta.96) (2020-07-09)
+
+
+### Features
+
+* add styles for table ([37360ce](https://github.com/dvhb/ui/commit/37360ce8a693fc288000e8945e688f40580add5a))
+
 # [1.1.0-beta.95](https://github.com/dvhb/ui/compare/v1.1.0-beta.94...v1.1.0-beta.95) (2020-07-08)
 
 
