@@ -1,4 +1,28 @@
+@import '../styles/colors';
+
 .table {
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid $gray-50;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.row {
+  border: 1px solid $gray-50;
+}
+
+.headerRow {
+  border-bottom: 2px solid $gray-50;
+}
+
+.cell {
+  text-align: left;
+  padding: 4px;
+}
+
+.headerCell {
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
