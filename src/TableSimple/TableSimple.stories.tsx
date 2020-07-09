@@ -1,4 +1,5 @@
 import React from 'react';
+import namor from 'namor';
 
 import { TableSimple } from './TableSimple';
 
@@ -6,115 +7,33 @@ export default {
   title: 'TableSimple',
 };
 
-const compareTableData = [
-  {
-    title: 'Амбулаторное лечение',
-    economy: true,
-    premium: true,
-  },
-  {
-    title: 'Экстренная стоматология',
-    economy: true,
-    premium: true,
-  },
-  {
-    title: 'Пребывание и лечение в круглосуточном стационаре',
-    economy: true,
-    premium: true,
-  },
-  {
-    title: 'Транспортировка к врачу или в медицинскую организацию на территории страхования',
-    economy: true,
-    premium: true,
-  },
-  {
-    title: 'Транспортировка с территории страхования к ПМЖ по медицинским показаниям',
-    economy: true,
-    premium: true,
-  },
-  {
-    title: 'Организация возвращения тела (останков) или урны с прахом',
-    economy: true,
-    premium: true,
-  },
-  {
-    title: 'Проезд к ПМЖ после стационарного лечения/при наличии медицинских противопоказаний к перелету',
-    economy: true,
-    premium: true,
-  },
-  {
-    title: 'Проезд одного взрослого для немедицинского сопровождения Застрахованного к ПМЖ',
-    economy: true,
-    premium: true,
-  },
-  {
-    title: 'Оплата телефонных звонков в Сервисную компанию',
-    economy: true,
-    premium: true,
-  },
-  {
-    title: 'Проживание в гостинице с момента выписки из круглосуточного стационара до отъезда к ПМЖ',
-    premium: true,
-  },
-  {
-    title:
-      'Визит третьего лица (близкого родственника/опекуна) к месту лечения Застрахованного при пребывании его в стационаре более 10 дней',
-    premium: true,
-  },
-  {
-    title: 'Возвращение несовершеннолетних детей Застрахованного с территории страхования к ПМЖ',
-    premium: true,
-  },
-  {
-    title:
-      'Расходы на пребывание в стационаре одного из родителей застрахованного ребенка до 14 лет, путешествующих вместе',
-    premium: true,
-  },
-  {
-    title: 'Предоставление и оплата переводчика',
-    premium: true,
-  },
-  {
-    title:
-      'Транспортировка Застрахованного к ПМЖ и обратно на территорию страхования при вынужденном возвращении из-за смерти близкого родственника',
-    premium: true,
-  },
-  {
-    title:
-      'Проезд лица, включенного в Полис и находящегося в одной поездке с Застрахованным, с которым наступил страховой случай, к ПМЖ',
-    premium: true,
-  },
-  {
-    title:
-      'Досрочное возвращение: близких родственников Застрахованного в случае страхового события, включая ДТП, или Застрахованного к ПМЖ в случае смерти его близкого родственника',
-    premium: true,
-  },
-  {
-    title: 'Получение юридической помощи',
-    premium: true,
-  },
-  {
-    title: 'Организация административной помощи при потере документов/билетов',
-    premium: true,
-  },
-  {
-    title: 'Организация и проведение поисково-спасательных операций',
-    premium: true,
-  },
-];
+const makeColumnsData = () => {
+  return Array(6)
+    .fill(null)
+    .map((_, index) => {
+      return {
+        header: namor.generate({ words: 1, saltLength: 0 }),
+        accessor: `column${index}`,
+      };
+    });
+};
 
-const columnsData = [
-  {
-    accessor: 'title',
-  },
-  {
-    header: 'Эконом',
-    accessor: 'economy',
-  },
-  {
-    header: 'Премиум',
-    accessor: 'premium',
-  },
-];
+const makeData = () => {
+  return Array(20)
+    .fill(null)
+    .map(_ => {
+      return {
+        column0: namor.generate({ words: 4, saltLength: 0, separator: ' ' }),
+        column1: namor.generate({ words: 1, saltLength: 0 }),
+        column2: namor.generate({ words: 2, saltLength: 0, separator: ' ' }),
+        column3: namor.generate({ words: 4, saltLength: 0, separator: ' ' }),
+        column4: namor.generate({ words: 4, saltLength: 0, separator: ' ' }),
+        column5: namor.generate({ words: 3, saltLength: 0, separator: ' ' }),
+      };
+    });
+};
 
-export const Default = () => <TableSimple columns={columnsData} data={compareTableData} />;
+const columnsData = makeColumnsData();
+const data = makeData();
+
+export const Default = () => <TableSimple columns={columnsData} data={data} />;

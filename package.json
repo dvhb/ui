@@ -79,6 +79,7 @@
     "final-form": "^4.19.1",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
+    "namor": "^2.0.2",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
