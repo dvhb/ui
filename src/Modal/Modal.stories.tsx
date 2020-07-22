@@ -1,5 +1,7 @@
 import React, { useCallback, useState } from 'react';
+
 import { Modal } from './Modal';
+import { Button } from '../Button';
 
 export default {
   title: 'Modal',
@@ -12,17 +14,23 @@ export const Default = () => {
     setIsOpen(true);
   }, []);
 
-  const handleModalClose = useCallback(() => {
+  const handleRequestClose = useCallback(() => {
     setIsOpen(false);
   }, []);
 
   return (
     <div>
       <button onClick={handleButtonClick}>Open modal</button>
-      <Modal isOpen={isOpen} onRequestClose={handleModalClose}>
-        {[...Array(20)].map((i, index) => (
-          <div key={index}>modal</div>
-        ))}
+      {[...Array(30)].map((i, index) => (
+        <div key={index}>parent content</div>
+      ))}
+      <Modal isOpen={isOpen} onRequestClose={handleRequestClose}>
+        <>
+          {[...Array(20)].map((i, index) => (
+            <div key={index}>modal</div>
+          ))}
+          <Button onClick={handleRequestClose}>Close</Button>
+        </>
       </Modal>
     </div>
   );
