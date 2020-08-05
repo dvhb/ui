@@ -1,3 +1,10 @@
+# [1.1.0-beta.100](https://github.com/dvhb/ui/compare/v1.1.0-beta.99...v1.1.0-beta.100) (2020-08-05)
+
+
+### Bug Fixes
+
+* remove unnecessary useState ([9157238](https://github.com/dvhb/ui/commit/91572383ad626f776cd9f21815e86a9706da26ee))
+
 # [1.1.0-beta.99](https://github.com/dvhb/ui/compare/v1.1.0-beta.98...v1.1.0-beta.99) (2020-08-05)
 
 
