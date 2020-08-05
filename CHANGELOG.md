@@ -1,3 +1,10 @@
+# [1.1.0-beta.97](https://github.com/dvhb/ui/compare/v1.1.0-beta.96...v1.1.0-beta.97) (2020-07-22)
+
+
+### Bug Fixes
+
+* modal close errors ([695585f](https://github.com/dvhb/ui/commit/695585f74bb7c693735790765615ef7bdfd974b4))
+
 # [1.1.0-beta.96](https://github.com/dvhb/ui/compare/v1.1.0-beta.95...v1.1.0-beta.96) (2020-07-09)
 
 

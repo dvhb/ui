@@ -39,21 +39,10 @@ export const Modal: FC<ModalProps> = ({
 
   useEffect(() => {
     setIsModalOpen(isOpen);
-    if (overlayRef && isOpen && disableBodyScroll) {
-      disableBodyScrollLock(overlayRef);
+    if (disableBodyScroll && overlayRef) {
+      isOpen ? disableBodyScrollLock(overlayRef) : enableBodyScroll(overlayRef);
     }
   }, [isOpen, overlayRef]);
-
-  const handleCloseModal = useCallback(
-    e => {
-      onRequestClose && onRequestClose(e);
-      setIsModalOpen(false);
-      if (overlayRef !== null && disableBodyScroll) {
-        enableBodyScroll(overlayRef);
-      }
-    },
-    [onRequestClose, overlayRef],
-  );
 
   const getOverlayRef = useCallback((node: HTMLDivElement) => {
     setOverlayRef(node);
@@ -67,12 +56,12 @@ export const Modal: FC<ModalProps> = ({
       overlayClassName={cn(styles.overlay, { overlayClassName })}
       className={cn(styles.modalWrapper, contentWrapperClassName)}
       isOpen={isModalOpen}
-      onRequestClose={handleCloseModal}
+      onRequestClose={onRequestClose}
       bodyOpenClassName={styles.bodyModalOpen}
       {...rest}
     >
       <ModalContent className={styles.modal}>
-        <CloseButton tag="button" onClick={handleCloseModal}>
+        <CloseButton tag="button" onClick={onRequestClose}>
           X
         </CloseButton>
         {children}
