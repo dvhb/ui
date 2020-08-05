@@ -1,3 +1,10 @@
+# [1.1.0-beta.98](https://github.com/dvhb/ui/compare/v1.1.0-beta.97...v1.1.0-beta.98) (2020-08-05)
+
+
+### Features
+
+* add attributes for tests ([717a4b1](https://github.com/dvhb/ui/commit/717a4b1e3057f03f9be45e5e2f636cdf6ade16f1))
+
 # [1.1.0-beta.97](https://github.com/dvhb/ui/compare/v1.1.0-beta.96...v1.1.0-beta.97) (2020-07-22)
 
 
