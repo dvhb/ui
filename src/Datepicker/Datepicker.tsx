@@ -118,6 +118,7 @@ export const Datepicker = ({
   const [typedValue, setTypedValue] = useState('');
   const [typeToDate, setTypeToDate] = useState(false);
   const [fromChange, setFromChange] = useState(false);
+  const [isPeriod, setIsPeriod] = useState(period);
   const locale = dayPickerProps?.locale || 'en';
 
   useEffect(() => {
@@ -273,6 +274,11 @@ export const Datepicker = ({
     },
     [locale, onChange, getError],
   );
+  useEffect(() => {
+    if (!period && currentDate) {
+      onChange?.(formatDate(currentDate, FORMAT_FORMDATA, locale), getError(currentDate));
+    }
+  }, []);
 
   const handleDayChangePeriod = useCallback((day: Date | undefined, _, dayPickerInput: DayPickerInput) => {
     setPeriodDate(day);
