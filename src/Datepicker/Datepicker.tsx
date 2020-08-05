@@ -118,7 +118,6 @@ export const Datepicker = ({
   const [typedValue, setTypedValue] = useState('');
   const [typeToDate, setTypeToDate] = useState(false);
   const [fromChange, setFromChange] = useState(false);
-  const [isPeriod, setIsPeriod] = useState(period);
   const locale = dayPickerProps?.locale || 'en';
 
   useEffect(() => {
