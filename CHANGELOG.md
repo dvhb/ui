@@ -1,3 +1,10 @@
+# [1.1.0-beta.99](https://github.com/dvhb/ui/compare/v1.1.0-beta.98...v1.1.0-beta.99) (2020-08-05)
+
+
+### Bug Fixes
+
+* send onchange after change period type to false ([92fe594](https://github.com/dvhb/ui/commit/92fe59480cb910d2694e6340733da3296c408ce8))
+
 # [1.1.0-beta.98](https://github.com/dvhb/ui/compare/v1.1.0-beta.97...v1.1.0-beta.98) (2020-08-05)
 
 
