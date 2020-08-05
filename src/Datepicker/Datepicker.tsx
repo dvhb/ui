@@ -46,6 +46,7 @@ export type DatepickerProps = {
     ref?: React.MutableRefObject<HTMLInputElement | undefined>;
     onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
     onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+    dataCy?: string;
   };
 
   modifiersClassNames?: {
@@ -91,7 +92,7 @@ export const Datepicker = ({
   modifiersClassNames,
   ...dayPickerInputProps
 }: DatepickerProps) => {
-  const { mask, maskChar, required, iconName, type: inputType = 'text', onFocus, onBlur } = inputProps || {};
+  const { mask, maskChar, required, iconName, type: inputType = 'text', onFocus, onBlur, dataCy } = inputProps || {};
   let { ref: inputRef } = inputProps || {};
   inputRef = inputRef ?? React.useRef<HTMLInputElement>();
   const pickerRef = React.useRef<DayPickerInput>(null);
@@ -201,6 +202,7 @@ export const Datepicker = ({
       iconName: iconName || 'Calendar',
       forwardedRef: inputRef,
       type: inputType,
+      'data-cy': dataCy,
     },
     hideOnDayClick: !period,
     classNames: inputStyles as any,

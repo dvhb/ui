@@ -27,6 +27,7 @@ export type CheckboxProps = {
   };
   onChange?: (checked: boolean) => void;
   type?: 'default' | 'slider';
+  dataCy?: string;
 };
 
 const defaultComponents = {
@@ -44,6 +45,7 @@ export const Checkbox = ({
   disabled = false,
   onChange,
   components,
+  dataCy,
 }: CheckboxProps) => {
   const handleChange = useCallback(() => !disabled && onChange?.(!checked), [checked, disabled, onChange]);
 
@@ -51,7 +53,7 @@ export const Checkbox = ({
 
   return (
     <div id={id} className={styles.checkboxWrapper} onClick={handleChange}>
-      <input className={styles.checkboxInput} type="checkbox" defaultChecked={checked} />
+      <input className={styles.checkboxInput} type="checkbox" defaultChecked={checked} data-cy={dataCy} />
       <CheckboxControlWrapper className={styles.checkboxControlWrapper}>
         <CheckboxControl
           className={cn(
