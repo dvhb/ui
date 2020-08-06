@@ -1,3 +1,10 @@
+# [1.1.0-beta.102](https://github.com/dvhb/ui/compare/v1.1.0-beta.101...v1.1.0-beta.102) (2020-08-06)
+
+
+### Bug Fixes
+
+* trigger error after the choose new date ([47f5f1d](https://github.com/dvhb/ui/commit/47f5f1dc4f407fb70fcac5491032f22216763ea2))
+
 # [1.1.0-beta.101](https://github.com/dvhb/ui/compare/v1.1.0-beta.100...v1.1.0-beta.101) (2020-08-05)
 
 
