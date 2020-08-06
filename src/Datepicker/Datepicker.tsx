@@ -338,6 +338,9 @@ export const Datepicker = ({
         getError(nextRange.from) ?? getError(nextRange.to),
       );
     }
+    if (nextRange.from && !nextRange.to) {
+      onChange?.(formatPeriodFormdata(from, undefined), 'format');
+    }
   }, [fromChange, periodDate, typedValue, typeToDate, from, to, getError, onChange]);
 
   return (
