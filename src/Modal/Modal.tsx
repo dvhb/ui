@@ -64,7 +64,7 @@ export const Modal: FC<ModalProps> = ({
   return (
     <ReactModal
       overlayRef={getOverlayRef}
-      overlayClassName={cn(styles.overlay, { overlayClassName })}
+      overlayClassName={cn(styles.overlay, overlayClassName)}
       className={cn(styles.modalWrapper, contentWrapperClassName)}
       isOpen={isModalOpen}
       onRequestClose={handleCloseModal}
