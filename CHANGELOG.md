@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/dvhb/ui/compare/v1.1.0...v1.1.1) (2020-09-10)
+
+
+### Bug Fixes
+
+* modal overlay classnames ([ae9ef92](https://github.com/dvhb/ui/commit/ae9ef920d9f351802281e7452ebdda8d558fb192))
+
 # [1.1.0](https://github.com/dvhb/ui/compare/v1.0.0...v1.1.0) (2020-06-12)
 
 
