@@ -1,3 +1,10 @@
+# [1.1.0-beta.103](https://github.com/dvhb/ui/compare/v1.1.0-beta.102...v1.1.0-beta.103) (2020-09-11)
+
+
+### Bug Fixes
+
+* modal overlay classnames ([6827163](https://github.com/dvhb/ui/commit/682716314ce8095e77f461fc70c14bc0df9d2783))
+
 # [1.1.0-beta.102](https://github.com/dvhb/ui/compare/v1.1.0-beta.101...v1.1.0-beta.102) (2020-08-06)
 
 
