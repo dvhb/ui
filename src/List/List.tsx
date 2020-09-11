@@ -5,7 +5,7 @@ import { UniversalComponentProps, UniversalComponent as ListItem } from './compo
 export type ListProps = {
   items?: string[];
   components?: {
-    ListItem?: (props: UniversalComponentProps) => ReactElement;
+    ListItem?: (props: UniversalComponentProps & { index: number }) => ReactElement;
   };
 } & HTMLAttributes<HTMLDivElement>;
 
@@ -19,7 +19,9 @@ export const List: FC<ListProps> = ({ items, components, ...rest }) => {
   return (
     <div {...rest}>
       {items?.map((i, index) => (
-        <ListItem key={index}>{i}</ListItem>
+        <ListItem index={index} key={index}>
+          {i}
+        </ListItem>
       ))}
     </div>
   );
