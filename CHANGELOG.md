@@ -1,3 +1,10 @@
+# [1.1.0-beta.104](https://github.com/dvhb/ui/compare/v1.1.0-beta.103...v1.1.0-beta.104) (2020-09-11)
+
+
+### Bug Fixes
+
+* index of list item in List ([573cd91](https://github.com/dvhb/ui/commit/573cd91f53050f0e1672ee76ed460eff33bb7791))
+
 # [1.1.0-beta.103](https://github.com/dvhb/ui/compare/v1.1.0-beta.102...v1.1.0-beta.103) (2020-09-11)
 
 
