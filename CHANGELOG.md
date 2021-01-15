@@ -1,3 +1,10 @@
+# [1.1.0-beta.105](https://github.com/dvhb/ui/compare/v1.1.0-beta.104...v1.1.0-beta.105) (2021-01-15)
+
+
+### Bug Fixes
+
+* **deps:** react-select versions ([39b74db](https://github.com/dvhb/ui/commit/39b74db5b4cc51f75cf9f5d1379c02e80b614149))
+
 # [1.1.0-beta.104](https://github.com/dvhb/ui/compare/v1.1.0-beta.103...v1.1.0-beta.104) (2020-09-11)
 
 
