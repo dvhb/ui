@@ -6,7 +6,7 @@ export default {
 };
 
 export const Default = () => <Button>button</Button>;
-export const unstyled = () => <Button type="unstyled">button</Button>;
+export const unstyled = () => <Button variant="unstyled">button</Button>;
 export const TagA = () => (
   <Button tag="a" href="#">
     button
