@@ -1,3 +1,10 @@
+# [1.1.0-beta.106](https://github.com/dvhb/ui/compare/v1.1.0-beta.105...v1.1.0-beta.106) (2021-03-19)
+
+
+### Bug Fixes
+
+* default button behavior ([5fcb8f9](https://github.com/dvhb/ui/commit/5fcb8f936b78c4810cc77b40155ea92de0f45cf8))
+
 # [1.1.0-beta.105](https://github.com/dvhb/ui/compare/v1.1.0-beta.104...v1.1.0-beta.105) (2021-01-15)
 
 
