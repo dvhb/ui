@@ -23,6 +23,7 @@
   border: 2px solid $border;
   position: relative;
   pointer-events: none;
+  box-sizing: content-box;
 
   &_active {
     background-color: $black;
