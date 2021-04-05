@@ -1,3 +1,10 @@
+# [1.1.0-beta.108](https://github.com/dvhb/ui/compare/v1.1.0-beta.107...v1.1.0-beta.108) (2021-04-05)
+
+
+### Bug Fixes
+
+* button props ([9a3e419](https://github.com/dvhb/ui/commit/9a3e4199136bed1f05d57c304e7df63b6fcd6fa9))
+
 # [1.1.0-beta.107](https://github.com/dvhb/ui/compare/v1.1.0-beta.106...v1.1.0-beta.107) (2021-04-05)
 
 
