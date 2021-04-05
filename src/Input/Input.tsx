@@ -21,7 +21,7 @@ export type InputProps = {
   onKeyUp?: React.KeyboardEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   disabled?: boolean;
   type?: string;
-  autocomplete?: boolean;
+  autocomplete?: string;
 } & Pick<InputMask['props'], 'formatChars' | 'maskChar'>;
 
 function InputBase({
