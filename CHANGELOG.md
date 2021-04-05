@@ -1,3 +1,10 @@
+# [1.1.0-beta.107](https://github.com/dvhb/ui/compare/v1.1.0-beta.106...v1.1.0-beta.107) (2021-04-05)
+
+
+### Bug Fixes
+
+* **checkbox:** box sizing property ([11f2ad1](https://github.com/dvhb/ui/commit/11f2ad1a1b3c9de865db3553e3cea05e1212f1b3))
+
 # [1.1.0-beta.106](https://github.com/dvhb/ui/compare/v1.1.0-beta.105...v1.1.0-beta.106) (2021-03-19)
 
 
