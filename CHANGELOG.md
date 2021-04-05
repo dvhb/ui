@@ -1,3 +1,10 @@
+# [1.1.0-beta.109](https://github.com/dvhb/ui/compare/v1.1.0-beta.108...v1.1.0-beta.109) (2021-04-05)
+
+
+### Bug Fixes
+
+* input props ([e4a6729](https://github.com/dvhb/ui/commit/e4a67291fe951597ab59ab77a945ad2605249e73))
+
 # [1.1.0-beta.108](https://github.com/dvhb/ui/compare/v1.1.0-beta.107...v1.1.0-beta.108) (2021-04-05)
 
 
