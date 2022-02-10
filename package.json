@@ -78,7 +78,7 @@
     "final-form": "^4.19.1",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
